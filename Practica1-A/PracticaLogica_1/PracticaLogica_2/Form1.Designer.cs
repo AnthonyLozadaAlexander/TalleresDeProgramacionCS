@@ -32,12 +32,12 @@
             this.lstCursos = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lstCostos = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAlumno = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lstCos = new System.Windows.Forms.ListBox();
             this.lstCur = new System.Windows.Forms.ListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,15 +48,19 @@
             this.chkContado = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chkCredito = new System.Windows.Forms.CheckBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 50);
+            this.label1.Location = new System.Drawing.Point(229, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 32);
+            this.label1.Size = new System.Drawing.Size(350, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sistema Seleccion Cursos";
             // 
@@ -90,18 +94,19 @@
             this.lstCostos.Size = new System.Drawing.Size(98, 144);
             this.lstCostos.TabIndex = 4;
             // 
-            // textBox1
+            // txtAlumno
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 29);
-            this.textBox1.TabIndex = 5;
+            this.txtAlumno.Location = new System.Drawing.Point(226, 128);
+            this.txtAlumno.Multiline = true;
+            this.txtAlumno.Name = "txtAlumno";
+            this.txtAlumno.Size = new System.Drawing.Size(127, 29);
+            this.txtAlumno.TabIndex = 5;
+            this.txtAlumno.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(128, 338);
+            this.btnAgregar.Location = new System.Drawing.Point(126, 340);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(121, 38);
             this.btnAgregar.TabIndex = 11;
@@ -112,50 +117,55 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(255, 338);
+            this.btnEliminar.Location = new System.Drawing.Point(253, 340);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 38);
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lstCos
             // 
             this.lstCos.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCos.FormattingEnabled = true;
             this.lstCos.ItemHeight = 20;
-            this.lstCos.Location = new System.Drawing.Point(255, 396);
+            this.lstCos.Location = new System.Drawing.Point(253, 439);
             this.lstCos.Name = "lstCos";
             this.lstCos.Size = new System.Drawing.Size(98, 144);
             this.lstCos.TabIndex = 14;
+            this.lstCos.SelectedIndexChanged += new System.EventHandler(this.lstCos_SelectedIndexChanged);
             // 
             // lstCur
             // 
             this.lstCur.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCur.FormattingEnabled = true;
             this.lstCur.ItemHeight = 20;
-            this.lstCur.Location = new System.Drawing.Point(129, 396);
+            this.lstCur.Location = new System.Drawing.Point(127, 439);
             this.lstCur.Name = "lstCur";
             this.lstCur.Size = new System.Drawing.Size(120, 144);
             this.lstCur.TabIndex = 13;
+            this.lstCur.SelectedIndexChanged += new System.EventHandler(this.lstCur_SelectedIndexChanged);
             // 
-            // textBox2
+            // txtSubTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(228, 565);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 29);
-            this.textBox2.TabIndex = 16;
+            this.txtSubTotal.Location = new System.Drawing.Point(238, 608);
+            this.txtSubTotal.Multiline = true;
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(113, 29);
+            this.txtSubTotal.TabIndex = 16;
+            this.txtSubTotal.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(138, 565);
+            this.label3.Location = new System.Drawing.Point(110, 609);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 28);
+            this.label3.Size = new System.Drawing.Size(120, 28);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Total:";
+            this.label3.Text = "SubTotal:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label8
             // 
@@ -215,39 +225,88 @@
             // 
             this.chkContado.AutoSize = true;
             this.chkContado.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkContado.Location = new System.Drawing.Point(470, 174);
+            this.chkContado.Location = new System.Drawing.Point(501, 167);
             this.chkContado.Name = "chkContado";
-            this.chkContado.Size = new System.Drawing.Size(92, 25);
+            this.chkContado.Size = new System.Drawing.Size(91, 24);
             this.chkContado.TabIndex = 25;
             this.chkContado.Text = "Contado";
             this.chkContado.UseVisualStyleBackColor = true;
+            this.chkContado.CheckedChanged += new System.EventHandler(this.chkContado_CheckedChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(505, 122);
+            this.label4.Location = new System.Drawing.Point(512, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 25);
             this.label4.TabIndex = 24;
             this.label4.Text = "Forma De Pago";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // chkCredito
             // 
             this.chkCredito.AutoSize = true;
             this.chkCredito.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCredito.Location = new System.Drawing.Point(568, 174);
+            this.chkCredito.Location = new System.Drawing.Point(599, 167);
             this.chkCredito.Name = "chkCredito";
-            this.chkCredito.Size = new System.Drawing.Size(92, 25);
+            this.chkCredito.Size = new System.Drawing.Size(91, 24);
             this.chkCredito.TabIndex = 34;
             this.chkCredito.Text = "Credito";
             this.chkCredito.UseVisualStyleBackColor = true;
+            this.chkCredito.CheckedChanged += new System.EventHandler(this.chkCredito_CheckedChanged);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(667, 22);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(121, 38);
+            this.btnCerrar.TabIndex = 37;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(599, 431);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(121, 38);
+            this.btnLimpiar.TabIndex = 36;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(458, 431);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(121, 38);
+            this.btnCalcular.TabIndex = 35;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(125, 397);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(230, 24);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Cursos Seleccionados";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 663);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.chkCredito);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -257,22 +316,28 @@
             this.Controls.Add(this.txtDescuento);
             this.Controls.Add(this.chkContado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstCos);
             this.Controls.Add(this.lstCur);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAlumno);
             this.Controls.Add(this.lstCostos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstCursos);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Sistema Seleccion Cursos";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
+
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnCalcular;
 
         private System.Windows.Forms.CheckBox chkCredito;
 
@@ -291,13 +356,14 @@
         private System.Windows.Forms.ListBox lstCursos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lstCostos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAlumno;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ListBox lstCos;
         private System.Windows.Forms.ListBox lstCur;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
