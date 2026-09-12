@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PracticaLogica_1
@@ -67,14 +60,15 @@ namespace PracticaLogica_1
             double montoTotal = 0.0;
             double aumento = 0.0;
 
-            if ((txtCosto.Text ==  "") || (String.IsNullOrEmpty(txtCosto.Text))){
+            if ((txtCosto.Text == "") || (String.IsNullOrEmpty(txtCosto.Text)))
+            {
                 MessageBox.Show("Error: Necesita Ingresar El Costo Del Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             costo = Convert.ToDouble(txtCosto.Text);
 
-            if(costo <= 0.0)
+            if (costo <= 0.0)
             {
                 MessageBox.Show("Error: El costo no puede ser negativo ni igual a cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -85,13 +79,13 @@ namespace PracticaLogica_1
                 if (rdAudio.Checked)
                 {
                     descuento = calcularPorcentaje(costo, 6.0);
-                    
+
                 }
 
                 else if (rdVideo.Checked)
                 {
                     descuento = calcularPorcentaje(costo, 8.0);
-                    
+
                 }
 
                 else if (rdLinea.Checked)
@@ -102,7 +96,8 @@ namespace PracticaLogica_1
                 montoTotal = costo - descuento;
             }
 
-            else{
+            else
+            {
 
                 if (rdAudio.Checked)
                 {
@@ -128,7 +123,7 @@ namespace PracticaLogica_1
             txtIncremento.Text = aumento.ToString();
             igv = calcularPorcentaje(montoTotal, 19.0);
             txtIgv.Text = igv.ToString();
-            
+
             montoTotal += igv;
 
             txtMPagar.Text = montoTotal.ToString();
@@ -137,8 +132,8 @@ namespace PracticaLogica_1
 
         private double calcularPorcentaje(double costo, double valor)
         {
-            return (costo * (valor/100.0));
+            return (costo * (valor / 100.0));
         }
-        
+
     }
 }

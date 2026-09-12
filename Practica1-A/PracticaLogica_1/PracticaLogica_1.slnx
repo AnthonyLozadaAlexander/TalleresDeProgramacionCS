@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="PracticaLogica_1/PracticaLogica_1.csproj" />
+  <Project Path="PracticaLogica_1/PracticaLogica_1.csproj" Id="fe690d65-ab59-4ce1-91dc-86ed277a73af" />
+  <Project Path="PracticaLogica_2/PracticaLogica_2.csproj" Id="3f1bb9dd-25ac-457f-a7e0-7f0c951b8ee2" />
 </Solution>
