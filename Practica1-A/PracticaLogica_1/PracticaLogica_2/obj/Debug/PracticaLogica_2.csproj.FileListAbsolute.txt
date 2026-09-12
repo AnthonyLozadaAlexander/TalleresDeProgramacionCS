@@ -1,0 +1,10 @@
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\bin\Debug\PracticaLogica_2.exe.config
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\bin\Debug\PracticaLogica_2.exe
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\bin\Debug\PracticaLogica_2.pdb
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.csproj.AssemblyReference.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.Form1.resources
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.Properties.Resources.resources
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.csproj.GenerateResource.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.exe
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaLogica_2\obj\Debug\PracticaLogica_2.pdb
