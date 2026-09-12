@@ -47,9 +47,6 @@
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.chkContado = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rdLinea = new System.Windows.Forms.RadioButton();
-            this.rdAudio = new System.Windows.Forms.RadioButton();
-            this.rdVideo = new System.Windows.Forms.RadioButton();
             this.chkCredito = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -68,7 +65,7 @@
             this.lstCursos.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCursos.FormattingEnabled = true;
             this.lstCursos.ItemHeight = 20;
-            this.lstCursos.Location = new System.Drawing.Point(46, 167);
+            this.lstCursos.Location = new System.Drawing.Point(129, 178);
             this.lstCursos.Name = "lstCursos";
             this.lstCursos.Size = new System.Drawing.Size(120, 144);
             this.lstCursos.TabIndex = 2;
@@ -77,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 117);
+            this.label2.Location = new System.Drawing.Point(124, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 28);
             this.label2.TabIndex = 3;
@@ -88,14 +85,14 @@
             this.lstCostos.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCostos.FormattingEnabled = true;
             this.lstCostos.ItemHeight = 20;
-            this.lstCostos.Location = new System.Drawing.Point(172, 167);
+            this.lstCostos.Location = new System.Drawing.Point(255, 178);
             this.lstCostos.Name = "lstCostos";
             this.lstCostos.Size = new System.Drawing.Size(98, 144);
             this.lstCostos.TabIndex = 4;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 117);
+            this.textBox1.Location = new System.Drawing.Point(226, 128);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(113, 29);
@@ -104,7 +101,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(45, 327);
+            this.btnAgregar.Location = new System.Drawing.Point(128, 338);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(121, 38);
             this.btnAgregar.TabIndex = 11;
@@ -115,7 +112,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(172, 327);
+            this.btnEliminar.Location = new System.Drawing.Point(255, 338);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(98, 38);
             this.btnEliminar.TabIndex = 12;
@@ -127,7 +124,7 @@
             this.lstCos.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCos.FormattingEnabled = true;
             this.lstCos.ItemHeight = 20;
-            this.lstCos.Location = new System.Drawing.Point(172, 385);
+            this.lstCos.Location = new System.Drawing.Point(255, 396);
             this.lstCos.Name = "lstCos";
             this.lstCos.Size = new System.Drawing.Size(98, 144);
             this.lstCos.TabIndex = 14;
@@ -137,14 +134,14 @@
             this.lstCur.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCur.FormattingEnabled = true;
             this.lstCur.ItemHeight = 20;
-            this.lstCur.Location = new System.Drawing.Point(46, 385);
+            this.lstCur.Location = new System.Drawing.Point(129, 396);
             this.lstCur.Name = "lstCur";
             this.lstCur.Size = new System.Drawing.Size(120, 144);
             this.lstCur.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 554);
+            this.textBox2.Location = new System.Drawing.Point(228, 565);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(113, 29);
@@ -154,7 +151,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 554);
+            this.label3.Location = new System.Drawing.Point(138, 565);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 28);
             this.label3.TabIndex = 15;
@@ -164,7 +161,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(396, 491);
+            this.label8.Location = new System.Drawing.Point(468, 368);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 25);
             this.label8.TabIndex = 33;
@@ -174,7 +171,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(396, 425);
+            this.label7.Location = new System.Drawing.Point(468, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 25);
             this.label7.TabIndex = 32;
@@ -184,7 +181,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(396, 360);
+            this.label6.Location = new System.Drawing.Point(468, 237);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 25);
             this.label6.TabIndex = 31;
@@ -192,7 +189,7 @@
             // 
             // txtMontoPagar
             // 
-            this.txtMontoPagar.Location = new System.Drawing.Point(531, 485);
+            this.txtMontoPagar.Location = new System.Drawing.Point(603, 362);
             this.txtMontoPagar.Multiline = true;
             this.txtMontoPagar.Name = "txtMontoPagar";
             this.txtMontoPagar.Size = new System.Drawing.Size(117, 38);
@@ -200,7 +197,7 @@
             // 
             // txtIncremento
             // 
-            this.txtIncremento.Location = new System.Drawing.Point(531, 419);
+            this.txtIncremento.Location = new System.Drawing.Point(603, 296);
             this.txtIncremento.Multiline = true;
             this.txtIncremento.Name = "txtIncremento";
             this.txtIncremento.Size = new System.Drawing.Size(117, 38);
@@ -208,7 +205,7 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(531, 354);
+            this.txtDescuento.Location = new System.Drawing.Point(603, 231);
             this.txtDescuento.Multiline = true;
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(117, 38);
@@ -218,7 +215,7 @@
             // 
             this.chkContado.AutoSize = true;
             this.chkContado.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkContado.Location = new System.Drawing.Point(398, 297);
+            this.chkContado.Location = new System.Drawing.Point(470, 174);
             this.chkContado.Name = "chkContado";
             this.chkContado.Size = new System.Drawing.Size(92, 25);
             this.chkContado.TabIndex = 25;
@@ -229,53 +226,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(396, 248);
+            this.label4.Location = new System.Drawing.Point(505, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 25);
             this.label4.TabIndex = 24;
             this.label4.Text = "Forma De Pago";
             // 
-            // rdLinea
-            // 
-            this.rdLinea.AutoSize = true;
-            this.rdLinea.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdLinea.Location = new System.Drawing.Point(489, 186);
-            this.rdLinea.Name = "rdLinea";
-            this.rdLinea.Size = new System.Drawing.Size(85, 29);
-            this.rdLinea.TabIndex = 23;
-            this.rdLinea.TabStop = true;
-            this.rdLinea.Text = "Linea";
-            this.rdLinea.UseVisualStyleBackColor = true;
-            // 
-            // rdAudio
-            // 
-            this.rdAudio.AutoSize = true;
-            this.rdAudio.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdAudio.Location = new System.Drawing.Point(580, 186);
-            this.rdAudio.Name = "rdAudio";
-            this.rdAudio.Size = new System.Drawing.Size(85, 29);
-            this.rdAudio.TabIndex = 22;
-            this.rdAudio.TabStop = true;
-            this.rdAudio.Text = "Audio";
-            this.rdAudio.UseVisualStyleBackColor = true;
-            // 
-            // rdVideo
-            // 
-            this.rdVideo.AutoSize = true;
-            this.rdVideo.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdVideo.Location = new System.Drawing.Point(398, 186);
-            this.rdVideo.Name = "rdVideo";
-            this.rdVideo.Size = new System.Drawing.Size(85, 29);
-            this.rdVideo.TabIndex = 21;
-            this.rdVideo.TabStop = true;
-            this.rdVideo.Text = "Video";
-            this.rdVideo.UseVisualStyleBackColor = true;
-            // 
             // chkCredito
             // 
             this.chkCredito.AutoSize = true;
             this.chkCredito.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCredito.Location = new System.Drawing.Point(496, 297);
+            this.chkCredito.Location = new System.Drawing.Point(568, 174);
             this.chkCredito.Name = "chkCredito";
             this.chkCredito.Size = new System.Drawing.Size(92, 25);
             this.chkCredito.TabIndex = 34;
@@ -296,9 +257,6 @@
             this.Controls.Add(this.txtDescuento);
             this.Controls.Add(this.chkContado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.rdLinea);
-            this.Controls.Add(this.rdAudio);
-            this.Controls.Add(this.rdVideo);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstCos);
@@ -326,9 +284,6 @@
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.CheckBox chkContado;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton rdLinea;
-        private System.Windows.Forms.RadioButton rdAudio;
-        private System.Windows.Forms.RadioButton rdVideo;
 
         #endregion
 
