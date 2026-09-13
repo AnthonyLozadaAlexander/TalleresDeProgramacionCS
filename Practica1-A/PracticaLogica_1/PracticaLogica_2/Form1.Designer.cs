@@ -45,13 +45,13 @@
             this.txtMontoPagar = new System.Windows.Forms.TextBox();
             this.txtIncremento = new System.Windows.Forms.TextBox();
             this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.chkContado = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chkCredito = new System.Windows.Forms.CheckBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.rdContado = new System.Windows.Forms.RadioButton();
+            this.rdCredito = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -221,18 +221,6 @@
             this.txtDescuento.Size = new System.Drawing.Size(117, 38);
             this.txtDescuento.TabIndex = 26;
             // 
-            // chkContado
-            // 
-            this.chkContado.AutoSize = true;
-            this.chkContado.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkContado.Location = new System.Drawing.Point(501, 167);
-            this.chkContado.Name = "chkContado";
-            this.chkContado.Size = new System.Drawing.Size(91, 24);
-            this.chkContado.TabIndex = 25;
-            this.chkContado.Text = "Contado";
-            this.chkContado.UseVisualStyleBackColor = true;
-            this.chkContado.CheckedChanged += new System.EventHandler(this.chkContado_CheckedChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -243,18 +231,6 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Forma De Pago";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // chkCredito
-            // 
-            this.chkCredito.AutoSize = true;
-            this.chkCredito.Font = new System.Drawing.Font("Cascadia Code", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCredito.Location = new System.Drawing.Point(599, 167);
-            this.chkCredito.Name = "chkCredito";
-            this.chkCredito.Size = new System.Drawing.Size(91, 24);
-            this.chkCredito.TabIndex = 34;
-            this.chkCredito.Text = "Credito";
-            this.chkCredito.UseVisualStyleBackColor = true;
-            this.chkCredito.CheckedChanged += new System.EventHandler(this.chkCredito_CheckedChanged);
             // 
             // btnCerrar
             // 
@@ -276,6 +252,7 @@
             this.btnLimpiar.TabIndex = 36;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnCalcular
             // 
@@ -294,27 +271,51 @@
             this.label5.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(125, 397);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 24);
+            this.label5.Size = new System.Drawing.Size(232, 25);
             this.label5.TabIndex = 38;
             this.label5.Text = "Cursos Seleccionados";
+            // 
+            // rdContado
+            // 
+            this.rdContado.AutoSize = true;
+            this.rdContado.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdContado.Location = new System.Drawing.Point(473, 178);
+            this.rdContado.Name = "rdContado";
+            this.rdContado.Size = new System.Drawing.Size(107, 29);
+            this.rdContado.TabIndex = 39;
+            this.rdContado.TabStop = true;
+            this.rdContado.Text = "Contado";
+            this.rdContado.UseVisualStyleBackColor = true;
+            // 
+            // rdCredito
+            // 
+            this.rdCredito.AutoSize = true;
+            this.rdCredito.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdCredito.Location = new System.Drawing.Point(599, 178);
+            this.rdCredito.Name = "rdCredito";
+            this.rdCredito.Size = new System.Drawing.Size(107, 29);
+            this.rdCredito.TabIndex = 40;
+            this.rdCredito.TabStop = true;
+            this.rdCredito.Text = "Credito";
+            this.rdCredito.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 663);
+            this.Controls.Add(this.rdCredito);
+            this.Controls.Add(this.rdContado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.chkCredito);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMontoPagar);
             this.Controls.Add(this.txtIncremento);
             this.Controls.Add(this.txtDescuento);
-            this.Controls.Add(this.chkContado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.label3);
@@ -339,15 +340,12 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCalcular;
 
-        private System.Windows.Forms.CheckBox chkCredito;
-
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMontoPagar;
         private System.Windows.Forms.TextBox txtIncremento;
         private System.Windows.Forms.TextBox txtDescuento;
-        private System.Windows.Forms.CheckBox chkContado;
         private System.Windows.Forms.Label label4;
 
         #endregion
@@ -364,6 +362,8 @@
         private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton rdContado;
+        private System.Windows.Forms.RadioButton rdCredito;
     }
 }
 

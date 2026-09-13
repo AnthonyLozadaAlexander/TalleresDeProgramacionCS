@@ -33,33 +33,49 @@ namespace PracticaLogica_2 {
                 return;
             }
 
-            if (!(lstCursos.SelectedItems.Count >= 0) || !(lstCostos.SelectedItems.Count >= 0)) {
+            if (!(lstCursos.SelectedItems.Count > 0)) {
                 MessageBox.Show("Error: Debe Seleccionar un Curso y un Costo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!(chkContado.Checked) || chkCredito.Checked) {
-                MessageBox.Show("Error: Debe seleccionar un tipo de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-
+            /*
+             * Toma el indice del curso que se selecciono en la lista de cursos y lo agrega a la lista del carrito y costos 
+            */
             int cursoIndex = lstCursos.SelectedIndex;
 
 
             lstCur.Items.Add(lstCursos.Items[cursoIndex]);
             lstCos.Items.Add(lstCostos.Items[cursoIndex]);
+
+
         }
         private void btnCalcular_Click(object sender, EventArgs e) {
-            double subTotal = 0.0;
-            double costo = 0.0;
 
-            foreach (string i in lstCos.Items) {
-                costo = Convert.ToDouble(i);
-                subTotal = subTotal + costo;
+
+            /*
+             * Que el carrito no este vacio 
+            */
+
+            if (lstCur.Items.Count == 0) {
+                MessageBox.Show("Error: Debe agregar un curso en el carrito", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            txtSubTotal.Text = subTotal.ToString();
+            /*
+             * Seleccionar un metodo de pago 
+            */
+            if(!rdContado.Checked && !rdCredito.Checked) { 
+                MessageBox.Show("Error: Debe seleccionar un metodo de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            calcularPrecio();
+
+        }
+
+        private double calcularPorcentaje(double subtotal, double valor) {
+            return (subtotal * (valor / 100));
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) {
@@ -71,11 +87,87 @@ namespace PracticaLogica_2 {
         }
 
         private void btnEliminar_Click(object sender, EventArgs e) {
-            if (!(lstCursos.SelectedItems.Count >= 0) || !(lstCostos.SelectedItems.Count >= 0)) {
+            if (!(lstCur.SelectedItems.Count > 0)) {
 
-                MessageBox.Show("Error: Debe Seleccionar un Curso y un Costo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Debe Seleccionar un Curso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            int cursoIndex = lstCur.SelectedIndex;
+
+            lstCur.Items.RemoveAt(cursoIndex);
+            lstCos.Items.RemoveAt(cursoIndex);
+
+            calcularPrecio();
+
+        }
+
+        private  void calcularPrecio() {
+
+            double subTotal = 0.0;
+            double costo = 0.0;
+            double incremento = 0.0;
+            double descuento = 0.0;
+            double total = 0.0;
+
+            foreach (string i in lstCos.Items) {
+                costo = Convert.ToDouble(i);
+                subTotal = subTotal + costo;
+            }
+
+            txtSubTotal.Text = subTotal.ToString();
+
+            if (rdContado.Checked) {
+
+                descuento = calcularPorcentaje(subTotal, 5.0);
+                MessageBox.Show("Se aplicara un descuento del 5% por pago al contado", "Descuento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                total = subTotal - descuento;
+
+
+            }
+            else if (rdCredito.Checked) {
+
+                incremento = calcularPorcentaje(subTotal, 7.0);
+                MessageBox.Show("Se aplicara un incremento del 7% por pago a credito", "Incremento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                total = subTotal + incremento;
+            }
+
+            txtMontoPagar.Text = total.ToString();
+            txtDescuento.Text = descuento.ToString();
+            txtIncremento.Text = incremento.ToString();
+        }
+
+        public bool validaciones() {
+
+            if (String.IsNullOrEmpty(txtAlumno.Text)) {
+                MessageBox.Show("Error: Debe Ingresar un Nombre de Alumno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!(lstCursos.SelectedItems.Count > 0)) {
+                MessageBox.Show("Error: Debe Seleccionar un Curso y un Costo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+
+            return true;
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e) {
+            rdContado.Checked = false;
+            rdCredito.Checked = false;
+
+            txtAlumno.Clear();
+            txtDescuento.Clear();
+            txtIncremento.Clear();
+            txtMontoPagar.Clear();
+            txtSubTotal.Clear();
+
+            lstCur.Items.Clear();
+            lstCos.Items.Clear();
+
+            txtAlumno.Focus();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -113,5 +205,6 @@ namespace PracticaLogica_2 {
         private void Form1_Load(object sender, EventArgs e) {
 
         }
+
     }
 }
