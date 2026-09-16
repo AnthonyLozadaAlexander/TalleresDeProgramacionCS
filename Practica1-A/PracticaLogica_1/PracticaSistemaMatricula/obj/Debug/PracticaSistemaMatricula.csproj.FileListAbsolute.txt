@@ -1,0 +1,10 @@
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\bin\Debug\PracticaSistemaMatricula.exe.config
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\bin\Debug\PracticaSistemaMatricula.exe
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\bin\Debug\PracticaSistemaMatricula.pdb
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.csproj.AssemblyReference.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.Formulario.resources
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.Properties.Resources.resources
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.csproj.GenerateResource.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.exe
+C:\Users\USUARIO\OneDrive\Documentos\TalleresDeProgramacion\Practica1-A\PracticaLogica_1\PracticaSistemaMatricula\obj\Debug\PracticaSistemaMatricula.pdb
