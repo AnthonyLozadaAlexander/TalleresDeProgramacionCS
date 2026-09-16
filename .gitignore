@@ -1,0 +1,27 @@
+## Visual Studio / .NET .gitignore
+
+# Carpetas de entorno y usuario de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vsidx
+*.dtbcache.json
+
+# Carpetas de compilación y binarios
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Archivos temporales y de registro
+*.log
+*.cache
+*.tmp
