@@ -136,6 +136,18 @@ namespace PracticaSistemaMatricula {
         }
         private void btnEliminar_Click(object sender, EventArgs e) {
 
+            int index = lstCur.SelectedIndex;
+
+            if(index == -1) {
+                MessageBox.Show("Error: Debe Seleccionar Un Curso Para Eliminarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            lstCur.Items.RemoveAt(index);
+            lstCos.Items.RemoveAt(index);
+
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e) {
