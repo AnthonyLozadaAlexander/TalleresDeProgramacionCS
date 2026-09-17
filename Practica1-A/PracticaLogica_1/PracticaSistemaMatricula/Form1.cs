@@ -146,8 +146,50 @@ namespace PracticaSistemaMatricula {
             lstCur.Items.RemoveAt(index);
             lstCos.Items.RemoveAt(index);
 
+            actualizarCalculo();
             
 
+        }
+
+        private void actualizarCalculo() {
+            double descuento = 0.0;
+            double incremento = 0.0;
+            double subtotal = 0.0;
+            double total = 0.0;
+            double sum = 0.0;
+            double mensual = 0.0;
+            double valorMatricula = 0.0;
+
+            foreach (var i in lstCos.Items) {
+                sum = sum + Convert.ToDouble(i);
+            }
+
+            subtotal = sum;
+
+            if (lstCos.Items.Count == 1) {
+                valorMatricula = subtotal * 0.80;
+            }
+            else if (lstCos.Items.Count == 2) {
+                valorMatricula = subtotal * 0.60;
+            }
+            else if (lstCos.Items.Count >= 3) {
+                valorMatricula = subtotal * 0.50;
+            }
+
+            txtMatricula.Text = valorMatricula.ToString();
+
+            if (cboPago.SelectedIndex == 0) {
+                descuento = subtotal * 0.10;
+                total = subtotal - descuento;
+            }
+            else if (cboPago.SelectedIndex == 1) {
+                incremento = subtotal * 0.10;
+                total = subtotal + incremento;
+                mensual = total / 4;
+            }
+
+            txtMensual.Text = mensual.ToString();
+            txtCostoTotal.Text = total.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e) {
