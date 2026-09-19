@@ -17,15 +17,8 @@ namespace PracticaSistemaCalificaciones {
             tabla.BorderStyle = BorderStyle.None;
             BackColor = Color.White;
             tabla.Font = new Font("Cascadia Code", 11, FontStyle.Bold);
+            configurarTabla();
 
-            tabla.Columns.Add("Nombre", "Nombre");
-            tabla.Columns.Add("Edad", "Edad");
-            tabla.Columns.Add("Cedula", "Cedula");
-            tabla.Columns.Add("Turno", "Turno");
-            tabla.Columns.Add("Nota 1", "Nota 1");
-            tabla.Columns.Add("Nota 2", "Nota 2");
-            tabla.Columns.Add("Nota 3", "Nota 3");
-            tabla.Columns.Add("Promedio Final", "Promedio Final");
         }
 
         private void btnSalir_Click(object sender, EventArgs e) {
@@ -36,6 +29,20 @@ namespace PracticaSistemaCalificaciones {
                 Application.Exit();
             }
 
+        }
+
+        public void configurarTabla() {
+            tabla.AutoGenerateColumns = false;
+            tabla.Columns.Clear();
+
+            tabla.Columns.Add("Nombre", "Nombre");
+            tabla.Columns.Add("Edad", "Edad");
+            tabla.Columns.Add("Cedula", "Cedula");
+            tabla.Columns.Add("Turno", "Turno");
+            tabla.Columns.Add("Nota 1", "Nota 1");
+            tabla.Columns.Add("Nota 2", "Nota 2");
+            tabla.Columns.Add("Nota 3", "Nota 3");
+            tabla.Columns.Add("Promedio Final", "Promedio Final");
         }
         private void label1_Click(object sender, EventArgs e) {
 
