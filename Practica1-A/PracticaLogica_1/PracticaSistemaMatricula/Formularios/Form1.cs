@@ -147,7 +147,7 @@ namespace PracticaSistemaMatricula {
             lstCos.Items.RemoveAt(index);
 
             actualizarCalculo();
-            
+           
 
         }
 
@@ -190,6 +190,16 @@ namespace PracticaSistemaMatricula {
 
             txtMensual.Text = mensual.ToString();
             txtCostoTotal.Text = total.ToString();
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e) {
+            
+            txtAlumno.Clear();
+            txtCostoTotal.Clear();
+            txtMatricula.Clear();
+            txtMensual.Clear();
+
+            lstCur.Items.Clear();
+            lstCos.Items.Clear();
         }
 
         private void label1_Click(object sender, EventArgs e) {
