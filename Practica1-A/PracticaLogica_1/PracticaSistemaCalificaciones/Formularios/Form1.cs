@@ -14,10 +14,8 @@ namespace PracticaSistemaCalificaciones {
             InitializeComponent();
             CenterToScreen();
             MinimizeBox = false;
-            tabla.BorderStyle = BorderStyle.None;
-            BackColor = Color.White;
-            tabla.Font = new Font("Cascadia Code", 11, FontStyle.Bold);
             configurarTabla();
+            configurarComboBox();
 
         }
 
@@ -31,7 +29,18 @@ namespace PracticaSistemaCalificaciones {
 
         }
 
+        public void configurarComboBox() {
+            cboTurno.Font = new Font("Cascadia Code", 11, FontStyle.Bold);
+            cboTurno.Items.Add("Mañana");
+            cboTurno.Items.Add("Tarde");
+            cboTurno.Items.Add("Noche");
+        }
+
         public void configurarTabla() {
+            tabla.BorderStyle = BorderStyle.None;
+            BackColor = Color.White;
+            tabla.Font = new Font("Cascadia Code", 11, FontStyle.Bold);
+
             tabla.AutoGenerateColumns = false;
             tabla.Columns.Clear();
 

@@ -37,6 +37,7 @@
             this.txtNota3 = new System.Windows.Forms.TextBox();
             this.tabla = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.cboTurno = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +185,20 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // cboTurno
+            // 
+            this.cboTurno.FormattingEnabled = true;
+            this.cboTurno.Location = new System.Drawing.Point(108, 171);
+            this.cboTurno.Name = "cboTurno";
+            this.cboTurno.Size = new System.Drawing.Size(246, 21);
+            this.cboTurno.TabIndex = 14;
+            // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 842);
+            this.Controls.Add(this.cboTurno);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.txtNota3);
@@ -228,6 +238,7 @@
         private System.Windows.Forms.TextBox txtNota3;
         private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cboTurno;
     }
 }
 
