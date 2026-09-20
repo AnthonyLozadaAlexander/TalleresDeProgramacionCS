@@ -142,8 +142,6 @@ namespace PracticaSistemaCalificaciones {
 
             Console.WriteLine("Info Del Alumno: " + a.mostrarInformacion());
             totalAlumnos();
-
-
         }
 
         private bool validaciones() {
