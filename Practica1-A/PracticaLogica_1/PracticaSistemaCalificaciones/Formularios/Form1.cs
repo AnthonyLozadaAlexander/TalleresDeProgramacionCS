@@ -79,16 +79,36 @@ namespace PracticaSistemaCalificaciones {
 
         private void btnAgregaR(object sender, EventArgs e) {
 
-            validaciones(); // validaciones basicas de los campos del formulario
+            String cedula = "";
+            String nombre = "";
+            int edad = 0;
 
-            String nombre = txtNombre.Text;
-            int edad = Convert.ToInt16(txtEdad.Text);
-            String cedula = txtCedula.Text;
+            if (!validaciones()) {    // validaciones basicas de los campos del formulario
+                return;
+            }
+            
+            if(Regex.IsMatch(txtNombre.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$")) {
+                MessageBox.Show("Debe ingresar un formato valido para el nombre (No Numerico)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            if(!(Regex.IsMatch(cedula, regexEntero))){
+            
+            if(!(Regex.IsMatch(txtEdad.Text, regexEntero))) {
+                MessageBox.Show("Debe ingresar un formato valido para la edad (Numerico)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+
+            if (!(Regex.IsMatch(txtCedula.Text, regexEntero))){
                 MessageBox.Show("Debe ingresar un formato valido para la cedula (Numerico)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            edad = Convert.ToInt16(txtEdad.Text);
+            nombre = txtNombre.Text;
+            cedula = txtCedula.Text;
+
 
             foreach(Alumno registro in alumnosList) {
                 if(registro.Cedula == cedula) {
@@ -99,30 +119,30 @@ namespace PracticaSistemaCalificaciones {
 
             String turno = cboTurno.SelectedItem.ToString();
 
-            double nota1 = Convert.ToDouble(txtNota1.Text);
-            double nota2 = Convert.ToDouble(txtNota2.Text);
-            double nota3 = Convert.ToDouble(txtNota3.Text);
-
-            if (!(Regex.IsMatch(nota1.ToString(), regexDecimal))) {
+            if (!(Regex.IsMatch(txtNota1.Text, regexDecimal))) {
                 MessageBox.Show("Debe ingresar un formato valido para la nota 1 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (!(Regex.IsMatch(nota2.ToString(), regexDecimal))) {
+            if (!(Regex.IsMatch(txtNota2.Text, regexDecimal))) {
                 MessageBox.Show("Debe ingresar un formato valido para la nota 2 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (!(Regex.IsMatch(nota3.ToString(), regexDecimal))) {
+            if (!(Regex.IsMatch(txtNota3.Text, regexDecimal))) {
                 MessageBox.Show("Debe ingresar un formato valido para la nota 3 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            double nota1 = Convert.ToDouble(txtNota1.Text);
+            double nota2 = Convert.ToDouble(txtNota2.Text);
+            double nota3 = Convert.ToDouble(txtNota3.Text);
+
 
             Alumno a = new Alumno(nombre, edad, cedula, turno, nota1, nota2, nota3);
             alumnosList.Add(a);
 
-            Object Promedio = a.calcularPromedio();
+            Double Promedio = a.calcularPromedio();
 
-            tabla.Rows.Add(a.Nombre, a.Edad, a.Cedula, a.Turno, a.Nota1, a.Nota2, a.Nota3, Promedio);
+            tabla.Rows.Add(a.Nombre, a.Edad, a.Cedula, a.Turno, a.Nota1, a.Nota2, a.Nota3, Promedio.ToString("F2"));
 
             Console.WriteLine("Info Del Alumno: " + a.mostrarInformacion());
             txtTotal.Text = alumnosList.Count().ToString();
@@ -130,42 +150,43 @@ namespace PracticaSistemaCalificaciones {
 
         }
 
-        private void validaciones() {
+        private bool validaciones() {
             if (cboTurno.SelectedIndex == -1) {
                 MessageBox.Show("Debe Seleccionar Un Turno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false; 
             }
 
             if(txtNombre.Text == "" || String.IsNullOrWhiteSpace(txtNombre.Text)) {
                 MessageBox.Show("Debe Ingresar Un Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
             if(txtEdad.Text == "" || String.IsNullOrWhiteSpace(txtEdad.Text)) {
                 MessageBox.Show("Debe Ingresar Una Edad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
             if(txtCedula.Text == "" || String.IsNullOrWhiteSpace(txtCedula.Text)) {
                 MessageBox.Show("Debe Ingresar Una Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
             if(txtNota1.Text == "" || String.IsNullOrWhiteSpace(txtNota1.Text)) {
                 MessageBox.Show("Debe Ingresar Una Nota 1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
             if(txtNota2.Text == "" || String.IsNullOrWhiteSpace(txtNota2.Text)) {
                 MessageBox.Show("Debe Ingresar Una Nota 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
             if(txtNota3.Text == "" || String.IsNullOrWhiteSpace(txtNota3.Text)) {
                 MessageBox.Show("Debe Ingresar Una Nota 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return false;
             }
 
+            return true;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e) {
