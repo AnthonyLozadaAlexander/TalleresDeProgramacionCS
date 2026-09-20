@@ -30,7 +30,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNota1 = new System.Windows.Forms.TextBox();
             this.txtNota2 = new System.Windows.Forms.TextBox();
@@ -54,7 +53,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(246, 20);
             this.txtNombre.TabIndex = 0;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombrE);
             // 
             // label1
             // 
@@ -122,21 +120,10 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregaR);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(899, 131);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(132, 43);
-            this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1051, 130);
+            this.btnEliminar.Location = new System.Drawing.Point(910, 131);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(132, 43);
             this.btnEliminar.TabIndex = 8;
@@ -150,7 +137,6 @@
             this.txtNota1.Name = "txtNota1";
             this.txtNota1.Size = new System.Drawing.Size(145, 20);
             this.txtNota1.TabIndex = 9;
-            this.txtNota1.TextChanged += new System.EventHandler(this.txtNota1_TextChanged);
             // 
             // txtNota2
             // 
@@ -158,7 +144,6 @@
             this.txtNota2.Name = "txtNota2";
             this.txtNota2.Size = new System.Drawing.Size(145, 20);
             this.txtNota2.TabIndex = 10;
-            this.txtNota2.TextChanged += new System.EventHandler(this.txtNota2_TextChanged);
             // 
             // txtNota3
             // 
@@ -166,20 +151,21 @@
             this.txtNota3.Name = "txtNota3";
             this.txtNota3.Size = new System.Drawing.Size(145, 20);
             this.txtNota3.TabIndex = 11;
-            this.txtNota3.TextChanged += new System.EventHandler(this.txtNota3_TextChanged);
             // 
             // tabla
             // 
+            this.tabla.AllowUserToAddRows = false;
             this.tabla.AllowUserToDeleteRows = false;
+            this.tabla.AllowUserToResizeColumns = false;
+            this.tabla.AllowUserToResizeRows = false;
             this.tabla.BackgroundColor = System.Drawing.Color.White;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla.Location = new System.Drawing.Point(168, 305);
+            this.tabla.Location = new System.Drawing.Point(163, 305);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersWidth = 47;
-            this.tabla.Size = new System.Drawing.Size(940, 514);
+            this.tabla.Size = new System.Drawing.Size(1020, 514);
             this.tabla.TabIndex = 12;
-            this.tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellContentClick);
             // 
             // btnSalir
             // 
@@ -206,7 +192,6 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(145, 20);
             this.txtTotal.TabIndex = 16;
-            this.txtTotal.TextChanged += new System.EventHandler(this.totalAlumnos);
             // 
             // label6
             // 
@@ -281,7 +266,6 @@
             this.Controls.Add(this.txtNota2);
             this.Controls.Add(this.txtNota1);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -307,7 +291,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtNota1;
         private System.Windows.Forms.TextBox txtNota2;

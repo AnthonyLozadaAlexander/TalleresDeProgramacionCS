@@ -47,7 +47,7 @@ namespace PracticaSistemaCalificaciones {
             tabla.BorderStyle = BorderStyle.None;
             BackColor = Color.White;
             tabla.Font = new Font("Cascadia Code", 11, FontStyle.Bold);
-
+            
             tabla.AutoGenerateColumns = false;
             tabla.Columns.Clear();
 
@@ -219,25 +219,6 @@ namespace PracticaSistemaCalificaciones {
             txtTotal.Text = alumnosList.Count().ToString();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e) {
-
-        }
-
-        private void txtNota3_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void txtNota2_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void txtNota1_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void tabla_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-
-        }
 
         private void label5_Click(object sender, EventArgs e) {
 
@@ -251,8 +232,6 @@ namespace PracticaSistemaCalificaciones {
 
         }
 
-        private void totalAlumnos(object sender, EventArgs e) {
 
-        }
     }
 }
