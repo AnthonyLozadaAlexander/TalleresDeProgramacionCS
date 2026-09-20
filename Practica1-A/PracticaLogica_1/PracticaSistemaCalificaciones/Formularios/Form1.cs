@@ -87,7 +87,7 @@ namespace PracticaSistemaCalificaciones {
                 return;
             }
             
-            if(Regex.IsMatch(txtNombre.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$")) {
+            if(!(Regex.IsMatch(txtNombre.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"))) {
                 MessageBox.Show("Debe ingresar un formato valido para el nombre (No Numerico)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -132,9 +132,12 @@ namespace PracticaSistemaCalificaciones {
                 MessageBox.Show("Debe ingresar un formato valido para la nota 3 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            double nota1 = Convert.ToDouble(txtNota1.Text);
-            double nota2 = Convert.ToDouble(txtNota2.Text);
-            double nota3 = Convert.ToDouble(txtNota3.Text);
+
+            // .Replace('.', ',') evita el error de formato decimal por el sistema de idioma
+            
+            double nota1 = Convert.ToDouble(txtNota1.Text.Replace('.', ','));
+            double nota2 = Convert.ToDouble(txtNota2.Text.Replace('.', ','));
+            double nota3 = Convert.ToDouble(txtNota3.Text.Replace('.', ','));
 
             if(nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10) {
                 MessageBox.Show("Las notas deben estar entre 0 y 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,7 +153,7 @@ namespace PracticaSistemaCalificaciones {
             tabla.Rows.Add(a.Nombre, a.Edad, a.Cedula, a.Turno, a.Nota1, a.Nota2, a.Nota3, Promedio.ToString("F2"));
 
             Console.WriteLine("Info Del Alumno: " + a.mostrarInformacion());
-            txtTotal.Text = alumnosList.Count().ToString();
+            totalAlumnos();
 
 
         }
@@ -196,6 +199,24 @@ namespace PracticaSistemaCalificaciones {
 
         private void btnEliminar_Click(object sender, EventArgs e) {
 
+            if (alumnosList.Count == 0) {
+                MessageBox.Show("No hay alumnos en el Sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(tabla.CurrentRow == null || tabla.CurrentRow.IsNewRow) {
+                MessageBox.Show("Debe seleccionar un alumno para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            int index = tabla.CurrentRow.Index;
+            alumnosList.RemoveAt(index);
+            tabla.Rows.RemoveAt(index);
+            totalAlumnos();
+        }
+
+        public void totalAlumnos() {
+            txtTotal.Text = alumnosList.Count().ToString();
         }
 
         private void btnModificar_Click(object sender, EventArgs e) {
