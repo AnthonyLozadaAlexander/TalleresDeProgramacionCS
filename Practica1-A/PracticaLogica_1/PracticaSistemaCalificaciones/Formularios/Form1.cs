@@ -136,6 +136,11 @@ namespace PracticaSistemaCalificaciones {
             double nota2 = Convert.ToDouble(txtNota2.Text);
             double nota3 = Convert.ToDouble(txtNota3.Text);
 
+            if(nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10) {
+                MessageBox.Show("Las notas deben estar entre 0 y 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
 
             Alumno a = new Alumno(nombre, edad, cedula, turno, nota1, nota2, nota3);
             alumnosList.Add(a);
