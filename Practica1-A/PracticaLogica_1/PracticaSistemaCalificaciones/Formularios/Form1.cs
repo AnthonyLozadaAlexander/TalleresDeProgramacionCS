@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticaSistemaCalificaciones.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PracticaSistemaCalificaciones {
     public partial class Formulario : Form {
+        List<Alumno> alumnosList = new List<Alumno>();
+        String regexDecimal = @"^-?\d+([.,]\d+)?$";
+        String regexEntero = @"^\d+$"; 
+
         public Formulario() {
             InitializeComponent();
             CenterToScreen();
             MinimizeBox = false;
             configurarTabla();
             configurarComboBox();
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e) {
@@ -34,6 +39,8 @@ namespace PracticaSistemaCalificaciones {
             cboTurno.Items.Add("Mañana");
             cboTurno.Items.Add("Tarde");
             cboTurno.Items.Add("Noche");
+            cboTurno.DropDownStyle = ComboBoxStyle.DropDownList; // evitar que el usuario edite manualmente el comboBox
+            
         }
 
         public void configurarTabla() {
@@ -53,6 +60,10 @@ namespace PracticaSistemaCalificaciones {
             tabla.Columns.Add("Nota 3", "Nota 3");
             tabla.Columns.Add("Promedio Final", "Promedio Final");
         }
+        private void Formulario_Load(object sender, EventArgs e) {
+            txtTotal.Text = "0";
+        }
+
         private void label1_Click(object sender, EventArgs e) {
 
         }
@@ -61,15 +72,99 @@ namespace PracticaSistemaCalificaciones {
 
         }
 
-        private void Formulario_Load(object sender, EventArgs e) {
-
-        }
 
         private void txtNombrE(object sender, EventArgs e) {
 
         }
 
         private void btnAgregaR(object sender, EventArgs e) {
+
+            validaciones(); // validaciones basicas de los campos del formulario
+
+            String nombre = txtNombre.Text;
+            int edad = Convert.ToInt16(txtEdad.Text);
+            String cedula = txtCedula.Text;
+
+            if(!(Regex.IsMatch(cedula, regexEntero))){
+                MessageBox.Show("Debe ingresar un formato valido para la cedula (Numerico)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            foreach(Alumno registro in alumnosList) {
+                if(registro.Cedula == cedula) {
+                    MessageBox.Show("Ya existe un alumno con la misma cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            String turno = cboTurno.SelectedItem.ToString();
+
+            double nota1 = Convert.ToDouble(txtNota1.Text);
+            double nota2 = Convert.ToDouble(txtNota2.Text);
+            double nota3 = Convert.ToDouble(txtNota3.Text);
+
+            if (!(Regex.IsMatch(nota1.ToString(), regexDecimal))) {
+                MessageBox.Show("Debe ingresar un formato valido para la nota 1 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (!(Regex.IsMatch(nota2.ToString(), regexDecimal))) {
+                MessageBox.Show("Debe ingresar un formato valido para la nota 2 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!(Regex.IsMatch(nota3.ToString(), regexDecimal))) {
+                MessageBox.Show("Debe ingresar un formato valido para la nota 3 (Decimal)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            Alumno a = new Alumno(nombre, edad, cedula, turno, nota1, nota2, nota3);
+            alumnosList.Add(a);
+
+            Object Promedio = a.calcularPromedio();
+
+            tabla.Rows.Add(a.Nombre, a.Edad, a.Cedula, a.Turno, a.Nota1, a.Nota2, a.Nota3, Promedio);
+
+            Console.WriteLine("Info Del Alumno: " + a.mostrarInformacion());
+            txtTotal.Text = alumnosList.Count().ToString();
+
+
+        }
+
+        private void validaciones() {
+            if (cboTurno.SelectedIndex == -1) {
+                MessageBox.Show("Debe Seleccionar Un Turno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtNombre.Text == "" || String.IsNullOrWhiteSpace(txtNombre.Text)) {
+                MessageBox.Show("Debe Ingresar Un Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtEdad.Text == "" || String.IsNullOrWhiteSpace(txtEdad.Text)) {
+                MessageBox.Show("Debe Ingresar Una Edad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtCedula.Text == "" || String.IsNullOrWhiteSpace(txtCedula.Text)) {
+                MessageBox.Show("Debe Ingresar Una Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtNota1.Text == "" || String.IsNullOrWhiteSpace(txtNota1.Text)) {
+                MessageBox.Show("Debe Ingresar Una Nota 1", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtNota2.Text == "" || String.IsNullOrWhiteSpace(txtNota2.Text)) {
+                MessageBox.Show("Debe Ingresar Una Nota 2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(txtNota3.Text == "" || String.IsNullOrWhiteSpace(txtNota3.Text)) {
+                MessageBox.Show("Debe Ingresar Una Nota 3", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
         }
 
@@ -109,5 +204,8 @@ namespace PracticaSistemaCalificaciones {
 
         }
 
+        private void totalAlumnos(object sender, EventArgs e) {
+
+        }
     }
 }

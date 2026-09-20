@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace PracticaSistemaCalificaciones.Modelos {
     public class Alumno {
+
         private String nombre;
         private int edad;
         private String cedula;
-
         private String turno;
-
         private double nota1;
         private double nota2;
         private double nota3;
@@ -33,7 +32,6 @@ namespace PracticaSistemaCalificaciones.Modelos {
         public double Nota1 { get => nota1; set => nota1 = value; }
         public double Nota2 { get => nota2; set => nota2 = value; }
         public double Nota3 { get => nota3; set => nota3 = value; }
-
 
         public double calcularPromedio() { 
             return ((nota1 + nota2 + nota3) / 3);

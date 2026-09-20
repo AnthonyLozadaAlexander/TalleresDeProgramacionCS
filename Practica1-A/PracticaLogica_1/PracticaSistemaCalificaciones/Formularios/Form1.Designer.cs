@@ -38,6 +38,13 @@
             this.tabla = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.cboTurno = new System.Windows.Forms.ComboBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +114,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(761, 131);
+            this.btnAgregar.Location = new System.Drawing.Point(750, 130);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(132, 43);
             this.btnAgregar.TabIndex = 6;
@@ -118,7 +125,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(910, 132);
+            this.btnModificar.Location = new System.Drawing.Point(899, 131);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(132, 43);
             this.btnModificar.TabIndex = 7;
@@ -129,7 +136,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1062, 131);
+            this.btnEliminar.Location = new System.Drawing.Point(1051, 130);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(132, 43);
             this.btnEliminar.TabIndex = 8;
@@ -166,11 +173,11 @@
             this.tabla.AllowUserToDeleteRows = false;
             this.tabla.BackgroundColor = System.Drawing.Color.White;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla.Location = new System.Drawing.Point(171, 271);
+            this.tabla.Location = new System.Drawing.Point(168, 296);
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.RowHeadersWidth = 47;
-            this.tabla.Size = new System.Drawing.Size(940, 532);
+            this.tabla.Size = new System.Drawing.Size(940, 514);
             this.tabla.TabIndex = 12;
             this.tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellContentClick);
             // 
@@ -188,16 +195,85 @@
             // cboTurno
             // 
             this.cboTurno.FormattingEnabled = true;
-            this.cboTurno.Location = new System.Drawing.Point(108, 171);
+            this.cboTurno.Location = new System.Drawing.Point(108, 251);
             this.cboTurno.Name = "cboTurno";
             this.cboTurno.Size = new System.Drawing.Size(246, 21);
             this.cboTurno.TabIndex = 14;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(939, 220);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(145, 20);
+            this.txtTotal.TabIndex = 16;
+            this.txtTotal.TextChanged += new System.EventHandler(this.totalAlumnos);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(756, 214);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(177, 25);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Total  Alumnos:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(41, 168);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 25);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Edad:";
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(108, 173);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(246, 20);
+            this.txtEdad.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 207);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 25);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Cedula:";
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(108, 212);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(246, 20);
+            this.txtCedula.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 251);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 25);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Turno:";
             // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 842);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cboTurno);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.tabla);
@@ -239,6 +315,13 @@
         private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cboTurno;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label label9;
     }
 }
 
