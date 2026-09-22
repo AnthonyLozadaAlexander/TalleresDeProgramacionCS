@@ -3,4 +3,5 @@
   <Project Path="PracticaLogica_2/PracticaLogica_2.csproj" Id="3f1bb9dd-25ac-457f-a7e0-7f0c951b8ee2" />
   <Project Path="PracticaSistemaCalificaciones/PracticaSistemaCalificaciones.csproj" Id="de5fdc9f-c6f8-40af-b333-466fc28dedfe" />
   <Project Path="PracticaSistemaMatricula/PracticaSistemaMatricula.csproj" Id="42d12710-63a7-408b-9c0e-689601ba0d1a" />
+  <Project Path="SistemaNominaPolimorfica/SistemaNominaPolimorfica.csproj" Id="41528289-9bdd-4501-b781-1cad2c70dbbf" />
 </Solution>
