@@ -7,8 +7,19 @@ using System.Threading.Tasks;
 namespace SistemaNominaPolimorfica.Clases {
     public class Gerente : Empleado{
 
-        public Gerente(String nombre, double sueldoBase): base(nombre, sueldoBase) {
-            
+        private double bono;
+
+        public Gerente(String nombre, double sueldoBase, double bono): base(nombre, sueldoBase) {
+            this.bono = bono; 
+        }
+
+        public double Bono {
+            get => bono; 
+            set => bono = value; 
+        }
+
+        public override double calcularPagoFinal() {
+            return SueldoBase + bono;
         }
     }
 }
