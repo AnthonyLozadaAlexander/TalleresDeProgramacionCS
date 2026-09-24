@@ -15,6 +15,20 @@ namespace SistemaNominaPolimorfica.Clases {
             this.porcentajeComision = porcentajeComision;
         }
 
+        public double TotalVentas { 
+            get => totalVentas;
+            set => totalVentas = value; 
+        }
+
+        public double PorcentajeComision { 
+            get => porcentajeComision; 
+            set => porcentajeComision = value; 
+        }
+
+        public override double calcularPagoFinal() {
+            return SueldoBase + (totalVentas * porcentajeComision);
+        }
+
 
     }
 }
