@@ -19,7 +19,7 @@ namespace SistemaNominaPolimorfica.Clases {
         }
 
         public override double calcularPagoFinal() {
-            return SueldoBase + bono;
+            return base.calcularPagoFinal() + bono;
         }
     }
 }
