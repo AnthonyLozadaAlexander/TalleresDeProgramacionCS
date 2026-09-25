@@ -12,6 +12,8 @@ namespace SistemaNominaPolimorfica {
     public partial class Formulario : Form {
         public Formulario() {
             InitializeComponent();
+            CenterToScreen();
+            BackColor = Color.White;
         }
     }
 }
