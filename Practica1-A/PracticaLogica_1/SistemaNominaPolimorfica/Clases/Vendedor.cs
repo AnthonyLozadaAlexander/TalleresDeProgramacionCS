@@ -8,11 +8,11 @@ namespace SistemaNominaPolimorfica.Clases {
     public class Vendedor : Empleado{
 
         private double totalVentas;
-        private double porcentajeComision;
+        
 
-        public Vendedor(double totalVentas,  double porcentajeComision, string nombre, double sueldoBase) : base(nombre, sueldoBase) {
+        public Vendedor(double totalVentas, string nombre, double sueldoBase) : base(nombre, sueldoBase) {
             this.totalVentas = totalVentas;
-            this.porcentajeComision = porcentajeComision;
+            
         }
 
         public double TotalVentas { 
@@ -20,13 +20,8 @@ namespace SistemaNominaPolimorfica.Clases {
             set => totalVentas = value; 
         }
 
-        public double PorcentajeComision { 
-            get => porcentajeComision; 
-            set => porcentajeComision = value; 
-        }
-
         public override double calcularPagoFinal() {
-            return SueldoBase + (totalVentas * porcentajeComision);
+            return base.calcularPagoFinal() + (totalVentas * 0.10);
         }
 
 
