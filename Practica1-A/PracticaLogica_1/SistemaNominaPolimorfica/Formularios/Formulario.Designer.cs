@@ -39,6 +39,7 @@
             this.txtVentas = new System.Windows.Forms.TextBox();
             this.tabla = new System.Windows.Forms.DataGridView();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,11 +194,22 @@
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(523, 218);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(132, 43);
+            this.btnLimpiar.TabIndex = 16;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
             // Formulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 565);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.txtVentas);
@@ -240,6 +252,7 @@
         private System.Windows.Forms.TextBox txtVentas;
         private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 
