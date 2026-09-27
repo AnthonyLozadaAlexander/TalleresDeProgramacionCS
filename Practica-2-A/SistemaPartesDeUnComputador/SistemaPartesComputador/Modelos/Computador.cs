@@ -14,7 +14,7 @@ namespace SistemaPartesComputador.Modelos {
         private String tipoDiscoDuro;
 
         private bool tieneControladorRaid;
-        private bool tieneControladorVideo
+        private bool tieneControladorVideo;
 
         private List<String> accesorios;
 
