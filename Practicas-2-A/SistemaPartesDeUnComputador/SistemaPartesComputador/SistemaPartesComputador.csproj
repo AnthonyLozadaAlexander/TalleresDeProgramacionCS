@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E7BA034-BB17-4EEB-80A2-ABCAD163C271}</ProjectGuid>
+    <ProjectGuid>{F7F73E6A-AB4C-4479-9DC4-ECF5DFAC9AC0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SistemaPartesDeUnComputador</RootNamespace>
-    <AssemblyName>SistemaPartesDeUnComputador</AssemblyName>
+    <RootNamespace>SistemaPartesComputador</RootNamespace>
+    <AssemblyName>SistemaPartesComputador</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

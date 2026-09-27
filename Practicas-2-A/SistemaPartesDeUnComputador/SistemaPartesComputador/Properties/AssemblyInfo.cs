@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SistemaPartesDeUnComputador")]
+[assembly: AssemblyTitle("SistemaPartesComputador")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SistemaPartesDeUnComputador")]
+[assembly: AssemblyProduct("SistemaPartesComputador")]
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3e7ba034-bb17-4eeb-80a2-abcad163c271")]
+[assembly: Guid("f7f73e6a-ab4c-4479-9dc4-ecf5dfac9ac0")]
 
 // Version information for an assembly consists of the following four values:
 //
