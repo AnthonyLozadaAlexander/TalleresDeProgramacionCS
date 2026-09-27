@@ -26,5 +26,13 @@ namespace SistemaPartesComputador {
         public ComboBox tipoDisco() => cboDisco;
 
         public ListBox listaConfiguraciones() => lstSistema;
+
+        public RadioButton radioButonElestra() => rdbElestra;
+
+        public RadioButton radioButonEption() => rdbEption;
+
+        public RadioButton radioButonSxM() => rdbSxM;
+
+        public RadioButton radioButonMDA() => rdbMDA;
     }
 }

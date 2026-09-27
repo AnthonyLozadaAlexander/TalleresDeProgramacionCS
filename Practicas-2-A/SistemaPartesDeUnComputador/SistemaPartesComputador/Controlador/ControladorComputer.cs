@@ -16,10 +16,11 @@ namespace SistemaPartesComputador.Controlador {
             this.vistaSistema = vistaSistema;
         }
 
-        public void iniciarPrograma() {
-            
+        public void Iniciar() {
             Application.Run(vistaSistema);
         } 
+
+
 
         
     }

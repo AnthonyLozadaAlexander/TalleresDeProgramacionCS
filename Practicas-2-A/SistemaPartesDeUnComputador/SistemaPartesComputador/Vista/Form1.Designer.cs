@@ -60,8 +60,8 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.Location = new System.Drawing.Point(78, 565);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(66, 522);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(180, 53);
             this.btnAgregar.TabIndex = 2;
@@ -106,7 +106,7 @@
             this.rdbElestra.AutoSize = true;
             this.rdbElestra.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbElestra.Location = new System.Drawing.Point(80, 181);
-            this.rdbElestra.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbElestra.Margin = new System.Windows.Forms.Padding(5);
             this.rdbElestra.Name = "rdbElestra";
             this.rdbElestra.Size = new System.Drawing.Size(98, 26);
             this.rdbElestra.TabIndex = 6;
@@ -119,7 +119,7 @@
             this.rdbEption.AutoSize = true;
             this.rdbEption.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbEption.Location = new System.Drawing.Point(80, 250);
-            this.rdbEption.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbEption.Margin = new System.Windows.Forms.Padding(5);
             this.rdbEption.Name = "rdbEption";
             this.rdbEption.Size = new System.Drawing.Size(88, 26);
             this.rdbEption.TabIndex = 7;
@@ -132,7 +132,7 @@
             this.rdbSxM.AutoSize = true;
             this.rdbSxM.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbSxM.Location = new System.Drawing.Point(188, 181);
-            this.rdbSxM.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdbSxM.Margin = new System.Windows.Forms.Padding(5);
             this.rdbSxM.Name = "rdbSxM";
             this.rdbSxM.Size = new System.Drawing.Size(58, 26);
             this.rdbSxM.TabIndex = 8;
@@ -145,7 +145,7 @@
             this.rdb512Gb.AutoSize = true;
             this.rdb512Gb.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb512Gb.Location = new System.Drawing.Point(473, 181);
-            this.rdb512Gb.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rdb512Gb.Margin = new System.Windows.Forms.Padding(5);
             this.rdb512Gb.Name = "rdb512Gb";
             this.rdb512Gb.Size = new System.Drawing.Size(88, 26);
             this.rdb512Gb.TabIndex = 9;
@@ -158,7 +158,7 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.Location = new System.Drawing.Point(597, 181);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(5);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(68, 26);
             this.radioButton5.TabIndex = 10;
@@ -171,7 +171,7 @@
             this.radioButton6.AutoSize = true;
             this.radioButton6.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton6.Location = new System.Drawing.Point(473, 240);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(5);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(68, 26);
             this.radioButton6.TabIndex = 11;
@@ -183,8 +183,8 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(69, 366);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox1.Location = new System.Drawing.Point(69, 339);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(189, 26);
             this.checkBox1.TabIndex = 15;
@@ -195,8 +195,8 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(67, 429);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox2.Location = new System.Drawing.Point(67, 402);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(179, 26);
             this.checkBox2.TabIndex = 16;
@@ -206,8 +206,8 @@
             // cboDisco
             // 
             this.cboDisco.FormattingEnabled = true;
-            this.cboDisco.Location = new System.Drawing.Point(69, 497);
-            this.cboDisco.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cboDisco.Location = new System.Drawing.Point(67, 454);
+            this.cboDisco.Margin = new System.Windows.Forms.Padding(5);
             this.cboDisco.Name = "cboDisco";
             this.cboDisco.Size = new System.Drawing.Size(199, 30);
             this.cboDisco.TabIndex = 20;
@@ -271,7 +271,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(78, 654);
+            this.btnEliminar.Location = new System.Drawing.Point(66, 606);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(180, 53);
@@ -316,7 +316,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Sistema Partes De Un Computador";
             this.ResumeLayout(false);

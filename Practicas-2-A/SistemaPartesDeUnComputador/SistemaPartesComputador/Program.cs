@@ -16,9 +16,9 @@ namespace SistemaPartesComputador {
             Application.SetCompatibleTextRenderingDefault(false); 
 
             Form1 sistema = new Form1(); // creacion del formulario
-            ControladorComputer window = new ControladorComputer(sistema);
+            ControladorComputer window = new ControladorComputer(sistema); // instancia del controlador
             
-            window.iniciarPrograma();
+            window.Iniciar();
         }
     }
 }
