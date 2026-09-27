@@ -20,6 +20,10 @@ namespace SistemaPartesComputador.Controlador {
             Application.Run(vistaSistema);
         } 
 
+        public void registrarSistema() {
+
+        }
+
 
 
         

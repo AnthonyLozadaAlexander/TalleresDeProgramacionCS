@@ -44,6 +44,7 @@
             this.chkTeclado = new System.Windows.Forms.CheckBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lstSistema = new System.Windows.Forms.ListBox();
+            this.txtInformacion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -94,7 +95,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(902, 118);
+            this.label4.Location = new System.Drawing.Point(788, 118);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 28);
@@ -241,7 +242,7 @@
             // chkMicrofono
             // 
             this.chkMicrofono.AutoSize = true;
-            this.chkMicrofono.Location = new System.Drawing.Point(907, 168);
+            this.chkMicrofono.Location = new System.Drawing.Point(793, 168);
             this.chkMicrofono.Name = "chkMicrofono";
             this.chkMicrofono.Size = new System.Drawing.Size(119, 26);
             this.chkMicrofono.TabIndex = 23;
@@ -251,7 +252,7 @@
             // chkRaton
             // 
             this.chkRaton.AutoSize = true;
-            this.chkRaton.Location = new System.Drawing.Point(907, 213);
+            this.chkRaton.Location = new System.Drawing.Point(793, 213);
             this.chkRaton.Name = "chkRaton";
             this.chkRaton.Size = new System.Drawing.Size(79, 26);
             this.chkRaton.TabIndex = 24;
@@ -261,7 +262,7 @@
             // chkTeclado
             // 
             this.chkTeclado.AutoSize = true;
-            this.chkTeclado.Location = new System.Drawing.Point(907, 263);
+            this.chkTeclado.Location = new System.Drawing.Point(793, 263);
             this.chkTeclado.Name = "chkTeclado";
             this.chkTeclado.Size = new System.Drawing.Size(99, 26);
             this.chkTeclado.TabIndex = 25;
@@ -285,8 +286,16 @@
             this.lstSistema.ItemHeight = 22;
             this.lstSistema.Location = new System.Drawing.Point(470, 339);
             this.lstSistema.Name = "lstSistema";
-            this.lstSistema.Size = new System.Drawing.Size(536, 400);
+            this.lstSistema.Size = new System.Drawing.Size(205, 400);
             this.lstSistema.TabIndex = 30;
+            // 
+            // txtInformacion
+            // 
+            this.txtInformacion.Location = new System.Drawing.Point(750, 339);
+            this.txtInformacion.Multiline = true;
+            this.txtInformacion.Name = "txtInformacion";
+            this.txtInformacion.Size = new System.Drawing.Size(207, 400);
+            this.txtInformacion.TabIndex = 31;
             // 
             // Form1
             // 
@@ -294,6 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1085, 784);
+            this.Controls.Add(this.txtInformacion);
             this.Controls.Add(this.lstSistema);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.chkTeclado);
@@ -347,6 +357,7 @@
         private System.Windows.Forms.CheckBox chkTeclado;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ListBox lstSistema;
+        private System.Windows.Forms.TextBox txtInformacion;
     }
 }
 
