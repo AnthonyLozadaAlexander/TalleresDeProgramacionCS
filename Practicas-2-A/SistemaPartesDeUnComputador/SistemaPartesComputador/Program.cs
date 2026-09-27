@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaPartesComputador.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,8 +13,12 @@ namespace SistemaPartesComputador {
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.SetCompatibleTextRenderingDefault(false); 
+
+            Form1 sistema = new Form1(); // creacion del formulario
+            ControladorComputer window = new ControladorComputer(sistema);
+            
+            window.iniciarPrograma();
         }
     }
 }
