@@ -34,5 +34,17 @@ namespace SistemaPartesComputador {
         public RadioButton radioButonSxM() => rdbSxM;
 
         public RadioButton radioButonMDA() => rdbMDA;
+
+        public RadioButton radioButon512GB() => rdb512Gb;
+
+        public RadioButton radioButon1TB() => rdb1Tb;
+
+        public RadioButton radioButon4TB() => rdb4Tb;
+
+        public RadioButton  radioButton16TB() => rdb16Tb;
+
+        public CheckBox checkBoxRaid() => chkControladorRaid;
+
+        public CheckBox checkBoxVideo() => chkGrabadoraVideo;
     }
 }

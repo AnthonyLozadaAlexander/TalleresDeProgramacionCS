@@ -28,7 +28,7 @@ namespace SistemaPartesComputador.Modelos {
         }
 
         public void agregarAccesorio(String accesorio) {
-            accesorios.Add(accesorio);
+            accesorios.Add(accesorio); // accesorios del objeto Computador individual
         }
 
         public override string ToString() {
@@ -56,7 +56,9 @@ namespace SistemaPartesComputador.Modelos {
             get => tieneControladorVideo;
             set => tieneControladorVideo = value; 
         }
-        public List<string> Accesorios { get => accesorios; }
+        public List<string> Accesorios { 
+            get => accesorios; 
+        }
 
         
 

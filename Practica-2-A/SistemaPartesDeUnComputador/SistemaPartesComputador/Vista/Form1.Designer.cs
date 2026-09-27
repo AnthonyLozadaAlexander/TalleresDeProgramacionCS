@@ -32,13 +32,13 @@
             this.rdbEption = new System.Windows.Forms.RadioButton();
             this.rdbSxM = new System.Windows.Forms.RadioButton();
             this.rdb512Gb = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.rdb1Tb = new System.Windows.Forms.RadioButton();
+            this.rdb4Tb = new System.Windows.Forms.RadioButton();
+            this.chkControladorRaid = new System.Windows.Forms.CheckBox();
+            this.chkGrabadoraVideo = new System.Windows.Forms.CheckBox();
             this.cboDisco = new System.Windows.Forms.ComboBox();
             this.rdbMDA = new System.Windows.Forms.RadioButton();
-            this.rdb4TB = new System.Windows.Forms.RadioButton();
+            this.rdb16Tb = new System.Windows.Forms.RadioButton();
             this.chkMicrofono = new System.Windows.Forms.CheckBox();
             this.chkRaton = new System.Windows.Forms.CheckBox();
             this.chkTeclado = new System.Windows.Forms.CheckBox();
@@ -60,7 +60,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.Location = new System.Drawing.Point(66, 522);
+            this.btnAgregar.Location = new System.Drawing.Point(75, 522);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(180, 53);
@@ -153,55 +153,55 @@
             this.rdb512Gb.Text = "512 Gb";
             this.rdb512Gb.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rdb1Tb
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.Location = new System.Drawing.Point(597, 181);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(5);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(68, 26);
-            this.radioButton5.TabIndex = 10;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "1 TB";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdb1Tb.AutoSize = true;
+            this.rdb1Tb.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb1Tb.Location = new System.Drawing.Point(597, 181);
+            this.rdb1Tb.Margin = new System.Windows.Forms.Padding(5);
+            this.rdb1Tb.Name = "rdb1Tb";
+            this.rdb1Tb.Size = new System.Drawing.Size(68, 26);
+            this.rdb1Tb.TabIndex = 10;
+            this.rdb1Tb.TabStop = true;
+            this.rdb1Tb.Text = "1 TB";
+            this.rdb1Tb.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdb4Tb
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton6.Location = new System.Drawing.Point(473, 240);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(5);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(68, 26);
-            this.radioButton6.TabIndex = 11;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "4 TB";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdb4Tb.AutoSize = true;
+            this.rdb4Tb.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb4Tb.Location = new System.Drawing.Point(473, 240);
+            this.rdb4Tb.Margin = new System.Windows.Forms.Padding(5);
+            this.rdb4Tb.Name = "rdb4Tb";
+            this.rdb4Tb.Size = new System.Drawing.Size(68, 26);
+            this.rdb4Tb.TabIndex = 11;
+            this.rdb4Tb.TabStop = true;
+            this.rdb4Tb.Text = "4 TB";
+            this.rdb4Tb.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkControladorRaid
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(69, 339);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(189, 26);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Controlador Raid";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkControladorRaid.AutoSize = true;
+            this.chkControladorRaid.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkControladorRaid.Location = new System.Drawing.Point(69, 339);
+            this.chkControladorRaid.Margin = new System.Windows.Forms.Padding(5);
+            this.chkControladorRaid.Name = "chkControladorRaid";
+            this.chkControladorRaid.Size = new System.Drawing.Size(189, 26);
+            this.chkControladorRaid.TabIndex = 15;
+            this.chkControladorRaid.Text = "Controlador Raid";
+            this.chkControladorRaid.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkGrabadoraVideo
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(67, 402);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(179, 26);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Grabadora Video";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkGrabadoraVideo.AutoSize = true;
+            this.chkGrabadoraVideo.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGrabadoraVideo.Location = new System.Drawing.Point(67, 402);
+            this.chkGrabadoraVideo.Margin = new System.Windows.Forms.Padding(5);
+            this.chkGrabadoraVideo.Name = "chkGrabadoraVideo";
+            this.chkGrabadoraVideo.Size = new System.Drawing.Size(179, 26);
+            this.chkGrabadoraVideo.TabIndex = 16;
+            this.chkGrabadoraVideo.Text = "Grabadora Video";
+            this.chkGrabadoraVideo.UseVisualStyleBackColor = true;
             // 
             // cboDisco
             // 
@@ -225,18 +225,18 @@
             this.rdbMDA.Text = "MDA";
             this.rdbMDA.UseVisualStyleBackColor = true;
             // 
-            // rdb4TB
+            // rdb16Tb
             // 
-            this.rdb4TB.AutoSize = true;
-            this.rdb4TB.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb4TB.Location = new System.Drawing.Point(597, 240);
-            this.rdb4TB.Margin = new System.Windows.Forms.Padding(5);
-            this.rdb4TB.Name = "rdb4TB";
-            this.rdb4TB.Size = new System.Drawing.Size(68, 26);
-            this.rdb4TB.TabIndex = 22;
-            this.rdb4TB.TabStop = true;
-            this.rdb4TB.Text = "4 TB";
-            this.rdb4TB.UseVisualStyleBackColor = true;
+            this.rdb16Tb.AutoSize = true;
+            this.rdb16Tb.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb16Tb.Location = new System.Drawing.Point(597, 240);
+            this.rdb16Tb.Margin = new System.Windows.Forms.Padding(5);
+            this.rdb16Tb.Name = "rdb16Tb";
+            this.rdb16Tb.Size = new System.Drawing.Size(78, 26);
+            this.rdb16Tb.TabIndex = 22;
+            this.rdb16Tb.TabStop = true;
+            this.rdb16Tb.Text = "16 TB";
+            this.rdb16Tb.UseVisualStyleBackColor = true;
             // 
             // chkMicrofono
             // 
@@ -271,7 +271,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(66, 606);
+            this.btnEliminar.Location = new System.Drawing.Point(75, 606);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(180, 53);
@@ -299,13 +299,13 @@
             this.Controls.Add(this.chkTeclado);
             this.Controls.Add(this.chkRaton);
             this.Controls.Add(this.chkMicrofono);
-            this.Controls.Add(this.rdb4TB);
+            this.Controls.Add(this.rdb16Tb);
             this.Controls.Add(this.rdbMDA);
             this.Controls.Add(this.cboDisco);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.chkGrabadoraVideo);
+            this.Controls.Add(this.chkControladorRaid);
+            this.Controls.Add(this.rdb4Tb);
+            this.Controls.Add(this.rdb1Tb);
             this.Controls.Add(this.rdb512Gb);
             this.Controls.Add(this.rdbSxM);
             this.Controls.Add(this.rdbEption);
@@ -335,13 +335,13 @@
         private System.Windows.Forms.RadioButton rdbEption;
         private System.Windows.Forms.RadioButton rdbSxM;
         private System.Windows.Forms.RadioButton rdb512Gb;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.RadioButton rdb1Tb;
+        private System.Windows.Forms.RadioButton rdb4Tb;
+        private System.Windows.Forms.CheckBox chkControladorRaid;
+        private System.Windows.Forms.CheckBox chkGrabadoraVideo;
         private System.Windows.Forms.ComboBox cboDisco;
         private System.Windows.Forms.RadioButton rdbMDA;
-        private System.Windows.Forms.RadioButton rdb4TB;
+        private System.Windows.Forms.RadioButton rdb16Tb;
         private System.Windows.Forms.CheckBox chkMicrofono;
         private System.Windows.Forms.CheckBox chkRaton;
         private System.Windows.Forms.CheckBox chkTeclado;
