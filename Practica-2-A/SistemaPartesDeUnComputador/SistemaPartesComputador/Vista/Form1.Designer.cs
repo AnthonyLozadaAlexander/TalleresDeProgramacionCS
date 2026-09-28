@@ -221,17 +221,17 @@
             // 
             this.lstSistema.FormattingEnabled = true;
             this.lstSistema.ItemHeight = 22;
-            this.lstSistema.Location = new System.Drawing.Point(417, 339);
+            this.lstSistema.Location = new System.Drawing.Point(400, 324);
             this.lstSistema.Name = "lstSistema";
-            this.lstSistema.Size = new System.Drawing.Size(205, 400);
+            this.lstSistema.Size = new System.Drawing.Size(817, 400);
             this.lstSistema.TabIndex = 30;
             // 
             // txtInformacion
             // 
-            this.txtInformacion.Location = new System.Drawing.Point(697, 339);
+            this.txtInformacion.Location = new System.Drawing.Point(881, 101);
             this.txtInformacion.Multiline = true;
             this.txtInformacion.Name = "txtInformacion";
-            this.txtInformacion.Size = new System.Drawing.Size(207, 400);
+            this.txtInformacion.Size = new System.Drawing.Size(336, 213);
             this.txtInformacion.TabIndex = 31;
             // 
             // grpProcesador
@@ -262,21 +262,22 @@
             // 
             // chkListAccesorios
             // 
+            this.chkListAccesorios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chkListAccesorios.FormattingEnabled = true;
             this.chkListAccesorios.Items.AddRange(new object[] {
             "Microfono",
             "Raton",
             "Teclado"});
-            this.chkListAccesorios.Location = new System.Drawing.Point(710, 163);
+            this.chkListAccesorios.Location = new System.Drawing.Point(677, 160);
             this.chkListAccesorios.Name = "chkListAccesorios";
-            this.chkListAccesorios.Size = new System.Drawing.Size(182, 92);
+            this.chkListAccesorios.Size = new System.Drawing.Size(182, 88);
             this.chkListAccesorios.TabIndex = 34;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(721, 115);
+            this.label1.Location = new System.Drawing.Point(682, 114);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 28);
@@ -288,7 +289,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(999, 784);
+            this.ClientSize = new System.Drawing.Size(1229, 784);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chkListAccesorios);
             this.Controls.Add(this.groupBox1);

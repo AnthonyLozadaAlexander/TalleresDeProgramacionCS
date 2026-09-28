@@ -15,6 +15,7 @@ namespace SistemaPartesComputador {
             BackColor = Color.White;
             CenterToScreen();
             configurarComboBox();
+            
         }
 
         private void configurarComboBox() {
@@ -22,10 +23,14 @@ namespace SistemaPartesComputador {
             cboDisco.Items.Add("Disco IDE");
             cboDisco.Items.Add("Disco SATA");
             cboDisco.Items.Add("Disco Nvme");
+            
         }
+
 
         public Button botonAgregar => btnAgregar;
         public Button botonEliminar => btnEliminar;
+
+        public TextBox txtInfo => txtInformacion;
 
         public ComboBox tipoDisco => cboDisco;
 
