@@ -14,37 +14,43 @@ namespace SistemaPartesComputador {
             InitializeComponent();
             BackColor = Color.White;
             CenterToScreen();
+            configurarComboBox();
+        }
+
+        private void configurarComboBox() {
+            cboDisco.DropDownStyle = ComboBoxStyle.DropDownList; // evita que el usuario escriba en el comboBox
             cboDisco.Items.Add("Disco IDE");
             cboDisco.Items.Add("Disco SATA");
             cboDisco.Items.Add("Disco Nvme");
-
         }
 
-        public Button botonAgregar() => btnAgregar;
-        public Button botonEliminar() => btnEliminar;
+        public Button botonAgregar => btnAgregar;
+        public Button botonEliminar => btnEliminar;
 
-        public ComboBox tipoDisco() => cboDisco;
+        public ComboBox tipoDisco => cboDisco;
 
-        public ListBox listaConfiguraciones() => lstSistema;
+        public ListBox listaConfiguraciones => lstSistema;
 
-        public RadioButton radioButonElestra() => rdbElestra;
+        public RadioButton radioButonElestra => rdbElestra;
 
-        public RadioButton radioButonEption() => rdbEption;
+        public RadioButton radioButonEption => rdbEption;
 
-        public RadioButton radioButonSxM() => rdbSxM;
+        public RadioButton radioButonSxM => rdbSxM;
 
-        public RadioButton radioButonMDA() => rdbMDA;
+        public RadioButton radioButonMDA => rdbMDA;
 
-        public RadioButton radioButon512GB() => rdb512Gb;
+        public RadioButton radioButon512GB => rdb512Gb;
 
-        public RadioButton radioButon1TB() => rdb1Tb;
+        public RadioButton radioButon1TB => rdb1Tb;
 
-        public RadioButton radioButon4TB() => rdb4Tb;
+        public RadioButton radioButon4TB => rdb4Tb;
 
-        public RadioButton  radioButton16TB() => rdb16Tb;
+        public RadioButton  radioButton16TB => rdb16Tb;
 
-        public CheckBox checkBoxRaid() => chkControladorRaid;
+        public CheckBox checkBoxRaid => chkControladorRaid;
 
-        public CheckBox checkBoxVideo() => chkGrabadoraVideo;
+        public CheckBox checkBoxVideo => chkGrabadoraVideo;
+
+        public CheckedListBox checkListAccesorios => chkListAccesorios;
     }
 }
