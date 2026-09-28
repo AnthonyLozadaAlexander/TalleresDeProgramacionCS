@@ -53,10 +53,21 @@ namespace SistemaPartesComputador.Controlador {
             }
 
             formularioSistema.txtInfo.Text = pc.ToString();
+            actualizarListBox(pc);
+     
+
+        }
+
+        public void eliminarSistema() {
+
+        }
+
+        public void actualizarListBox(Computador pc) {
+            // Agregamos el objeto pc al listBox del frm
             formularioSistema.listaConfiguraciones.Items.Add(pc);
 
             // habilitamos el scroll horizontal para que se pueda ver todo el texto si es muy largo
-            formularioSistema.listaConfiguraciones.HorizontalScrollbar = true; 
+            formularioSistema.listaConfiguraciones.HorizontalScrollbar = true;
 
             // Estimamos el ancho multiplicando los caracteres del texto por 8 píxeles
             int anchoEstimado = pc.ToString().Length * 15;
@@ -65,11 +76,6 @@ namespace SistemaPartesComputador.Controlador {
             if (anchoEstimado > formularioSistema.listaConfiguraciones.HorizontalExtent) {
                 formularioSistema.listaConfiguraciones.HorizontalExtent = anchoEstimado;
             }
-
-        }
-
-        public void eliminarSistema() {
-
         }
 
         
