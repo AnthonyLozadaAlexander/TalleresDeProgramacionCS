@@ -16,6 +16,7 @@ namespace SistemaPartesComputador.Controlador {
             this.formularioSistema = vistaSistema;
 
             formularioSistema.botonAgregar.Click += (sender, e) => registrarSistema();
+            formularioSistema.botonEliminar.Click += (sender, e) => eliminarSistema();
         }
 
         public void Iniciar() {
@@ -23,6 +24,9 @@ namespace SistemaPartesComputador.Controlador {
         } 
 
         public void registrarSistema() {
+
+            bool tieneControladorRaid = false;
+            bool tieneControladorVideo = false;
 
             String procesador = obtenerProcesador();
             String memoriaRam = obtenerMemoriaRam();
@@ -32,14 +36,43 @@ namespace SistemaPartesComputador.Controlador {
                 return;
             }
 
-            String discoDuro = formularioSistema.tipoDisco.SelectedItem.ToString();
-
-            if(discoDuro == null) {
-                MessageBox.Show("Error: Debe elegir un tipo de disco duro en el combo", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if(formularioSistema.tipoDisco.SelectedIndex == -1) {
+                MessageBox.Show("Error: Debes elegir un tipo de disco en el comboBox", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            String discoDuro = formularioSistema.tipoDisco.SelectedItem.ToString();
+            tieneControladorRaid = formularioSistema.checkBoxRaid.Checked;
+            tieneControladorVideo = formularioSistema.checkBoxVideo.Checked;
+
+            Computador pc = new Computador(procesador, memoriaRam, discoDuro, tieneControladorRaid, tieneControladorVideo);
+
+            // guarda los elementos escogidos del checkList y los agrega a la lista de accesorios del computador
+            foreach (string datos in formularioSistema.checkListAccesorios.CheckedItems) {
+                pc.agregarAccesorio(datos);
+            }
+
+            formularioSistema.txtInfo.Text = pc.ToString();
+            formularioSistema.listaConfiguraciones.Items.Add(pc);
+
+            // habilitamos el scroll horizontal para que se pueda ver todo el texto si es muy largo
+            formularioSistema.listaConfiguraciones.HorizontalScrollbar = true; 
+
+            // Estimamos el ancho multiplicando los caracteres del texto por 8 píxeles
+            int anchoEstimado = pc.ToString().Length * 15;
+
+            // Si el nuevo texto supera el scroll actual, lo estiramos
+            if (anchoEstimado > formularioSistema.listaConfiguraciones.HorizontalExtent) {
+                formularioSistema.listaConfiguraciones.HorizontalExtent = anchoEstimado;
+            }
+
         }
+
+        public void eliminarSistema() {
+
+        }
+
+        
 
         private String obtenerProcesador() {
             String pc = "";
