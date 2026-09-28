@@ -44,6 +44,7 @@
             this.chkListAccesorios = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.grpProcesador.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -296,12 +297,24 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "> Informacion";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.Location = new System.Drawing.Point(78, 681);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(180, 53);
+            this.btnLimpiar.TabIndex = 37;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1229, 784);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chkListAccesorios);
@@ -351,6 +364,7 @@
         private System.Windows.Forms.CheckedListBox chkListAccesorios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 

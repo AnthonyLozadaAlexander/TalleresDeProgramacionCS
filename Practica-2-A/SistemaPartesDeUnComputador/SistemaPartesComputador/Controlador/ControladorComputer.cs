@@ -17,6 +17,7 @@ namespace SistemaPartesComputador.Controlador {
 
             formularioSistema.botonAgregar.Click += (sender, e) => registrarSistema();
             formularioSistema.botonEliminar.Click += (sender, e) => eliminarSistema();
+            formularioSistema.botonLimpiar.Click += (sender, e) => limpiar();
         }
 
         public void Iniciar() {
@@ -52,14 +53,28 @@ namespace SistemaPartesComputador.Controlador {
                 pc.agregarAccesorio(datos);
             }
 
+            
             formularioSistema.txtInfo.Text = pc.ToString();
             actualizarListBox(pc);
-     
+            listaComputador.Add(pc); // base de datos del sistema.
+
 
         }
 
         public void eliminarSistema() {
 
+            int index = 0;
+
+            if (listaComputador.Count == 0) {
+
+                MessageBox.Show("Error: No hay datos en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else {
+                index = formularioSistema.listaConfiguraciones.SelectedIndex;
+                listaComputador.RemoveAt(index);
+                formularioSistema.listaConfiguraciones.Items.RemoveAt(index);
+            }
         }
 
         public void actualizarListBox(Computador pc) {
@@ -111,6 +126,18 @@ namespace SistemaPartesComputador.Controlador {
                 ram = formularioSistema.radioButton16TB.Text;
             }
             return ram;
+        }
+
+
+        public void limpiar() {
+            formularioSistema.txtInfo.Clear();
+            formularioSistema.checkBoxRaid.Checked = false;
+            formularioSistema.checkBoxVideo.Checked = false;
+     
+
+            foreach (int i in formularioSistema.checkListAccesorios.CheckedIndices) {
+                formularioSistema.checkListAccesorios.SetItemChecked(i, false);
+            }
         }
 
 

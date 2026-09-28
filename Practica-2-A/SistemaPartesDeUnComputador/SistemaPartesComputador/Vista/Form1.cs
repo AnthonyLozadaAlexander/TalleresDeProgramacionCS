@@ -57,5 +57,7 @@ namespace SistemaPartesComputador {
         public CheckBox checkBoxVideo => chkGrabadoraVideo;
 
         public CheckedListBox checkListAccesorios => chkListAccesorios;
+
+        public Button botonLimpiar => btnLimpiar;
     }
 }
