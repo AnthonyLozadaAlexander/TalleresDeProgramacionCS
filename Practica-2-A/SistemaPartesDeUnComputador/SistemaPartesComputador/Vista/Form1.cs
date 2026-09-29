@@ -13,6 +13,8 @@ namespace SistemaPartesComputador {
         public Form1() {
             InitializeComponent();
             BackColor = Color.White;
+            MaximizeBox = false; // deshabilita el boton de maximizar
+            FormBorderStyle = FormBorderStyle.FixedSingle; // evita que el usuario cambie el tamaño del formulario
             CenterToScreen();
             configurarComboBox();       
         }
