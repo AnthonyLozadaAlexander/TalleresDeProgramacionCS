@@ -23,7 +23,7 @@ namespace SistemaPartesComputador.Modelos {
             this.memoriaRam = memoriaRam;
             this.tipoDiscoDuro = tipoDiscoDuro;
             this.tieneControladorRaid = tieneControladorRaid;
-            this.TieneControladorVideo = tieneControladorVideo;
+            this.tieneControladorVideo = tieneControladorVideo;
             accesorios = new List<String>();
         }
 
@@ -32,7 +32,11 @@ namespace SistemaPartesComputador.Modelos {
         }
 
         public override string ToString() {
-            return "Procesador: " + procesador + Environment.NewLine + "Memoria RAM: " + memoriaRam + Environment.NewLine + "Tipo de Disco Duro: " + tipoDiscoDuro + "Controlador RAID: " + (tieneControladorRaid ? "Sí" : "No") + Environment.NewLine + "Controlador de Video: " + (tieneControladorVideo ? "Sí" : "No") + Environment.NewLine + "Accesorios: " + string.Join(", ", accesorios);
+            return "Procesador: " + procesador + Environment.NewLine + "Memoria RAM: " + memoriaRam + Environment.NewLine + "Tipo de Disco Duro: " + tipoDiscoDuro + Environment.NewLine + "Controlador RAID: " + (tieneControladorRaid ? "Sí" : "No") + Environment.NewLine + "Controlador de Video: " + (tieneControladorVideo ? "Sí" : "No") + Environment.NewLine + "Accesorios: " + string.Join(", ", accesorios);
+        }
+
+        public string mostrarInformacionLineal() {
+            return "Procesador: " + procesador + " | Memoria RAM: " + memoriaRam + " | Tipo de Disco Duro: " + tipoDiscoDuro + " | Controlador RAID: " + (tieneControladorRaid ? "Sí" : "No") + " | Controlador de Video: " + (tieneControladorVideo ? "Sí" : "No") + " | Accesorios: " + string.Join(", ", accesorios);
         }
 
         public string Procesador { 
