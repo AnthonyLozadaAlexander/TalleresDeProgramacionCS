@@ -29,6 +29,7 @@ namespace SistemaPartesComputador {
 
         public Button botonAgregar => btnAgregar;
         public Button botonEliminar => btnEliminar;
+        public Button botonLimpiar => btnLimpiar;
 
         public TextBox txtInfo => txtInformacion;
 
@@ -58,6 +59,5 @@ namespace SistemaPartesComputador {
 
         public CheckedListBox checkListAccesorios => chkListAccesorios;
 
-        public Button botonLimpiar => btnLimpiar;
     }
 }
