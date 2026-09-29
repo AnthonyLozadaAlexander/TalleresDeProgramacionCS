@@ -48,33 +48,47 @@ namespace SistemaPartesComputador.Controlador {
 
             Computador pc = new Computador(procesador, memoriaRam, discoDuro, tieneControladorRaid, tieneControladorVideo);
 
+            if(formularioSistema.checkListAccesorios.CheckedItems.Count == 0) {
+                MessageBox.Show("Advertencia: Debe elegir almenos un accesorio de las opciones (Raton, Mouse, Teclado)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             // guarda los elementos escogidos del checkList y los agrega a la lista de accesorios del computador
             foreach (string datos in formularioSistema.checkListAccesorios.CheckedItems) {
                 pc.agregarAccesorio(datos);
             }
 
-            
+
+            listaComputador.Add(pc); // base de datos del sistema.
             formularioSistema.txtInfo.Text = pc.ToString();
             actualizarListBox(pc);
-            listaComputador.Add(pc); // base de datos del sistema.
-
-
+           
         }
 
         public void eliminarSistema() {
-
-            int index = 0;
 
             if (listaComputador.Count == 0) {
 
                 MessageBox.Show("Error: No hay datos en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else {
-                index = formularioSistema.listaConfiguraciones.SelectedIndex;
-                listaComputador.RemoveAt(index);
-                formularioSistema.listaConfiguraciones.Items.RemoveAt(index);
+            
+            int index = formularioSistema.listaConfiguraciones.SelectedIndex;
+
+            if (index == -1) {
+                    MessageBox.Show("Error: Debe seleccionar un elemento de la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
             }
+            
+            listaComputador.RemoveAt(index);
+            formularioSistema.listaConfiguraciones.Items.RemoveAt(index);
+
+            if(listaComputador.Count == 0) {
+                formularioSistema.txtInfo.Clear();
+            }
+            
+            
         }
 
         public void actualizarListBox(Computador pc) {
@@ -92,8 +106,7 @@ namespace SistemaPartesComputador.Controlador {
                 formularioSistema.listaConfiguraciones.HorizontalExtent = anchoEstimado;
             }
         }
-
-        
+  
 
         private String obtenerProcesador() {
             String pc = "";
@@ -130,12 +143,23 @@ namespace SistemaPartesComputador.Controlador {
 
 
         public void limpiar() {
-            formularioSistema.txtInfo.Clear();
-            formularioSistema.checkBoxRaid.Checked = false;
-            formularioSistema.checkBoxVideo.Checked = false;
-     
+            formularioSistema.txtInfo.Clear(); // limpiar txtInfo
+            formularioSistema.checkBoxRaid.Checked = false; // deseleccionar checkBox
+            formularioSistema.checkBoxVideo.Checked = false; // deseleccionar checkBox
 
-            foreach (int i in formularioSistema.checkListAccesorios.CheckedIndices) {
+            formularioSistema.tipoDisco.SelectedIndex = -1; // deselecciona el comboBox
+            formularioSistema.radioButon1TB.Checked = false;  // deselecciona radioButton
+            formularioSistema.radioButon4TB.Checked = false;  // deselecciona radioButton
+            formularioSistema.radioButon512GB.Checked = false;  // deselecciona radioButton
+            formularioSistema.radioButton16TB.Checked = false;
+
+            formularioSistema.radioButonEption.Checked = false;
+            formularioSistema.radioButonElestra.Checked = false;
+            formularioSistema.radioButonMDA.Checked = false;
+            formularioSistema.radioButonSxM.Checked = false;
+
+            // deselecciona los elementos del checkListAccesorios
+            for (int i = 0; i < formularioSistema.checkListAccesorios.Items.Count; i++) {
                 formularioSistema.checkListAccesorios.SetItemChecked(i, false);
             }
         }
