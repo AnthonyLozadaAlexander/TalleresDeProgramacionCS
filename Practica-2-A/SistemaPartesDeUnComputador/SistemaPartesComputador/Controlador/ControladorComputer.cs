@@ -42,16 +42,16 @@ namespace SistemaPartesComputador.Controlador {
                 return;
             }
 
+            if (formularioSistema.checkListAccesorios.CheckedItems.Count == 0) {
+                MessageBox.Show("Advertencia: Debe elegir almenos un accesorio de las opciones (Microfono, Raton, Teclado)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             String discoDuro = formularioSistema.tipoDisco.SelectedItem.ToString();
             tieneControladorRaid = formularioSistema.checkBoxRaid.Checked;
             tieneControladorVideo = formularioSistema.checkBoxVideo.Checked;
 
             Computador pc = new Computador(procesador, memoriaRam, discoDuro, tieneControladorRaid, tieneControladorVideo);
-
-            if(formularioSistema.checkListAccesorios.CheckedItems.Count == 0) {
-                MessageBox.Show("Advertencia: Debe elegir almenos un accesorio de las opciones (Raton, Mouse, Teclado)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
 
             // guarda los elementos escogidos del checkList y los agrega a la lista de accesorios del computador
@@ -93,13 +93,13 @@ namespace SistemaPartesComputador.Controlador {
 
         public void actualizarListBox(Computador pc) {
             // Agregamos el objeto pc al listBox del frm
-            formularioSistema.listaConfiguraciones.Items.Add(pc);
+            formularioSistema.listaConfiguraciones.Items.Add(pc.mostrarInformacionLineal());
 
             // habilitamos el scroll horizontal para que se pueda ver todo el texto si es muy largo
             formularioSistema.listaConfiguraciones.HorizontalScrollbar = true;
 
             // Estimamos el ancho multiplicando los caracteres del texto por 8 píxeles
-            int anchoEstimado = pc.ToString().Length * 15;
+            int anchoEstimado = pc.mostrarInformacionLineal().Length * 10;
 
             // Si el nuevo texto supera el scroll actual, lo estiramos
             if (anchoEstimado > formularioSistema.listaConfiguraciones.HorizontalExtent) {
