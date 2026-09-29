@@ -32,7 +32,7 @@ namespace SistemaPartesComputador.Modelos {
         }
 
         public override string ToString() {
-            return "Procesador: " + procesador + Environment.NewLine + "Memoria RAM: " + memoriaRam + Environment.NewLine + "Tipo de Disco Duro: " + tipoDiscoDuro + "Controlador RAID: " + Environment.NewLine + (tieneControladorRaid ? "Sí" : "No") + Environment.NewLine + "Controlador de Video: " + (tieneControladorVideo ? "Sí" : "No") + Environment.NewLine + "Accesorios: " + string.Join(", ", accesorios);
+            return "Procesador: " + procesador + Environment.NewLine + "Memoria RAM: " + memoriaRam + Environment.NewLine + "Tipo de Disco Duro: " + tipoDiscoDuro + "Controlador RAID: " + (tieneControladorRaid ? "Sí" : "No") + Environment.NewLine + "Controlador de Video: " + (tieneControladorVideo ? "Sí" : "No") + Environment.NewLine + "Accesorios: " + string.Join(", ", accesorios);
         }
 
         public string Procesador { 
