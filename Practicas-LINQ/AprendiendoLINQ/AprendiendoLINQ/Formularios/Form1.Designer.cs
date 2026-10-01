@@ -30,9 +30,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboOrden = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabla = new System.Windows.Forms.DataGridView();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -105,15 +105,15 @@
             this.cboOrden.Size = new System.Drawing.Size(185, 28);
             this.cboOrden.TabIndex = 5;
             // 
-            // dataGridView1
+            // tabla
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 258);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 47;
-            this.dataGridView1.Size = new System.Drawing.Size(596, 291);
-            this.dataGridView1.TabIndex = 7;
+            this.tabla.BackgroundColor = System.Drawing.Color.White;
+            this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.Location = new System.Drawing.Point(19, 258);
+            this.tabla.Name = "tabla";
+            this.tabla.RowHeadersWidth = 47;
+            this.tabla.Size = new System.Drawing.Size(596, 291);
+            this.tabla.TabIndex = 7;
             // 
             // btnFiltrar
             // 
@@ -133,7 +133,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(627, 572);
             this.Controls.Add(this.btnFiltrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tabla);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboOrden);
             this.Controls.Add(this.label3);
@@ -143,7 +143,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +158,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboOrden;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button btnFiltrar;
     }
 }
