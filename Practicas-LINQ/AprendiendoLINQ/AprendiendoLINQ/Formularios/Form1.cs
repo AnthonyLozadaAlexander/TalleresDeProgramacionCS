@@ -103,6 +103,13 @@ namespace AprendiendoLINQ {
 
             if (buscarP != null) {
 
+                DialogResult opc = MessageBox.Show($"Desea eliminar el producto {buscarP.Nombre}?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if(opc == DialogResult.Yes) {
+                    inventario.Remove(buscarP);
+                    tabla.DataSource = null;
+                    tabla.DataSource = inventario;
+                }
             }
             
         }
