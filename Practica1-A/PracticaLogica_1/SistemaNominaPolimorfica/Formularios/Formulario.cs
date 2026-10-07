@@ -95,17 +95,36 @@ namespace SistemaNominaPolimorfica {
             double sueldoBase = double.Parse(txtSueldoBase.Text);
             double totalVentas = 0.0;
 
+            if(verificarDuplicado(empleadosEmpresa, cedula)) {
+                MessageBox.Show("Error: Ya Existe Una Cedula Identica",  "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (cargo == "Gerente") {
                 double bono = double.Parse(txtBonoAsignado.Text);
                 txtVentas.Clear();
                 agregarGerente(nombre, ID, cedula, cargo, sueldoBase, bono);
             }else if(cargo == "Vendedor") {
                 txtBonoAsignado.Clear();
+
+                if (String.IsNullOrEmpty(txtVentas.Text)) {
+                    MessageBox.Show("Error: Debe Ingresar Un Valor Para Total Ventas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 totalVentas = double.Parse(txtVentas.Text);
+
+                
+
                 agregarVendedor(nombre, ID, cedula, cargo, sueldoBase, totalVentas);
             }
 
 
+        }
+
+        private Boolean verificarDuplicado(List<Empleado> listaEmp, string cedula) {
+            bool existe = false;
+            return existe = listaEmp.Any(emp => emp.Cedula == cedula);
         }
     }
 }
