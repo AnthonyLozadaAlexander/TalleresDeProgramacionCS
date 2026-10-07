@@ -1,4 +1,5 @@
-﻿using SistemaNominaPolimorfica.Clases;
+﻿using SistemaNominaPolimorfica.Clases; //  importa las clases Empleado, Gerente y Vendedor
+using SistemaNominaPolimorfica.Formularios; // importa la clase IngresoCedula
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -125,6 +126,33 @@ namespace SistemaNominaPolimorfica {
         private Boolean verificarDuplicado(List<Empleado> listaEmp, string cedula) {
             bool existe = false;
             return existe = listaEmp.Any(emp => emp.Cedula == cedula);
+        }
+
+        private void buscarCedula(String cedula) {
+            int index = -1;
+            index = empleadosEmpresa.FindIndex(emp => emp.Cedula == cedula);
+            if(index != -1) {
+                MessageBox.Show($"Empleado Encontrado: " +
+                    $"{Environment.NewLine} {empleadosEmpresa[index].Nombre} " +
+                    $"{Environment.NewLine} {empleadosEmpresa[index].Id} " +
+                    $"{Environment.NewLine} {empleadosEmpresa[index].Cedula} " +
+                    $"{Environment.NewLine} {empleadosEmpresa[index].Cargo}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                tabla.ClearSelection(); // limpia en la tabla el empleado encontrado seleccionado
+                tabla.Rows[index].Selected = true; // selecciona el empleado encontrado en la tabla
+            }
+            else {
+                MessageBox.Show("Empleado No Existente En La Empresa",  "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e) {
+            using(var ventanaBuscar = new IngresoCedula()) { // usando la ventana de ingreso cedula para buscar un empleado por su cedula
+                if (ventanaBuscar.ShowDialog() == DialogResult.OK) { // esperamos a que terminen de ingresar la cedula y se cierre la ventana
+                    string cedula = ventanaBuscar.CedulaIngresada; // obtenemos la cedula atraves del getter de la ventana
+                    buscarCedula(cedula);
+                }
+            }
         }
     }
 }
