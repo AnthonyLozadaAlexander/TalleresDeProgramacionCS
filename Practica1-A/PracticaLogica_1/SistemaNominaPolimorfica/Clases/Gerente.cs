@@ -9,7 +9,7 @@ namespace SistemaNominaPolimorfica.Clases {
 
         private double bono;
 
-        public Gerente(String nombre, double sueldoBase, double bono): base(nombre, sueldoBase) {
+        public Gerente(String nombre, double sueldoBase, String ID, String cedula, string cargo, double bono) : base(nombre, sueldoBase, ID, cedula, cargo) {
             this.bono = bono; 
         }
 

@@ -10,9 +10,8 @@ namespace SistemaNominaPolimorfica.Clases {
         private double totalVentas;
         
 
-        public Vendedor(double totalVentas, string nombre, double sueldoBase) : base(nombre, sueldoBase) {
-            this.totalVentas = totalVentas;
-            
+        public Vendedor(string nombre, double sueldoBase, string ID, string cedula, string cargo, double totalVentas) : base(nombre, sueldoBase, ID, cedula, cargo) {
+            this.totalVentas = totalVentas;         
         }
 
         public double TotalVentas { 
