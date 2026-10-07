@@ -26,6 +26,7 @@ namespace SistemaNominaPolimorfica {
         private void configurarTabla() {
             tabla.Columns.Clear();
 
+            tabla.Font = new Font("Cascadia Code", 10, FontStyle.Bold);
             tabla.Columns.Add("Nombre", "Nombre");
             tabla.Columns["Nombre"].DataPropertyName = "Nombre";
             tabla.Columns.Add("SueldoBase", "Sueldo Base");
@@ -129,14 +130,20 @@ namespace SistemaNominaPolimorfica {
         }
 
         private void buscarCedula(String cedula) {
+
+            if(empleadosEmpresa.Count == 0) {
+                MessageBox.Show("No Hay Aun Empleados En La Empresa", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int index = -1;
             index = empleadosEmpresa.FindIndex(emp => emp.Cedula == cedula);
             if(index != -1) {
                 MessageBox.Show($"Empleado Encontrado: " +
-                    $"{Environment.NewLine} {empleadosEmpresa[index].Nombre} " +
-                    $"{Environment.NewLine} {empleadosEmpresa[index].Id} " +
-                    $"{Environment.NewLine} {empleadosEmpresa[index].Cedula} " +
-                    $"{Environment.NewLine} {empleadosEmpresa[index].Cargo}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    $"{Environment.NewLine} Nombre: {empleadosEmpresa[index].Nombre} " +
+                    $"{Environment.NewLine} ID: {empleadosEmpresa[index].Id} " +
+                    $"{Environment.NewLine} Cedula: {empleadosEmpresa[index].Cedula} " +
+                    $"{Environment.NewLine} Cargo: {empleadosEmpresa[index].Cargo}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 tabla.ClearSelection(); // limpia en la tabla el empleado encontrado seleccionado
                 tabla.Rows[index].Selected = true; // selecciona el empleado encontrado en la tabla

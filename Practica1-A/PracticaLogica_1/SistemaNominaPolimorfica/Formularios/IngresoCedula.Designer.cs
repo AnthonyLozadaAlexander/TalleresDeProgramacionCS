@@ -39,11 +39,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(126, 130);
+            this.label3.Location = new System.Drawing.Point(56, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(221, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Cedula";
+            this.label3.Text = "Busqueda Por Cedula";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRegistrar
             // 
