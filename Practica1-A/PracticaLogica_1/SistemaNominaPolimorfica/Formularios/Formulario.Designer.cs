@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Location = new System.Drawing.Point(12, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(312, 29);
             this.label1.TabIndex = 0;
@@ -82,10 +82,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 522);
+            this.label4.Font = new System.Drawing.Font("Cascadia Code", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 518);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 25);
+            this.label4.Size = new System.Drawing.Size(156, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Sueldo Base:";
             // 
@@ -143,7 +143,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 414);
+            this.label6.Location = new System.Drawing.Point(20, 414);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(260, 29);
             this.label6.TabIndex = 9;
@@ -153,7 +153,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 466);
+            this.label7.Location = new System.Drawing.Point(20, 464);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(195, 29);
             this.label7.TabIndex = 10;
@@ -162,25 +162,25 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(27, 733);
+            this.label8.Font = new System.Drawing.Font("Cascadia Code", 13.09091F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 574);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 29);
+            this.label8.Size = new System.Drawing.Size(168, 27);
             this.label8.TabIndex = 11;
             this.label8.Text = "Total Ventas:";
             // 
             // txtBonoAsignado
             // 
-            this.txtBonoAsignado.Location = new System.Drawing.Point(231, 473);
+            this.txtBonoAsignado.Location = new System.Drawing.Point(214, 474);
             this.txtBonoAsignado.Name = "txtBonoAsignado";
-            this.txtBonoAsignado.Size = new System.Drawing.Size(100, 20);
+            this.txtBonoAsignado.Size = new System.Drawing.Size(117, 20);
             this.txtBonoAsignado.TabIndex = 12;
             // 
             // txtVentas
             // 
-            this.txtVentas.Location = new System.Drawing.Point(205, 740);
+            this.txtVentas.Location = new System.Drawing.Point(182, 581);
             this.txtVentas.Name = "txtVentas";
-            this.txtVentas.Size = new System.Drawing.Size(100, 20);
+            this.txtVentas.Size = new System.Drawing.Size(149, 20);
             this.txtVentas.TabIndex = 13;
             // 
             // tabla
@@ -196,7 +196,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(32, 583);
+            this.btnRegistrar.Location = new System.Drawing.Point(25, 664);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(132, 43);
             this.btnRegistrar.TabIndex = 15;
@@ -207,17 +207,18 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(176, 642);
+            this.btnLimpiar.Location = new System.Drawing.Point(169, 723);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(132, 43);
             this.btnLimpiar.TabIndex = 16;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(32, 642);
+            this.btnBuscar.Location = new System.Drawing.Point(25, 723);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(132, 43);
             this.btnBuscar.TabIndex = 17;
@@ -228,7 +229,7 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(176, 583);
+            this.btnModificar.Location = new System.Drawing.Point(169, 664);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(132, 43);
             this.btnModificar.TabIndex = 18;

@@ -101,6 +101,12 @@ namespace SistemaNominaPolimorfica {
 
         private void btnRegistrar_Click(object sender, EventArgs e) {
 
+            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(txtID.Text) || String.IsNullOrEmpty(txtCedula.Text) || String.IsNullOrEmpty(txtSueldoBase.Text)) {
+                MessageBox.Show("Error: Debe Ingresar Valores En Todos Los Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
 
             string nombre = txtNombre.Text;
             string ID = txtID.Text;
@@ -174,6 +180,11 @@ namespace SistemaNominaPolimorfica {
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) {
+            if(empleadosEmpresa.Count == 0) {
+                MessageBox.Show("No hay aun empleados en la lista", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             using(var ventanaBuscar = new Buscar()) { // usando la ventana de ingreso cedula para buscar un empleado por su cedula
                 if (ventanaBuscar.ShowDialog() == DialogResult.OK) { // esperamos a que terminen de ingresar la cedula y se cierre la ventana
                     string cedula = ventanaBuscar.CedulaIngresada; // obtenemos la cedula atraves del getter de la ventana
@@ -183,6 +194,11 @@ namespace SistemaNominaPolimorfica {
         }
 
         private void btnModificar_Click(object sender, EventArgs e) {
+
+            if (empleadosEmpresa.Count == 0) {
+                MessageBox.Show("No hay aun empleados en la lista", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (tabla.CurrentRow == null) {
                 MessageBox.Show("Error: Debe Seleccionar Un Empleado Para Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -242,6 +258,19 @@ namespace SistemaNominaPolimorfica {
                 tabla.Rows[index].Cells["TotalVentas"].Value = vendedor.TotalVentas;
                 tabla.Rows[index].Cells["PagoFinal"].Value = vendedor.calcularPagoFinal();
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e) {
+            txtNombre.Clear();
+            txtID.Clear();
+            txtCedula.Clear();
+            txtSueldoBase.Clear();
+            txtBonoAsignado.Clear();
+            txtVentas.Clear();
+            rdbVendedor.Checked = false;
+            rbdGerente.Checked = false;
+
+
         }
     }
 }
