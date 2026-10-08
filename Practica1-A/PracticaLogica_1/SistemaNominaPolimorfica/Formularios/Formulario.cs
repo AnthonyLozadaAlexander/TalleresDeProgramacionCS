@@ -12,7 +12,13 @@ using System.Windows.Forms;
 
 namespace SistemaNominaPolimorfica {
     public partial class Formulario : Form {
-        List<Empleado> empleadosEmpresa = new List<Empleado>();
+        private List<Empleado> empleadosEmpresa = new List<Empleado>();
+        private bool esGerente = false;
+        private bool esVendedor = false;
+
+        public bool EsGerente { get => esGerente; set => esGerente = value; }
+        public bool EsVendedor { get => esVendedor; set => esVendedor = value; }
+        public List<Empleado> EmpleadosEmpresa { get => empleadosEmpresa; set => empleadosEmpresa = value; }
 
         public Formulario() {
             InitializeComponent();
@@ -22,6 +28,11 @@ namespace SistemaNominaPolimorfica {
             txtBonoAsignado.Enabled = false;
             configurarTabla();
         }
+
+        public DataGridView getTabla() {
+            return tabla;
+        }
+
 
         private void configurarTabla() {
             tabla.Columns.Clear();
@@ -37,8 +48,6 @@ namespace SistemaNominaPolimorfica {
             tabla.Columns["Cedula"].DataPropertyName = "Cedula";
             tabla.Columns.Add("Cargo", "Cargo");
             tabla.Columns["Cargo"].DataPropertyName = "Cargo";
-            tabla.Columns.Add("Sueldo Base", "Sueldo Base");
-            tabla.Columns["Sueldo Base"].DataPropertyName = "SueldoBase";
             tabla.Columns.Add("Bono", "Bono");
             tabla.Columns["Bono"].DataPropertyName = "Bono";
             tabla.Columns.Add("TotalVentas", "Total Ventas");
@@ -59,6 +68,8 @@ namespace SistemaNominaPolimorfica {
             if (rbdGerente.Checked) {
                 txtBonoAsignado.Enabled = true;
                 txtVentas.Enabled = false;
+                
+
             }
         }
 
@@ -66,12 +77,13 @@ namespace SistemaNominaPolimorfica {
             if (rdbVendedor.Checked) {
                 txtBonoAsignado.Enabled = false;
                 txtVentas.Enabled = true;
+                
             }
         }
 
         private void agregarEmpleadoTabla(Empleado e) { 
 
-            tabla.Rows.Add(e.Nombre, e.SueldoBase, e.Id, e.Cedula, e.Cargo, e.SueldoBase, ((e is Gerente) ? ((Gerente)e).Bono : 0), (e is Vendedor) ? ((Vendedor)e).TotalVentas : 0 , ( e is Gerente) ? ((Gerente)e).calcularPagoFinal() : (e is Vendedor) ? ((Vendedor)e).calcularPagoFinal() : 0);
+            tabla.Rows.Add(e.Nombre, e.SueldoBase, e.Id, e.Cedula, e.Cargo,((e is Gerente) ? ((Gerente)e).Bono : 0), (e is Vendedor) ? ((Vendedor)e).TotalVentas : 0 , ( e is Gerente) ? ((Gerente)e).calcularPagoFinal() : (e is Vendedor) ? ((Vendedor)e).calcularPagoFinal() : 0);
         }
 
         private void agregarVendedor(String nombre, String ID, String cedula, String cargo, double sueldoBase, double totalVentas) {
@@ -103,12 +115,19 @@ namespace SistemaNominaPolimorfica {
             }
 
             if (cargo == "Gerente") {
-                double bono = double.Parse(txtBonoAsignado.Text);
-                txtVentas.Clear();
-                agregarGerente(nombre, ID, cedula, cargo, sueldoBase, bono);
-            }else if(cargo == "Vendedor") {
-                txtBonoAsignado.Clear();
+                if (String.IsNullOrEmpty(txtBonoAsignado.Text)) {
+                    MessageBox.Show("Error: Debe Ingresar Un Valor Para Bono Asignado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                double bono = double.Parse(txtBonoAsignado.Text);
+                
+                agregarGerente(nombre, ID, cedula, cargo, sueldoBase, bono); // agregamos el gerente a la lista de empleados y a la tabla
+                txtBonoAsignado.Clear();
+                txtVentas.Clear();
+            }
+            else if(cargo == "Vendedor") {
+                
                 if (String.IsNullOrEmpty(txtVentas.Text)) {
                     MessageBox.Show("Error: Debe Ingresar Un Valor Para Total Ventas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -116,9 +135,10 @@ namespace SistemaNominaPolimorfica {
 
                 totalVentas = double.Parse(txtVentas.Text);
 
-                
-
-                agregarVendedor(nombre, ID, cedula, cargo, sueldoBase, totalVentas);
+               
+                agregarVendedor(nombre, ID, cedula, cargo, sueldoBase, totalVentas); // agregamos el vendedor a la lista de empleados y a la tabla
+                txtBonoAsignado.Clear();
+                txtVentas.Clear();
             }
 
 
@@ -154,11 +174,73 @@ namespace SistemaNominaPolimorfica {
         }
 
         private void btnBuscar_Click(object sender, EventArgs e) {
-            using(var ventanaBuscar = new IngresoCedula()) { // usando la ventana de ingreso cedula para buscar un empleado por su cedula
+            using(var ventanaBuscar = new Buscar()) { // usando la ventana de ingreso cedula para buscar un empleado por su cedula
                 if (ventanaBuscar.ShowDialog() == DialogResult.OK) { // esperamos a que terminen de ingresar la cedula y se cierre la ventana
                     string cedula = ventanaBuscar.CedulaIngresada; // obtenemos la cedula atraves del getter de la ventana
                     buscarCedula(cedula);
                 }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e) {
+
+            if (tabla.CurrentRow == null) {
+                MessageBox.Show("Error: Debe Seleccionar Un Empleado Para Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
+            int index = tabla.CurrentRow.Index;
+
+            if (index < 0 || index >= empleadosEmpresa.Count) {
+                MessageBox.Show("Error: Indice De Empleado No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            Empleado empleadoSelect = empleadosEmpresa[index]; // tomamos la referencia del empleado de la lista de empleados 
+
+            if(empleadoSelect is Gerente) {
+                EsGerente = true;
+                EsVendedor = false;
+            }
+            else {
+                EsGerente = false;
+                EsVendedor = true;
+            }
+
+            using (Modificar frmModificar = new Modificar(empleadoSelect, this)) {
+                var result = frmModificar.ShowDialog();
+                if(result == DialogResult.OK) {
+                    // El empleado ha sido modificado correctamente
+                    empleadoSelect = frmModificar.EmpleadoReferencia; // actualizamos la referencia del empleado con los cambios realizados en el formulario de modificación
+
+                    empleadosEmpresa.Insert(index, empleadoSelect); // insertamos el empleado modificado en la lista de empleados en la misma posición)
+              
+
+                    actualizarFila(empleadosEmpresa, index);
+                }
+            }          
+            
+        }
+
+        private void actualizarFila(List<Empleado> e, int index) {
+            
+            tabla.Rows[index].Cells["Nombre"].Value = e[index].Nombre;
+            tabla.Rows[index].Cells["SueldoBase"].Value = e[index].SueldoBase;
+            tabla.Rows[index].Cells["ID"].Value = e[index].Id;
+            tabla.Rows[index].Cells["Cedula"].Value = e[index].Cedula;
+            tabla.Rows[index].Cells["Cargo"].Value = e[index].Cargo;
+            if (e[index] is Gerente gerente) {
+                tabla.Rows[index].Cells["Bono"].Value = gerente.Bono;
+                tabla.Rows[index].Cells["TotalVentas"].Value = 0; // Los gerentes no tienen ventas
+                tabla.Rows[index].Cells["PagoFinal"].Value = gerente.calcularPagoFinal();
+            }
+            else if (e[index] is Vendedor vendedor) {
+                tabla.Rows[index].Cells["Bono"].Value = 0; // Los vendedores no tienen bono
+                tabla.Rows[index].Cells["TotalVentas"].Value = vendedor.TotalVentas;
+                tabla.Rows[index].Cells["PagoFinal"].Value = vendedor.calcularPagoFinal();
             }
         }
     }
