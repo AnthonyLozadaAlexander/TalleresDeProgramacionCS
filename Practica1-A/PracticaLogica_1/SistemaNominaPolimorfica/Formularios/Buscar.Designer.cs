@@ -1,5 +1,5 @@
 ﻿namespace SistemaNominaPolimorfica.Formularios {
-    partial class IngresoCedula {
+    partial class Buscar {
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaNominaPolimorfica.Formularios {
-    public partial class IngresoCedula : Form {
-        public IngresoCedula() {
+    public partial class Buscar : Form {
+        public Buscar() {
             InitializeComponent();
             CenterToScreen();
             MaximizeBox = false;
