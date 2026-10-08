@@ -189,8 +189,6 @@ namespace SistemaNominaPolimorfica {
                 return;
             }
 
-
-
             int index = tabla.CurrentRow.Index;
 
             if (index < 0 || index >= empleadosEmpresa.Count) {
@@ -214,9 +212,11 @@ namespace SistemaNominaPolimorfica {
                 var result = frmModificar.ShowDialog();
                 if(result == DialogResult.OK) {
                     // El empleado ha sido modificado correctamente
-                    empleadoSelect = frmModificar.EmpleadoReferencia; // actualizamos la referencia del empleado con los cambios realizados en el formulario de modificación
+                    Empleado empleadoModificado = frmModificar.EmpleadoReferencia; // actualizamos la referencia del empleado con los cambios realizados en el formulario de modificación
 
-                    empleadosEmpresa.Insert(index, empleadoSelect); // insertamos el empleado modificado en la lista de empleados en la misma posición)
+                    empleadosEmpresa.RemoveAt(index); // eliminamos el empleado original de la lista de empleados
+
+                    empleadosEmpresa.Insert(index, empleadoModificado); // insertamos el empleado modificado en la lista de empleados en la misma posición)
               
 
                     actualizarFila(empleadosEmpresa, index);
