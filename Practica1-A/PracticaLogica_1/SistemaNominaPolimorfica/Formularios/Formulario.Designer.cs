@@ -63,7 +63,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 85);
+            this.label2.Location = new System.Drawing.Point(16, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 29);
             this.label2.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 134);
+            this.label3.Location = new System.Drawing.Point(20, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(124, 140);
+            this.txtNombre.Location = new System.Drawing.Point(113, 145);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cascadia Code SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 299);
+            this.label5.Location = new System.Drawing.Point(19, 304);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(195, 29);
             this.label5.TabIndex = 6;
@@ -117,27 +117,25 @@
             // 
             this.rbdGerente.AutoSize = true;
             this.rbdGerente.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbdGerente.Location = new System.Drawing.Point(37, 352);
+            this.rbdGerente.Location = new System.Drawing.Point(26, 357);
             this.rbdGerente.Name = "rbdGerente";
             this.rbdGerente.Size = new System.Drawing.Size(105, 28);
             this.rbdGerente.TabIndex = 7;
             this.rbdGerente.TabStop = true;
             this.rbdGerente.Text = "Gerente";
             this.rbdGerente.UseVisualStyleBackColor = true;
-            this.rbdGerente.CheckedChanged += new System.EventHandler(this.rbdGerente_CheckedChanged);
             // 
             // rdbVendedor
             // 
             this.rdbVendedor.AutoSize = true;
             this.rdbVendedor.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbVendedor.Location = new System.Drawing.Point(163, 352);
+            this.rdbVendedor.Location = new System.Drawing.Point(152, 357);
             this.rdbVendedor.Name = "rdbVendedor";
             this.rdbVendedor.Size = new System.Drawing.Size(116, 28);
             this.rdbVendedor.TabIndex = 8;
             this.rdbVendedor.TabStop = true;
             this.rdbVendedor.Text = "Vendedor";
             this.rdbVendedor.UseVisualStyleBackColor = true;
-            this.rdbVendedor.CheckedChanged += new System.EventHandler(this.rdbVendedor_CheckedChanged);
             // 
             // label6
             // 
@@ -196,7 +194,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(25, 664);
+            this.btnRegistrar.Location = new System.Drawing.Point(26, 664);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(132, 43);
             this.btnRegistrar.TabIndex = 15;
@@ -239,7 +237,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(80, 196);
+            this.txtID.Location = new System.Drawing.Point(69, 201);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(144, 20);
             this.txtID.TabIndex = 20;
@@ -248,7 +246,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(31, 190);
+            this.label9.Location = new System.Drawing.Point(20, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 25);
             this.label9.TabIndex = 19;
@@ -256,7 +254,7 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(112, 249);
+            this.txtCedula.Location = new System.Drawing.Point(101, 254);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(112, 20);
             this.txtCedula.TabIndex = 22;
@@ -265,7 +263,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cascadia Code", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 243);
+            this.label10.Location = new System.Drawing.Point(20, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 25);
             this.label10.TabIndex = 21;

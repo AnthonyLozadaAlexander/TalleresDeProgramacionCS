@@ -53,11 +53,11 @@
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(132, 43);
             this.btnRegistrar.TabIndex = 16;
-            this.btnRegistrar.Text = "Ingresar";
+            this.btnRegistrar.Text = "Buscar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // IngresoCedula
+            // Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,7 +66,7 @@
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label3);
-            this.Name = "IngresoCedula";
+            this.Name = "Buscar";
             this.Text = "IngresoCedula";
             this.ResumeLayout(false);
             this.PerformLayout();

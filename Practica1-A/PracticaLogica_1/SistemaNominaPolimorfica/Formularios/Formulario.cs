@@ -107,7 +107,6 @@ namespace SistemaNominaPolimorfica {
             }
 
 
-
             string nombre = txtNombre.Text;
             string ID = txtID.Text;
             string cedula = txtCedula.Text;
