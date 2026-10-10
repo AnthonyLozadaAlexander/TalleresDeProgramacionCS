@@ -119,6 +119,7 @@
             btnDividir.TabIndex = 44;
             btnDividir.Text = "Dividir";
             btnDividir.UseVisualStyleBackColor = true;
+            btnDividir.Click += btnDividir_Click;
             // 
             // btnMultiplicar
             // 

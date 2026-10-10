@@ -88,5 +88,31 @@ namespace Taller_1.Formularios {
                 MessageBox.Show("Debe Ingresar Valores Numericos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Dividir(string n1, string n2) {
+            double num1, num2, divide;
+            num1 = Convert.ToDouble(n1);
+            num2 = Convert.ToDouble(n2);
+
+            if (num2 == 0) {
+                MessageBox.Show("Error: El Segundo Numero No Puede Ser Cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                divide = num1 / num2;
+                txtHistorial.Text = $"Resultado De La Division: {Environment.NewLine} {num1} / {num2} = {divide}";
+            }
+        }
+
+        private void btnDividir_Click(object sender, EventArgs e) {
+            try {
+                if (!validarTxT()) {
+                    return;
+                }
+                Dividir(txtNum1.Text, txtNum2.Text);
+            }
+            catch (FormatException) {
+                MessageBox.Show("Debe Ingresar Valores Numericos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
