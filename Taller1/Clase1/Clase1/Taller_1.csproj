@@ -14,7 +14,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="N3.cs">
+    <Compile Update="Formularios\N3.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
