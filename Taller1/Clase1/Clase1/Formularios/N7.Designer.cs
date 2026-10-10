@@ -45,6 +45,7 @@
             label3.Size = new Size(72, 28);
             label3.TabIndex = 39;
             label3.Text = "Num1:";
+            
             // 
             // txtNum1
             // 
@@ -62,6 +63,7 @@
             label2.Size = new Size(65, 24);
             label2.TabIndex = 37;
             label2.Text = "Num2:";
+            
             // 
             // txtHistorial
             // 
@@ -91,6 +93,7 @@
             label1.Size = new Size(228, 28);
             label1.TabIndex = 34;
             label1.Text = "Calculadora Basica";
+           
             // 
             // txtNum2
             // 
@@ -141,6 +144,7 @@
             label4.Size = new Size(156, 28);
             label4.TabIndex = 45;
             label4.Text = "Resultado ->";
+            
             // 
             // N7
             // 
