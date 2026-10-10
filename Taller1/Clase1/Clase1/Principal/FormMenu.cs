@@ -81,5 +81,10 @@ namespace Clase1
             N7 E7 = new N7();
             mostrarEjercicio(E7);
         }
+
+        private void btnN8_Click(object sender, EventArgs e) {
+            N8 E8 = new N8();
+            mostrarEjercicio(E8);
+        }
     }
 }

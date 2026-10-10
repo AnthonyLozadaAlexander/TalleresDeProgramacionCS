@@ -39,6 +39,7 @@
             btnN1 = new Button();
             label1 = new Label();
             panelBotones2 = new Panel();
+            btnN8 = new Button();
             panelBotones.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             // 
             panelBotones.AutoScroll = true;
             panelBotones.BorderStyle = BorderStyle.Fixed3D;
+            panelBotones.Controls.Add(btnN8);
             panelBotones.Controls.Add(btnN7);
             panelBotones.Controls.Add(btnN6);
             panelBotones.Controls.Add(btnN5);
@@ -171,6 +173,17 @@
             panelBotones2.Size = new Size(259, 801);
             panelBotones2.TabIndex = 3;
             // 
+            // btnN8
+            // 
+            btnN8.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnN8.Location = new Point(55, 456);
+            btnN8.Name = "btnN8";
+            btnN8.Size = new Size(165, 43);
+            btnN8.TabIndex = 8;
+            btnN8.Text = "Ejercicio N8";
+            btnN8.UseVisualStyleBackColor = true;
+            btnN8.Click += btnN8_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -203,5 +216,6 @@
         private Button btnN5;
         private Button btnN6;
         private Button btnN7;
+        private Button btnN8;
     }
 }
