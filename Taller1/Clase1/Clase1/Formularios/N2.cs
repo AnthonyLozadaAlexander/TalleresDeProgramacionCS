@@ -14,6 +14,7 @@ namespace Clase1
         public N2()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void label1_Click(object sender, EventArgs e)
