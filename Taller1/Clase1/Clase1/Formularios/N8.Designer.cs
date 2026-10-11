@@ -49,9 +49,10 @@
             // 
             // txtNota2
             // 
+            txtNota2.Font = new Font("Cascadia Code SemiBold", 9.818182F, FontStyle.Bold);
             txtNota2.Location = new Point(65, 139);
             txtNota2.Name = "txtNota2";
-            txtNota2.Size = new Size(187, 26);
+            txtNota2.Size = new Size(187, 25);
             txtNota2.TabIndex = 51;
             // 
             // label3
@@ -66,9 +67,10 @@
             // 
             // txtNota1
             // 
+            txtNota1.Font = new Font("Cascadia Code SemiBold", 9.818182F, FontStyle.Bold);
             txtNota1.Location = new Point(62, 72);
             txtNota1.Name = "txtNota1";
-            txtNota1.Size = new Size(187, 26);
+            txtNota1.Size = new Size(187, 25);
             txtNota1.TabIndex = 49;
             // 
             // label2
@@ -83,6 +85,7 @@
             // 
             // txtHistorial
             // 
+            txtHistorial.Font = new Font("Cascadia Code SemiBold", 9.818182F, FontStyle.Bold);
             txtHistorial.Location = new Point(317, 222);
             txtHistorial.Multiline = true;
             txtHistorial.Name = "txtHistorial";
@@ -103,10 +106,10 @@
             // 
             tablaNotas.BackgroundColor = Color.White;
             tablaNotas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tablaNotas.Location = new Point(12, 270);
+            tablaNotas.Location = new Point(29, 270);
             tablaNotas.Name = "tablaNotas";
             tablaNotas.RowHeadersWidth = 47;
-            tablaNotas.Size = new Size(565, 125);
+            tablaNotas.Size = new Size(548, 125);
             tablaNotas.TabIndex = 53;
             // 
             // btnCalcular
@@ -122,9 +125,10 @@
             // 
             // txtNota3
             // 
+            txtNota3.Font = new Font("Cascadia Code SemiBold", 9.818182F, FontStyle.Bold);
             txtNota3.Location = new Point(68, 219);
             txtNota3.Name = "txtNota3";
-            txtNota3.Size = new Size(187, 26);
+            txtNota3.Size = new Size(187, 25);
             txtNota3.TabIndex = 56;
             // 
             // label5

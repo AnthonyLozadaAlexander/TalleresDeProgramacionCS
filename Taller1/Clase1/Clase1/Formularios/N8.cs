@@ -12,9 +12,12 @@ namespace Taller_1.Formularios {
             InitializeComponent();
             configurarTabla();
             BackColor = Color.White;
+            txtHistorial.ReadOnly = true;
+            txtHistorial.BackColor = Color.White;
         }
 
         private void configurarTabla() {
+            tablaNotas.Font = new Font("Cascadia Code", 10, FontStyle.Bold);
             tablaNotas.Columns.Add("Nota 1", "Nota 1");
             tablaNotas.Columns.Add("Nota 2", "Nota 2");
             tablaNotas.Columns.Add("Nota 3", "Nota 3");
