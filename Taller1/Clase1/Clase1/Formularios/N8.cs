@@ -58,7 +58,7 @@ namespace Taller_1.Formularios {
                     return;
                 }
 
-                txtHistorial.Text = $"Promedio Final: {prom.ToString("F2")} {Environment.NewLine}" +
+                txtHistorial.Text = $"{prom.ToString("F2")} {Environment.NewLine}" +
                     $" Estado: {estado}";
 
             }
