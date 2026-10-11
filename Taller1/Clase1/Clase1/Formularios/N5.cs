@@ -13,6 +13,7 @@ namespace Clase1
         public N5()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)

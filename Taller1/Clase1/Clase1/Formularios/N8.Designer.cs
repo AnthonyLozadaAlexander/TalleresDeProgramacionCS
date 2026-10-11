@@ -34,6 +34,7 @@
             btnCalcular = new Button();
             txtNota3 = new TextBox();
             label5 = new Label();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)tablaNotas).BeginInit();
             SuspendLayout();
             // 
@@ -141,11 +142,23 @@
             label5.TabIndex = 55;
             label5.Text = "Nota 3";
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Font = new Font("Cascadia Code SemiBold", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.Location = new Point(79, 422);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(147, 43);
+            btnLimpiar.TabIndex = 57;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // N8
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(617, 407);
+            ClientSize = new Size(617, 512);
+            Controls.Add(btnLimpiar);
             Controls.Add(txtNota3);
             Controls.Add(label5);
             Controls.Add(btnCalcular);
@@ -177,5 +190,6 @@
         private Button btnCalcular;
         private TextBox txtNota3;
         private Label label5;
+        private Button btnLimpiar;
     }
 }

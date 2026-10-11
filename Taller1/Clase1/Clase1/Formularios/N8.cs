@@ -27,6 +27,12 @@ namespace Taller_1.Formularios {
 
         }
 
+        private void limpiarNotas() {
+            txtNota1.Clear();
+            txtNota2.Clear();
+            txtNota3.Clear();
+        }
+
         private bool validarTxT() {
             if (string.IsNullOrWhiteSpace(txtNota1.Text) || string.IsNullOrWhiteSpace(txtNota2.Text) || string.IsNullOrWhiteSpace(txtNota3.Text)) {
                 MessageBox.Show("Por favor, complete los campos.");
@@ -77,6 +83,10 @@ namespace Taller_1.Formularios {
 
         private void insertarFila(string n1, string n2, string n3, double prom, string estado) {
             tablaNotas.Rows.Add(n1, n2, n3, prom.ToString("F2"), estado);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e) {
+            limpiarNotas();
         }
     }
 }
