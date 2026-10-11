@@ -29,6 +29,10 @@
         private void InitializeComponent() {
             panelContenedor = new Panel();
             panelBotones = new Panel();
+            btnN10 = new Button();
+            label2 = new Label();
+            btnN9 = new Button();
+            btnN8 = new Button();
             btnN7 = new Button();
             btnN6 = new Button();
             btnN5 = new Button();
@@ -39,21 +43,23 @@
             btnN1 = new Button();
             label1 = new Label();
             panelBotones2 = new Panel();
-            btnN8 = new Button();
             panelBotones.SuspendLayout();
             SuspendLayout();
             // 
             // panelContenedor
             // 
-            panelContenedor.Location = new Point(282, 0);
+            panelContenedor.Location = new Point(274, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(606, 796);
+            panelContenedor.Size = new Size(614, 796);
             panelContenedor.TabIndex = 0;
             // 
             // panelBotones
             // 
             panelBotones.AutoScroll = true;
             panelBotones.BorderStyle = BorderStyle.Fixed3D;
+            panelBotones.Controls.Add(btnN10);
+            panelBotones.Controls.Add(label2);
+            panelBotones.Controls.Add(btnN9);
             panelBotones.Controls.Add(btnN8);
             panelBotones.Controls.Add(btnN7);
             panelBotones.Controls.Add(btnN6);
@@ -63,15 +69,58 @@
             panelBotones.Controls.Add(btnN2);
             panelBotones.Controls.Add(btnLimpiar);
             panelBotones.Controls.Add(btnN1);
-            panelBotones.Location = new Point(-1, -5);
+            panelBotones.Location = new Point(-1, -3);
             panelBotones.Name = "panelBotones";
-            panelBotones.Size = new Size(288, 801);
+            panelBotones.Size = new Size(277, 801);
             panelBotones.TabIndex = 1;
+            // 
+            // btnN10
+            // 
+            btnN10.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnN10.Location = new Point(55, 634);
+            btnN10.Name = "btnN10";
+            btnN10.Size = new Size(165, 43);
+            btnN10.TabIndex = 11;
+            btnN10.Text = "Ejercicio N10";
+            btnN10.UseVisualStyleBackColor = true;
+            btnN10.Click += btnN10_Click;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Black;
+            label2.Font = new Font("Cascadia Code", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(17, 62);
+            label2.Name = "label2";
+            label2.Size = new Size(250, 2);
+            label2.TabIndex = 10;
+            label2.UseMnemonic = false;
+            // 
+            // btnN9
+            // 
+            btnN9.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnN9.Location = new Point(55, 564);
+            btnN9.Name = "btnN9";
+            btnN9.Size = new Size(165, 43);
+            btnN9.TabIndex = 9;
+            btnN9.Text = "Ejercicio N9";
+            btnN9.UseVisualStyleBackColor = true;
+            btnN9.Click += btnN9_Click;
+            // 
+            // btnN8
+            // 
+            btnN8.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnN8.Location = new Point(55, 495);
+            btnN8.Name = "btnN8";
+            btnN8.Size = new Size(165, 43);
+            btnN8.TabIndex = 8;
+            btnN8.Text = "Ejercicio N8";
+            btnN8.UseVisualStyleBackColor = true;
+            btnN8.Click += btnN8_Click;
             // 
             // btnN7
             // 
             btnN7.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN7.Location = new Point(55, 393);
+            btnN7.Location = new Point(55, 432);
             btnN7.Name = "btnN7";
             btnN7.Size = new Size(165, 43);
             btnN7.TabIndex = 7;
@@ -82,7 +131,7 @@
             // btnN6
             // 
             btnN6.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN6.Location = new Point(55, 335);
+            btnN6.Location = new Point(55, 374);
             btnN6.Name = "btnN6";
             btnN6.Size = new Size(165, 43);
             btnN6.TabIndex = 6;
@@ -93,7 +142,7 @@
             // btnN5
             // 
             btnN5.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN5.Location = new Point(55, 277);
+            btnN5.Location = new Point(55, 316);
             btnN5.Name = "btnN5";
             btnN5.Size = new Size(165, 43);
             btnN5.TabIndex = 5;
@@ -104,7 +153,7 @@
             // btnN4
             // 
             btnN4.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN4.Location = new Point(55, 228);
+            btnN4.Location = new Point(55, 257);
             btnN4.Name = "btnN4";
             btnN4.Size = new Size(165, 43);
             btnN4.TabIndex = 4;
@@ -115,7 +164,7 @@
             // btnN3
             // 
             btnN3.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN3.Location = new Point(55, 179);
+            btnN3.Location = new Point(55, 203);
             btnN3.Name = "btnN3";
             btnN3.Size = new Size(165, 43);
             btnN3.TabIndex = 3;
@@ -126,7 +175,7 @@
             // btnN2
             // 
             btnN2.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN2.Location = new Point(55, 126);
+            btnN2.Location = new Point(55, 145);
             btnN2.Name = "btnN2";
             btnN2.Size = new Size(165, 43);
             btnN2.TabIndex = 2;
@@ -148,7 +197,7 @@
             // btnN1
             // 
             btnN1.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN1.Location = new Point(55, 76);
+            btnN1.Location = new Point(55, 86);
             btnN1.Name = "btnN1";
             btnN1.Size = new Size(165, 43);
             btnN1.TabIndex = 0;
@@ -160,11 +209,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cascadia Code", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(77, 23);
+            label1.Location = new Point(67, 23);
             label1.Name = "label1";
-            label1.Size = new Size(120, 28);
+            label1.Size = new Size(144, 28);
             label1.TabIndex = 2;
-            label1.Text = "Taller N1";
+            label1.Text = "Taller N# 1";
             // 
             // panelBotones2
             // 
@@ -172,17 +221,6 @@
             panelBotones2.Name = "panelBotones2";
             panelBotones2.Size = new Size(259, 801);
             panelBotones2.TabIndex = 3;
-            // 
-            // btnN8
-            // 
-            btnN8.Font = new Font("Cascadia Code", 11.7818184F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnN8.Location = new Point(55, 456);
-            btnN8.Name = "btnN8";
-            btnN8.Size = new Size(165, 43);
-            btnN8.TabIndex = 8;
-            btnN8.Text = "Ejercicio N8";
-            btnN8.UseVisualStyleBackColor = true;
-            btnN8.Click += btnN8_Click;
             // 
             // Menu
             // 
@@ -217,5 +255,8 @@
         private Button btnN6;
         private Button btnN7;
         private Button btnN8;
+        private Button btnN9;
+        private Label label2;
+        private Button btnN10;
     }
 }

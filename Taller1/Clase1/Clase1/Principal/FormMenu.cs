@@ -7,15 +7,7 @@ namespace Clase1
         public Menu() {
             InitializeComponent();
             CenterToScreen();
-
-        }
-
-        private void label1_Click(object sender, System.EventArgs e) {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e) {
-
+            MaximizeBox = false;
         }
 
         private void mostrarEjercicio(Form formEjercicio) {
@@ -28,8 +20,15 @@ namespace Clase1
             // configuramos las propiedades del formulario a mostrar
             formEjercicio.TopLevel = false;
             formEjercicio.FormBorderStyle = FormBorderStyle.None;
-            formEjercicio.Dock = DockStyle.Fill;
+            formEjercicio.Dock = DockStyle.None;
 
+            // Centrar el formulario dentro del panel contenedor
+            // la anchura del panel contenedor - menos la anchura del panel ejercicio / 2
+            int x = (this.panelContenedor.Width - formEjercicio.Width) / 2;
+
+            // la altura del panel contenedor - menos la altura del panel ejercicio / 2
+            int y = (this.panelContenedor.Height - formEjercicio.Height) / 2;
+            formEjercicio.Location = new Point(x, y);
 
             /// Agregamos  el ejercicio al panel  contenedor
             this.panelContenedor.Controls.Add(formEjercicio);
@@ -85,6 +84,16 @@ namespace Clase1
         private void btnN8_Click(object sender, EventArgs e) {
             N8 E8 = new N8();
             mostrarEjercicio(E8);
+        }
+
+        private void btnN9_Click(object sender, EventArgs e) {
+            N9 E9 = new N9();
+            mostrarEjercicio(E9);
+        }
+
+        private void btnN10_Click(object sender, EventArgs e) {
+            N10 E10 = new N10();
+            mostrarEjercicio(E10);
         }
     }
 }
