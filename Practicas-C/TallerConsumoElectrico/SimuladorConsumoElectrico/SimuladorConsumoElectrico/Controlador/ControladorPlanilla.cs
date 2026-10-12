@@ -13,11 +13,23 @@ namespace SimuladorConsumoElectrico.Controlador {
 
         private readonly FrmPrincipal vista;
 
+        public int FilaSeleccionada { get => filaSeleccionada; set => filaSeleccionada = value; }
+
         public ControladorPlanilla(FrmPrincipal vista) {
             this.vista = vista;
 
             vista.Guardar.Click += (s, e) => GuardarPlanilla(); // Ejecuta la accion del boton
-            
+
+            // s me permite acceder al objeto que genero el evento, en este caso la tabla
+            // e me permite acceder a la informacion del evento, en este caso el evento es el click de la celda de la tabla
+
+            vista.TablaFactura.CellClick += (s, e) => {
+                FilaSeleccionada = e.RowIndex;
+                if (FilaSeleccionada >= 0) {
+                    mostrarInformacionPlanilla(FilaSeleccionada);
+                }
+            };
+
         }
 
         public void GuardarPlanilla() {
@@ -32,6 +44,16 @@ namespace SimuladorConsumoElectrico.Controlador {
             insertarPlanillaEnTabla(p);
             TListaPlanilla.InsertarListaPlanilla(p);
 
+        }
+
+        private void mostrarInformacionPlanilla(int fila) {
+            vista.HistorialFactura.Text = $"Cliente: {TListaPlanilla.ListPlanilla[fila].Client} {Environment.NewLine}" +
+                $"Categoria: {TListaPlanilla.ListPlanilla[fila].ObtenerCategoria()} {Environment.NewLine}" +
+                $"Consumo: {TListaPlanilla.ListPlanilla[fila].Kwh} kWh {Environment.NewLine}" +
+                $"Tarifa Base: ${TListaPlanilla.ListPlanilla[fila].TarifaBase} {Environment.NewLine}" +
+                $"Subtotal: ${TListaPlanilla.ListPlanilla[fila].calcularSubTotal()} {Environment.NewLine}" +
+                $"Recargo: ${TListaPlanilla.ListPlanilla[fila].calcularRecargo()} {Environment.NewLine}" +
+                $"Total: ${TListaPlanilla.ListPlanilla[fila].CalcularTotal()}";
         }
 
         private void insertarPlanillaEnTabla(Planilla p) {
