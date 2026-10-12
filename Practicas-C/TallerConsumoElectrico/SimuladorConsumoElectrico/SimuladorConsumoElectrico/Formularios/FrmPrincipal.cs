@@ -20,6 +20,7 @@ namespace SimuladorConsumoElectrico {
 
         private void configurarTabla() {
             dvgFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dvgFactura.Font = new Font("Cascadia Code", 10, FontStyle.Bold);
             dvgFactura.Columns.Add("Cliente", "Cliente");
             dvgFactura.Columns.Add("Categoria", "Categoria");
             dvgFactura.Columns.Add("Kwh", "Kwh");
@@ -44,8 +45,10 @@ namespace SimuladorConsumoElectrico {
             btnCalcular.Enabled = activarBotonCalcular();
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e) {
+        public Button btnGuardar => btnCalcular;
+        public DataGridView TablaFactura => dvgFactura;
+        public TextBox HistorialFactura => txtFactura;
 
-        }
+
     }
 }
