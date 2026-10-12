@@ -28,6 +28,7 @@ namespace SimuladorConsumoElectrico.Controlador {
                 FilaSeleccionada = e.RowIndex;
                 if (FilaSeleccionada >= 0) {
                     mostrarInformacionPlanilla(FilaSeleccionada);
+                    FilaSeleccionada = -1; // Reinicia la fila seleccionada para evitar errores al seleccionar otra fila
                 }
             };
 
