@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimuladorConsumoElectrico.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,11 @@ namespace SimuladorConsumoElectrico {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+
+            FrmPrincipal mainFrm = new FrmPrincipal(); // Instancia del formulario principal
+            ControladorPlanilla controlador = new ControladorPlanilla(mainFrm); // Instancia del controlador y se le pasa el formulario principal
+
+            Application.Run(mainFrm); // Inicia la aplicación con el formulario principal
         }
     }
 }
