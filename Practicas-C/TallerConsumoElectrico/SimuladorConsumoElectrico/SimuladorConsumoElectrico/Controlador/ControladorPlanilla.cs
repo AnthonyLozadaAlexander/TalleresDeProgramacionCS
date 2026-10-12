@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SimuladorConsumoElectrico.Modelos;
+using SimuladorConsumoElectrico.Formularios;
 
 namespace SimuladorConsumoElectrico.Controlador {
     public class ControladorPlanilla {
@@ -31,6 +32,24 @@ namespace SimuladorConsumoElectrico.Controlador {
             };
 
         }
+
+        public void BuscarPlantilla() {
+            using (FrmBuscar buscar = new FrmBuscar()) {
+                if(buscar.ShowDialog() == DialogResult.OK) {
+                    string titular = buscar.Cliente;
+                    buscarTablaFactura(titular);
+                    buscar.Close();
+                }
+            }
+        }
+
+        private void buscarTablaFactura(String titular) {
+            int index = TListaPlanilla.ListPlanilla.FindIndex(p => p.Client == titular);
+            if(index != -1) {
+                vista.TablaFactura.Rows[index].Selected = true;
+            }
+        }
+
 
         public void GuardarPlanilla() {
             Planilla p; 

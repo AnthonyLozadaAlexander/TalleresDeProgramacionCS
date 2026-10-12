@@ -23,5 +23,11 @@ namespace SimuladorConsumoElectrico.Controlador {
                 Planilla[index] = p;
             }
         }
+
+        public static void EliminarListaPlanilla(int index) {
+            if(index >= 0 && index  < Planilla.Count) {
+                Planilla.RemoveAt(index);
+            }
+        }
     }
 }

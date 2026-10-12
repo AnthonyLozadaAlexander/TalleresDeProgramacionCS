@@ -132,6 +132,7 @@
             // 
             // txtFactura
             // 
+            this.txtFactura.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFactura.Location = new System.Drawing.Point(884, 80);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
