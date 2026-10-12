@@ -16,7 +16,7 @@ namespace SimuladorConsumoElectrico.Modelos {
             this.tarifaBase = tarifaBase;
         }
 
-        public string Cliente1 { get => Cliente; set => Cliente = value; }
+        public string Client { get => Cliente; set => Cliente = value; }
         public double Kwh { get => kwh; set => kwh = value; }
         public double TarifaBase { get => tarifaBase; set => tarifaBase = value; }
 
