@@ -37,7 +37,7 @@ namespace SimuladorConsumoElectrico {
 
         // debe estar haber texto en txtTitular y txtConsumo para que se active botonCalcular
         private bool activarBotonCalcular() {
-            bool datosCompletados = !String.IsNullOrWhiteSpace(txtTitular.Text) && !String.IsNullOrWhiteSpace(txtConsumo.Text);
+            bool datosCompletados = !String.IsNullOrWhiteSpace(txtTitular.Text) && !String.IsNullOrWhiteSpace(txtConsumo.Text); // Verifica si ambos campos de texto tienen contenido
             return datosCompletados;
         }
 
@@ -45,9 +45,17 @@ namespace SimuladorConsumoElectrico {
             btnCalcular.Enabled = activarBotonCalcular();
         }
 
-        public Button btnGuardar => btnCalcular;
+        public Button Guardar => btnCalcular;
         public DataGridView TablaFactura => dvgFactura;
         public TextBox HistorialFactura => txtFactura;
+
+        public Button Modificar => btnModificar;
+        public Button Eliminar => btnEliminar;
+        public Button Buscar => btnBuscar;
+
+        public TextBox Titular => txtTitular;
+
+        public TextBox Consumo => txtConsumo;
 
 
     }

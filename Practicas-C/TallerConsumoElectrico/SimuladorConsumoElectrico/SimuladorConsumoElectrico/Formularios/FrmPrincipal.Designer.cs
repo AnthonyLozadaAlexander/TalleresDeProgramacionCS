@@ -33,9 +33,9 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.dvgFactura = new System.Windows.Forms.DataGridView();
             this.txtFactura = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.gvDatosMedidor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgFactura)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +61,9 @@
             // 
             // gvDatosMedidor
             // 
-            this.gvDatosMedidor.Controls.Add(this.button3);
-            this.gvDatosMedidor.Controls.Add(this.button2);
-            this.gvDatosMedidor.Controls.Add(this.button1);
+            this.gvDatosMedidor.Controls.Add(this.btnBuscar);
+            this.gvDatosMedidor.Controls.Add(this.btnEliminar);
+            this.gvDatosMedidor.Controls.Add(this.btnModificar);
             this.gvDatosMedidor.Controls.Add(this.txtConsumo);
             this.gvDatosMedidor.Controls.Add(this.txtTitular);
             this.gvDatosMedidor.Controls.Add(this.label2);
@@ -138,32 +138,32 @@
             this.txtFactura.Size = new System.Drawing.Size(333, 687);
             this.txtFactura.TabIndex = 4;
             // 
-            // button1
+            // btnModificar
             // 
-            this.button1.Location = new System.Drawing.Point(280, 164);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 49);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "[ MODIFICAR ]";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(280, 164);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(171, 49);
+            this.btnModificar.TabIndex = 5;
+            this.btnModificar.Text = "[ MODIFICAR ]";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnEliminar
             // 
-            this.button2.Location = new System.Drawing.Point(457, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 49);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "[ ELIMINAR ]";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(457, 164);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(171, 49);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "[ ELIMINAR ]";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnBuscar
             // 
-            this.button3.Location = new System.Drawing.Point(634, 164);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 49);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "[ BUSCAR ]";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(634, 164);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(171, 49);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "[ BUSCAR ]";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
@@ -198,9 +198,9 @@
         private System.Windows.Forms.Label lblTitular;
         private System.Windows.Forms.TextBox txtConsumo;
         private System.Windows.Forms.TextBox txtTitular;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 
