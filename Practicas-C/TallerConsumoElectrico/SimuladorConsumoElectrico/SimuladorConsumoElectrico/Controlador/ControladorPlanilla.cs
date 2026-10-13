@@ -104,7 +104,7 @@ namespace SimuladorConsumoElectrico.Controlador {
             using (FrmBuscar buscar = new FrmBuscar()) {
                 if(buscar.ShowDialog() == DialogResult.OK) {
                     string titular = buscar.Cliente;
-                    buscarTablaFactura(titular);
+                    buscarTablaFacturaLINQ(titular);
                     
                 }
             }
