@@ -20,6 +20,8 @@ namespace SimuladorConsumoElectrico.Controlador {
             this.vista = vista;
 
             vista.Guardar.Click += (s, e) => GuardarPlanilla(); // Ejecuta la accion del boton
+            vista.Buscar.Click += (s, e) => BuscarPlanilla(); // Ejecuta la accion del boton
+            vista.Eliminar.Click += (s, e) => eliminarPlanilla(); // Ejecuta la accion del boton
 
             // s me permite acceder al objeto que genero el evento, en este caso la tabla
             // e me permite acceder a la informacion del evento, en este caso el evento es el click de la celda de la tabla
@@ -31,8 +33,24 @@ namespace SimuladorConsumoElectrico.Controlador {
                 }
             };
 
-            vista.Buscar.Click += (s, e) => BuscarPlanilla(); // Ejecuta la accion del boton
+        }
 
+        public void eliminarPlanilla() {
+            if(FilaSeleccionada != -1) {
+
+                MessageBox.Show($"El Registro [{FilaSeleccionada + 1}] Ha Sido Eliminado Con Exito {Environment.NewLine} Cliente: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Client} {Environment.NewLine} Consumo: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Kwh}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Eliminar la planilla de la lista y de la tabla
+                TListaPlanilla.EliminarListaPlanilla(filaSeleccionada);
+                vista.TablaFactura.Rows.RemoveAt(FilaSeleccionada);
+                vista.HistorialFactura.Clear();
+                FilaSeleccionada = -1;
+
+            }
+            else {
+                MessageBox.Show("Error: No hay ninguna planilla seleccionada para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         public void BuscarPlanilla() {
