@@ -32,9 +32,16 @@ namespace SimuladorConsumoElectrico.Controlador {
                 }
             };
 
+            vista.Buscar.Click += (s, e) => BuscarPlanilla(); // Ejecuta la accion del boton
+
         }
 
-        public void BuscarPlantilla() {
+        public void BuscarPlanilla() {
+            if (TListaPlanilla.ListPlanilla.Count == 0) {
+                MessageBox.Show("No hay planillas registradas.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             using (FrmBuscar buscar = new FrmBuscar()) {
                 if(buscar.ShowDialog() == DialogResult.OK) {
                     string titular = buscar.Cliente;
@@ -64,20 +71,35 @@ namespace SimuladorConsumoElectrico.Controlador {
             insertarPlanillaEnTabla(p);
             TListaPlanilla.InsertarListaPlanilla(p);
 
+
         }
 
         private void mostrarInformacionPlanilla(int fila) {
-            vista.HistorialFactura.Text = $"Cliente: {TListaPlanilla.ListPlanilla[fila].Client} {Environment.NewLine}" +
-                $"Categoria: {TListaPlanilla.ListPlanilla[fila].ObtenerCategoria()} {Environment.NewLine}" +
-                $"Consumo: {TListaPlanilla.ListPlanilla[fila].Kwh} kWh {Environment.NewLine}" +
-                $"Tarifa Base: ${TListaPlanilla.ListPlanilla[fila].TarifaBase} {Environment.NewLine}" +
-                $"Subtotal: ${TListaPlanilla.ListPlanilla[fila].calcularSubTotal()} {Environment.NewLine}" +
-                $"Recargo: ${TListaPlanilla.ListPlanilla[fila].calcularRecargo()} {Environment.NewLine}" +
-                $"Total: ${TListaPlanilla.ListPlanilla[fila].CalcularTotal()}";
+            string nl = Environment.NewLine; //  salto de linea
+            Planilla p = TListaPlanilla.ListPlanilla[fila]; // Referencia a la planilla seleccionada en la tabla
+
+            vista.HistorialFactura.Text =
+                "====================================" + nl +
+                "         FACTURA ELÉCTRICA       " + nl +
+                "====================================" + nl + nl +
+
+                "Cliente:   " + p.Client + nl +
+                "Categoria: " + p.ObtenerCategoria() + nl + nl +
+
+                "------------------------------------" + nl +
+                "Consumo:     " + p.Kwh + " kWh" + nl +
+                "Tarifa Base: $" + p.TarifaBase + nl +
+                "Subtotal:    $" + p.calcularSubTotal() + nl +
+                "Recargo:     $" + p.calcularRecargo() + nl +
+                "------------------------------------" + nl +
+                "TOTAL:       $" + p.CalcularTotal() + nl +
+                "====================================";
+
         }
 
         private void insertarPlanillaEnTabla(Planilla p) {
             vista.TablaFactura.Rows.Add(p.Client, p.ObtenerCategoria(), p.Kwh, p.TarifaBase, p.calcularSubTotal(), p.calcularRecargo(), p.CalcularTotal());
+            vista.TablaFactura.ClearSelection(); // Limpia la seleccion de la tabla para que no quede seleccionada la ultima fila agregada
         }
 
         private Planilla crearPlanilla(string titular, double kwh) {
