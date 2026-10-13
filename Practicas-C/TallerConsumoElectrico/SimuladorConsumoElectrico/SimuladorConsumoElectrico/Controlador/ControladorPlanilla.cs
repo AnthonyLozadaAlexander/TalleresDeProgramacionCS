@@ -22,6 +22,7 @@ namespace SimuladorConsumoElectrico.Controlador {
             vista.Guardar.Click += (s, e) => GuardarPlanilla(); // Ejecuta la accion del boton
             vista.Buscar.Click += (s, e) => BuscarPlanilla(); // Ejecuta la accion del boton
             vista.Eliminar.Click += (s, e) => eliminarPlanilla(); // Ejecuta la accion del boton
+            vista.Modificar.Click += (s, e) => modificarPlanilla(); // Ejecuta la accion del boton
 
             // s me permite acceder al objeto que genero el evento, en este caso la tabla
             // e me permite acceder a la informacion del evento, en este caso el evento es el click de la celda de la tabla
@@ -35,16 +36,57 @@ namespace SimuladorConsumoElectrico.Controlador {
 
         }
 
+        public void modificarPlanilla() {
+            if(FilaSeleccionada != -1) {
+                Planilla p = TListaPlanilla.ListPlanilla[FilaSeleccionada];
+                if(!String.IsNullOrWhiteSpace(vista.Titular.Text) && !String.IsNullOrWhiteSpace(vista.Consumo.Text)
+                    ) {
+
+                    
+                    if (double.TryParse(vista.Consumo.Text, out double consumo)) {
+                        p.Client = vista.Titular.Text;
+                        p.Kwh = consumo;
+                        TListaPlanilla.ModificarListaPlanilla(FilaSeleccionada, p);
+                        modificarTablaFactura(FilaSeleccionada, p);
+                    }
+                    else {
+                        MessageBox.Show("Porfavor ingresa valores validos de kilowats", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                     
+                }
+                else {
+                    MessageBox.Show("Porfavor ingresa valores validos de cliente y consumo", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                 
+            }
+            else {
+                MessageBox.Show("Error: No hay ninguna planilla seleccionada para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void modificarTablaFactura(int index, Planilla p) {
+            vista.TablaFactura.Rows[index].SetValues(p.Client, p.ObtenerCategoria(), p.Kwh, p.TarifaBase, p.calcularSubTotal(), p.calcularRecargo(), p.CalcularTotal()); // modifica la fila de la tabla con los nuevos valores
+        }
+
         public void eliminarPlanilla() {
             if(FilaSeleccionada != -1) {
 
-                MessageBox.Show($"El Registro [{FilaSeleccionada + 1}] Ha Sido Eliminado Con Exito {Environment.NewLine} Cliente: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Client} {Environment.NewLine} Consumo: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Kwh}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult confirm  = MessageBox.Show("Esta Seguro De Eliminar La Planilla Seleccionada?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Eliminar la planilla de la lista y de la tabla
-                TListaPlanilla.EliminarListaPlanilla(filaSeleccionada);
-                vista.TablaFactura.Rows.RemoveAt(FilaSeleccionada);
-                vista.HistorialFactura.Clear();
-                FilaSeleccionada = -1;
+                if (confirm == DialogResult.Yes) {
+
+                    MessageBox.Show($"El Registro [{FilaSeleccionada + 1}] Ha Sido Eliminado Con Exito {Environment.NewLine} Cliente: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Client} {Environment.NewLine} Consumo: {TListaPlanilla.ListPlanilla[FilaSeleccionada].Kwh}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Eliminar la planilla de la lista y de la tabla
+                    TListaPlanilla.EliminarListaPlanilla(filaSeleccionada);
+                    vista.TablaFactura.Rows.RemoveAt(FilaSeleccionada);
+                    vista.HistorialFactura.Clear();
+                    FilaSeleccionada = -1;
+                }
 
             }
             else {
