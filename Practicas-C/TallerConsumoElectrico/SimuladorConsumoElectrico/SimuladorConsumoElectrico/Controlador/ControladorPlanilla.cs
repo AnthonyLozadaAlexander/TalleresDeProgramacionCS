@@ -63,7 +63,7 @@ namespace SimuladorConsumoElectrico.Controlador {
                  
             }
             else {
-                MessageBox.Show("Error: No hay ninguna planilla seleccionada para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: No hay ninguna planilla seleccionada para modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
