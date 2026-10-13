@@ -26,6 +26,9 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gvDatosMedidor = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.txtConsumo = new System.Windows.Forms.TextBox();
             this.txtTitular = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -33,9 +36,6 @@
             this.btnCalcular = new System.Windows.Forms.Button();
             this.dvgFactura = new System.Windows.Forms.DataGridView();
             this.txtFactura = new System.Windows.Forms.TextBox();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.gvDatosMedidor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgFactura)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(181, 34);
+            this.lblTitulo.Location = new System.Drawing.Point(211, 28);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(434, 32);
             this.lblTitulo.TabIndex = 0;
@@ -76,6 +76,33 @@
             this.gvDatosMedidor.TabIndex = 2;
             this.gvDatosMedidor.TabStop = false;
             this.gvDatosMedidor.Text = "Datos Del Medidor";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(634, 164);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(171, 49);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "[ BUSCAR ]";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(457, 164);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(171, 49);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "[ ELIMINAR ]";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(280, 164);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(171, 49);
+            this.btnModificar.TabIndex = 5;
+            this.btnModificar.Text = "[ MODIFICAR ]";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // txtConsumo
             // 
@@ -132,46 +159,19 @@
             // 
             // txtFactura
             // 
-            this.txtFactura.Font = new System.Drawing.Font("Cascadia Code SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFactura.Font = new System.Drawing.Font("Cascadia Code SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFactura.Location = new System.Drawing.Point(884, 80);
             this.txtFactura.Multiline = true;
             this.txtFactura.Name = "txtFactura";
-            this.txtFactura.Size = new System.Drawing.Size(333, 687);
+            this.txtFactura.Size = new System.Drawing.Size(409, 687);
             this.txtFactura.TabIndex = 4;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(280, 164);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(171, 49);
-            this.btnModificar.TabIndex = 5;
-            this.btnModificar.Text = "[ MODIFICAR ]";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(457, 164);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(171, 49);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "[ ELIMINAR ]";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(634, 164);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(171, 49);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "[ BUSCAR ]";
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1229, 779);
+            this.ClientSize = new System.Drawing.Size(1303, 779);
             this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.dvgFactura);
             this.Controls.Add(this.gvDatosMedidor);
