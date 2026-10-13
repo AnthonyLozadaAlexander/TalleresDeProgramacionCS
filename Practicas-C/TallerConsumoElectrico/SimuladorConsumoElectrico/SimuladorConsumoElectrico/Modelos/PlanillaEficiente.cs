@@ -12,8 +12,6 @@ namespace SimuladorConsumoElectrico.Modelos {
         public PlanillaEficiente(string cliente, double kwh) : base(cliente, kwh, TARIFABASE) {
         }
 
-        public override string ObtenerCategoria() {
-            return "Eficiente";
-        }
+        public override string ObtenerCategoria() => "Eficiente";
     }
 }

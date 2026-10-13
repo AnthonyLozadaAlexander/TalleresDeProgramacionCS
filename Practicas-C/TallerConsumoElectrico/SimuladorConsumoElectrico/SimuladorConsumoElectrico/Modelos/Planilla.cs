@@ -20,17 +20,11 @@ namespace SimuladorConsumoElectrico.Modelos {
         public double Kwh { get => kwh; set => kwh = value; }
         public double TarifaBase { get => tarifaBase; set => tarifaBase = value; }
 
-        public virtual double calcularSubTotal() {
-            return kwh * tarifaBase;
-        }
+        public virtual double calcularSubTotal() => kwh * tarifaBase;
 
-        public virtual double calcularRecargo() {
-            return 0;
-        }
+        public virtual double calcularRecargo() => 0;
 
-        public double CalcularTotal() {
-            return calcularSubTotal() + calcularRecargo();
-        }
+        public double CalcularTotal() => calcularSubTotal() + calcularRecargo();
 
         public abstract string ObtenerCategoria();
 

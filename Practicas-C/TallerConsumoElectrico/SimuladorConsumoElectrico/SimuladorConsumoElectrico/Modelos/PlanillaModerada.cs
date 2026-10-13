@@ -10,8 +10,6 @@ namespace SimuladorConsumoElectrico.Modelos {
         public PlanillaModerada(string cliente, double kwh) : base(cliente, kwh, TARIFABASE) {
         }
 
-        public override string ObtenerCategoria() {
-            return "Moderado";
-        }
+        public override string ObtenerCategoria() => "Moderada";
     }
 }

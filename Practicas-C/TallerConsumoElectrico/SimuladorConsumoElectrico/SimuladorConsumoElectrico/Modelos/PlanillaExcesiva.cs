@@ -10,12 +10,8 @@ namespace SimuladorConsumoElectrico.Modelos {
         public PlanillaExcesiva(string cliente, double kwh) : base(cliente, kwh, TARIFABASE) {
         }
 
-        public override double calcularRecargo() {
-            return base.calcularSubTotal() * 0.10 ;
-        }
+        public override double calcularRecargo() => base.calcularSubTotal() * 0.10; // 10% de recargo sobre el subtota)
 
-        public override string ObtenerCategoria() {
-            return "Excesivo";
-        }
+        public override string ObtenerCategoria() => "Excesiva";
     }
 }
