@@ -28,7 +28,6 @@ namespace SimuladorConsumoElectrico.Controlador {
                 FilaSeleccionada = e.RowIndex;
                 if (FilaSeleccionada >= 0) {
                     mostrarInformacionPlanilla(FilaSeleccionada);
-                    FilaSeleccionada = -1; // Reinicia la fila seleccionada para evitar errores al seleccionar otra fila
                 }
             };
 
@@ -46,7 +45,7 @@ namespace SimuladorConsumoElectrico.Controlador {
                 if(buscar.ShowDialog() == DialogResult.OK) {
                     string titular = buscar.Cliente;
                     buscarTablaFactura(titular);
-                    buscar.Close();
+                    
                 }
             }
         }
@@ -58,6 +57,19 @@ namespace SimuladorConsumoElectrico.Controlador {
             }
         }
 
+        private void buscarTablaFacturaLINQ(string titular) {
+            var consulta = TListaPlanilla.ListPlanilla.FirstOrDefault(p => p.Client.Equals(titular, StringComparison.OrdinalIgnoreCase));
+
+            if(consulta != null) {
+                int index = TListaPlanilla.ListPlanilla.IndexOf(consulta);
+                vista.TablaFactura.Rows[index].Selected = true;
+            }
+            else {
+                MessageBox.Show("Dato No Encontrado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
 
         public void GuardarPlanilla() {
             Planilla p; 
@@ -66,7 +78,12 @@ namespace SimuladorConsumoElectrico.Controlador {
             }
 
             string titular = vista.Titular.Text;
-            double consumo = Convert.ToDouble(vista.Consumo.Text);
+
+            // Validar que el consumo sea un número válido
+            if (!double.TryParse(vista.Consumo.Text, out double consumo)){
+                MessageBox.Show("Error: El consumo debe ser un número válido.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             p = crearPlanilla(titular, consumo);
             insertarPlanillaEnTabla(p);
             TListaPlanilla.InsertarListaPlanilla(p);
