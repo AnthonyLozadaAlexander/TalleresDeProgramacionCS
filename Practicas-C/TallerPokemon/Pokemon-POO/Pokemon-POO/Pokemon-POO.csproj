@@ -110,6 +110,7 @@
     <Content Include="Recursos\Icons\pokebola.ico" />
     <Content Include="Recursos\Images\FondoRegistrar.jpg" />
     <Content Include="Recursos\Images\FondoRegistrar_Version2.jpg" />
+    <Content Include="Recursos\Images\FondoRegistrar_Version_3.jpg" />
     <Content Include="Recursos\Images\Interfaz Pokédex sobre paisaje Pokémon %282%29.png" />
   </ItemGroup>
   <ItemGroup />
