@@ -22,7 +22,7 @@ namespace Pokemon_POO.Formularios {
 
         public TextBox TxtNombreR() => txtNombre;
 
-        public TextBox TxtTipoR() => txtTipo;
+       
 
         public TextBox TxtNivelR() => txtNivel;
 
@@ -32,10 +32,10 @@ namespace Pokemon_POO.Formularios {
 
         public TextBox TxtDefensaR() => txtDefensa;
 
+        public TextBox TxtEspecieR() => txtEspecie;
 
-        private void btnAgregar_Click(object sender, EventArgs e) {
+        public ComboBox CboPokemonR() => cboPokemonsR;
 
-        }
 
         private void label7_Click(object sender, EventArgs e) {
 
@@ -46,10 +46,6 @@ namespace Pokemon_POO.Formularios {
         }
 
         private void label3_Click(object sender, EventArgs e) {
-
-        }
-
-        private void btnMenuR_Click(object sender, EventArgs e) {
 
         }
 

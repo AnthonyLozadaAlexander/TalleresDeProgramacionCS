@@ -67,6 +67,11 @@
     <Compile Include="Formularios\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\PokemonAgua.cs" />
+    <Compile Include="Modelos\PokemonElectrico.cs" />
+    <Compile Include="Modelos\PokemonFuego.cs" />
+    <Compile Include="Modelos\PokemonPlanta.cs" />
+    <Compile Include="Modelos\PokemonTierra.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmDuelo.resx">

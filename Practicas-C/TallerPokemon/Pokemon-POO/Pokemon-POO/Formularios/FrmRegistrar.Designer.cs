@@ -27,14 +27,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dvgRegistros = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtVida = new System.Windows.Forms.TextBox();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.txtNivel = new System.Windows.Forms.TextBox();
             this.txtDefensa = new System.Windows.Forms.TextBox();
             this.txtEspecie = new System.Windows.Forms.TextBox();
@@ -80,17 +78,6 @@
             this.label3.Text = "Especie:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(123, 288);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 27);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tipo:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -108,7 +95,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Montserrat SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(123, 343);
+            this.label6.Location = new System.Drawing.Point(117, 288);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 27);
             this.label6.TabIndex = 5;
@@ -152,19 +139,10 @@
             this.txtVida.Size = new System.Drawing.Size(152, 26);
             this.txtVida.TabIndex = 9;
             // 
-            // txtTipo
-            // 
-            this.txtTipo.Font = new System.Drawing.Font("Montserrat SemiBold", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(184, 288);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(152, 26);
-            this.txtTipo.TabIndex = 10;
-            this.txtTipo.TextChanged += new System.EventHandler(this.txtTipo_TextChanged);
-            // 
             // txtNivel
             // 
             this.txtNivel.Font = new System.Drawing.Font("Montserrat SemiBold", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNivel.Location = new System.Drawing.Point(190, 343);
+            this.txtNivel.Location = new System.Drawing.Point(184, 288);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(152, 26);
             this.txtNivel.TabIndex = 11;
@@ -197,35 +175,33 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Montserrat SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(370, 319);
+            this.btnAgregar.Location = new System.Drawing.Point(122, 338);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 44);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnMenuR
             // 
             this.btnMenuR.Font = new System.Drawing.Font("Montserrat SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuR.Location = new System.Drawing.Point(485, 319);
+            this.btnMenuR.Location = new System.Drawing.Point(237, 338);
             this.btnMenuR.Name = "btnMenuR";
             this.btnMenuR.Size = new System.Drawing.Size(109, 44);
             this.btnMenuR.TabIndex = 16;
             this.btnMenuR.Text = "Menu";
             this.btnMenuR.UseVisualStyleBackColor = true;
-            this.btnMenuR.Click += new System.EventHandler(this.btnMenuR_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Montserrat SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(618, 186);
+            this.label8.Location = new System.Drawing.Point(645, 187);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(208, 27);
+            this.label8.Size = new System.Drawing.Size(180, 27);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Modelos De Pokemon";
+            this.label8.Text = "Tipos De Pokemon";
             // 
             // cboPokemonsR
             // 
@@ -237,7 +213,7 @@
             "Agua",
             "Planta",
             "Electrico"});
-            this.cboPokemonsR.Location = new System.Drawing.Point(623, 231);
+            this.cboPokemonsR.Location = new System.Drawing.Point(634, 231);
             this.cboPokemonsR.Name = "cboPokemonsR";
             this.cboPokemonsR.Size = new System.Drawing.Size(203, 32);
             this.cboPokemonsR.TabIndex = 18;
@@ -257,7 +233,6 @@
             this.Controls.Add(this.txtEspecie);
             this.Controls.Add(this.txtDefensa);
             this.Controls.Add(this.txtNivel);
-            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.txtVida);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dvgRegistros);
@@ -265,7 +240,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmRegistrar";
@@ -281,14 +255,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dvgRegistros;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtVida;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.TextBox txtNivel;
         private System.Windows.Forms.TextBox txtDefensa;
         private System.Windows.Forms.TextBox txtEspecie;
