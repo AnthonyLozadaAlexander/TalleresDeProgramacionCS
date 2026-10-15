@@ -9,9 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pokemon_POO {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class FrmMenu : Form {
+        public FrmMenu() {
             InitializeComponent();
+            CenterToScreen();
         }
+
+        public Button Registrar => btnRegistrar;
+
+        public Button Duelos => btnDuelos;
+
+        public Button Consultar => btnConsultar;
+
+        public Button Salir => btnSalir;
     }
 }
