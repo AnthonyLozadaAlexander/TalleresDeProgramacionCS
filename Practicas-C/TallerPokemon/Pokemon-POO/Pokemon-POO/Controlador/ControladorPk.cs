@@ -36,15 +36,10 @@ namespace Pokemon_POO.Controlador {
 
             Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
 
-
             Vista.DuelosM.Click += (s, e) => mostrarFormulario(Duelo);
             Duelo.MENU().Click += (s, e) => Duelo.Hide();
 
-
-
-
             vista.SalirM.Click += (s, e) => Salir();
-
 
         }
 
@@ -63,7 +58,6 @@ namespace Pokemon_POO.Controlador {
         public FrmRegistrar Registrar {
             get => registrar;
         }
-
         public void verLista() {
             using ( FrmLista lista = new FrmLista()){
                 lista.ShowDialog();
