@@ -26,10 +26,12 @@ namespace Pokemon_POO.Controlador {
 
             Vista.RegistrarM.Click += (s, e) => mostrarFormulario(Registrar);
             Registrar.agregarR().Click += (s, e) => agregarPokemon();
-
+            Registrar.VerLista().Click += (s, e) => verLista();
             Registrar.tablaPokemons().CellClick += (s, e) => {
-                indexSeleccionado = e.RowIndex;
-                MessageBox.Show($"{TListaPokemon.ListaPokemon[indexSeleccionado].PokeDesc()}", "Informacion Del Pokemon Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (e.RowIndex >= 0) {
+                    indexSeleccionado = e.RowIndex;
+                    MessageBox.Show($"{TListaPokemon.ListaPokemon[indexSeleccionado].PokeDesc()}", "Informacion Del Pokemon Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             };
 
             Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
@@ -52,11 +54,14 @@ namespace Pokemon_POO.Controlador {
             }
         }
 
-
-
-
         public FrmRegistrar Registrar {
             get => registrar;
+        }
+
+        public void verLista() {
+            using ( FrmLista lista = new FrmLista()){
+                lista.ShowDialog();
+            }
         }
 
         private bool validarCampos() {
@@ -73,28 +78,33 @@ namespace Pokemon_POO.Controlador {
         }
 
         private void agregarPokemon() {
+            try {
 
-            if (!validarCampos()) {
-                MessageBox.Show("Error: Complete Todos Los Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else {
-
-                string nombre = Registrar.TxtNombreR().Text;
-                int nivel = int.Parse(Registrar.TxtNivelR().Text);
-                int vida = int.Parse(Registrar.TxtVidaR().Text);
-                string especie = Registrar.TxtEspecieR().Text;
-                int ataque = int.Parse(Registrar.TxtAtaqueR().Text);
-                int defensa = int.Parse(Registrar.TxtDefensaR().Text);
-                string tipo = Registrar.CboPokemonR().SelectedItem.ToString();
-
-                if (Registrar.CboPokemonR().SelectedItem.Equals("Fuego")) {
-                    PokemonFuego pFuego = new PokemonFuego(nombre, tipo, nivel, vida, especie, ataque, defensa);
-                    TListaPokemon.AgregarPokemon(pFuego);
-                    agregarFilaTabla(pFuego);
+                if (!validarCampos()) {
+                    MessageBox.Show("Error: Complete Todos Los Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else {
+
+                    string nombre = Registrar.TxtNombreR().Text;
+                    int nivel = int.Parse(Registrar.TxtNivelR().Text);
+                    int vida = int.Parse(Registrar.TxtVidaR().Text);
+                    string especie = Registrar.TxtEspecieR().Text;
+                    int ataque = int.Parse(Registrar.TxtAtaqueR().Text);
+                    int defensa = int.Parse(Registrar.TxtDefensaR().Text);
+                    string tipo = Registrar.CboPokemonR().SelectedItem.ToString();
+
+                    if (Registrar.CboPokemonR().SelectedItem.Equals("Fuego")) {
+                        PokemonFuego pFuego = new PokemonFuego(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                        TListaPokemon.AgregarPokemon(pFuego);
+                        agregarFilaTabla(pFuego);
+                    }
+                }
+            }catch(FormatException) {
+                MessageBox.Show("Error: Ingrese Valores Numericos En Los Campos De Nivel, Vida, Ataque Y Defensa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+            catch (Exception ex) {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void configurarTablaPokemon() {
