@@ -33,5 +33,7 @@ namespace Pokemon_POO.Formularios {
         public TextBox TxtEspecieR() => txtEspecie;
 
         public ComboBox CboPokemonR() => cboPokemonsR;
+
+        public Button VerLista() => btnLista;
     }
 }

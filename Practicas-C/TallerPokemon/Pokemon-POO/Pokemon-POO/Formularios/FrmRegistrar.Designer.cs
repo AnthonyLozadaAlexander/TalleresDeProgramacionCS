@@ -41,6 +41,7 @@
             this.btnMenuR = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.cboPokemonsR = new System.Windows.Forms.ComboBox();
+            this.btnLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dvgRegistros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,6 +215,16 @@
             this.cboPokemonsR.Size = new System.Drawing.Size(203, 32);
             this.cboPokemonsR.TabIndex = 18;
             // 
+            // btnLista
+            // 
+            this.btnLista.Font = new System.Drawing.Font("Montserrat SemiBold", 11.78182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLista.Location = new System.Drawing.Point(598, 323);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(109, 44);
+            this.btnLista.TabIndex = 19;
+            this.btnLista.Text = "Ver Lista";
+            this.btnLista.UseVisualStyleBackColor = true;
+            // 
             // FrmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +232,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 777);
+            this.Controls.Add(this.btnLista);
             this.Controls.Add(this.cboPokemonsR);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnMenuR);
@@ -265,5 +277,6 @@
         private System.Windows.Forms.Button btnMenuR;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboPokemonsR;
+        private System.Windows.Forms.Button btnLista;
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="Formularios\FrmDuelo.Designer.cs">
       <DependentUpon>FrmDuelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLista.Designer.cs">
+      <DependentUpon>FrmLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmDuelo.resx">
       <DependentUpon>FrmDuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLista.resx">
+      <DependentUpon>FrmLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>

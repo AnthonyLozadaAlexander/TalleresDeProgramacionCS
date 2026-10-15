@@ -13,6 +13,7 @@ namespace Pokemon_POO {
         /// </summary>
         [STAThread]
         static void Main() {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FrmMenu vistaPrincipal = new FrmMenu(); // instancia de la vista principal
