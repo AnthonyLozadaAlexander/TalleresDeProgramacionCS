@@ -117,6 +117,7 @@
   <ItemGroup>
     <Content Include="Recursos\Icons\game.ico" />
     <Content Include="Recursos\Icons\pokebola.ico" />
+    <Content Include="Recursos\Images\Duelos.jpg" />
     <Content Include="Recursos\Images\FondoRegistrar.jpg" />
     <Content Include="Recursos\Images\FondoRegistrar_Version2.jpg" />
     <Content Include="Recursos\Images\FondoRegistrar_Version_3.jpg" />

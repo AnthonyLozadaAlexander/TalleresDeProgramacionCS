@@ -13,9 +13,10 @@ namespace Pokemon_POO {
         /// </summary>
         [STAThread]
         static void Main() {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
             FrmMenu vistaPrincipal = new FrmMenu(); // instancia de la vista principal
             FrmRegistrar registrar = new FrmRegistrar(); // instancia de la vista de registro
             FrmDuelo duelo = new FrmDuelo(); // instancia de la vista de duelo
