@@ -24,19 +24,19 @@ namespace Pokemon_POO.Controlador {
             this.duelo = duelo;
             configurarTablaPokemon();
 
-            Vista.RegistrarM.Click += (s, e) => mostrarRegistrar();
+            Vista.RegistrarM.Click += (s, e) => mostrarFormulario(Registrar);
             Registrar.agregarR().Click += (s, e) => agregarPokemon();
 
             Registrar.tablaPokemons().CellClick += (s, e) => {
                 indexSeleccionado = e.RowIndex;
                 MessageBox.Show($"{TListaPokemon.ListaPokemon[indexSeleccionado].PokeDesc()}", "Informacion Del Pokemon Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             };
 
             Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
 
 
             vista.SalirM.Click += (s, e) => Salir();
+            Vista.DuelosM.Click += (s, e) => mostrarFormulario(Duelo);
 
         }
 
@@ -57,10 +57,6 @@ namespace Pokemon_POO.Controlador {
 
         public FrmRegistrar Registrar {
             get => registrar;
-        }
-
-        private void mostrarRegistrar() {
-            mostrarFormulario(Registrar);
         }
 
         private bool validarCampos() {
@@ -105,7 +101,7 @@ namespace Pokemon_POO.Controlador {
             var colorFondo = Color.White;
             Registrar.tablaPokemons().ReadOnly = true;
             Registrar.tablaPokemons().Font = new Font("Montserrat", 7, FontStyle.Bold);
-            Registrar.tablaPokemons().BorderStyle = BorderStyle.None;
+            Registrar.tablaPokemons().BorderStyle = BorderStyle.FixedSingle;
             
             Registrar.tablaPokemons().BackgroundColor = colorFondo;
             Registrar.tablaPokemons().DefaultCellStyle.BackColor = colorFondo;
