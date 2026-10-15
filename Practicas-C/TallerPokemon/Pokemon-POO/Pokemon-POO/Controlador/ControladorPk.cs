@@ -37,8 +37,14 @@ namespace Pokemon_POO.Controlador {
             Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
 
 
-            vista.SalirM.Click += (s, e) => Salir();
             Vista.DuelosM.Click += (s, e) => mostrarFormulario(Duelo);
+            Duelo.MENU().Click += (s, e) => Duelo.Hide();
+
+
+
+
+            vista.SalirM.Click += (s, e) => Salir();
+
 
         }
 
@@ -137,9 +143,6 @@ namespace Pokemon_POO.Controlador {
             get => duelo;
         }
 
-       
-
-        
 
         private void mostrarFormulario(Form p) {
             /// limpiamos el panel contenedor antes de mostrar otro Ejercicio
