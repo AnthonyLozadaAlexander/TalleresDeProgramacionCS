@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Pokemon_POO;
 using Pokemon_POO.Formularios;
+using Pokemon_POO.Modelos;
 
 namespace Pokemon_POO.Controlador {
 
     public class ControladorPk {
+
+        private int indexSeleccionado;
         private FrmMenu vista;
         private FrmRegistrar registrar;
-
         private FrmDuelo duelo;
 
         public ControladorPk(FrmMenu vista, FrmRegistrar registrar, FrmDuelo duelo) {
@@ -22,9 +24,15 @@ namespace Pokemon_POO.Controlador {
             this.duelo = duelo;
             configurarTablaPokemon();
 
-
             Vista.RegistrarM.Click += (s, e) => mostrarRegistrar();
-            // Registrar.agregarR().Click += (s, e)
+            Registrar.agregarR().Click += (s, e) => agregarPokemon();
+
+            Registrar.tablaPokemons().CellClick += (s, e) => {
+                indexSeleccionado = e.RowIndex;
+                MessageBox.Show($"{TListaPokemon.ListaPokemon[indexSeleccionado].PokeDesc()}", "Informacion Del Pokemon Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            };
+
             Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
 
 
@@ -45,16 +53,56 @@ namespace Pokemon_POO.Controlador {
         }
 
 
+
+
         public FrmRegistrar Registrar {
             get => registrar;
         }
 
+        private void mostrarRegistrar() {
+            mostrarFormulario(Registrar);
+        }
+
+        private bool validarCampos() {
+            if (string.IsNullOrWhiteSpace(Registrar.TxtNombreR().Text) ||
+                string.IsNullOrWhiteSpace(Registrar.TxtNivelR().Text) ||
+                string.IsNullOrWhiteSpace(Registrar.TxtVidaR().Text) ||
+                string.IsNullOrWhiteSpace(Registrar.TxtEspecieR().Text) ||
+                string.IsNullOrWhiteSpace(Registrar.TxtAtaqueR().Text) ||
+                string.IsNullOrWhiteSpace(Registrar.TxtDefensaR().Text) ||
+                string.IsNullOrEmpty(Registrar.CboPokemonR().SelectedItem?.ToString())) {
+                return false;
+            }
+            return true;
+        }
+
         private void agregarPokemon() {
+
+            if (!validarCampos()) {
+                MessageBox.Show("Error: Complete Todos Los Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+
+                string nombre = Registrar.TxtNombreR().Text;
+                int nivel = int.Parse(Registrar.TxtNivelR().Text);
+                int vida = int.Parse(Registrar.TxtVidaR().Text);
+                string especie = Registrar.TxtEspecieR().Text;
+                int ataque = int.Parse(Registrar.TxtAtaqueR().Text);
+                int defensa = int.Parse(Registrar.TxtDefensaR().Text);
+                string tipo = Registrar.CboPokemonR().SelectedItem.ToString();
+
+                if (Registrar.CboPokemonR().SelectedItem.Equals("Fuego")) {
+                    PokemonFuego pFuego = new PokemonFuego(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                    TListaPokemon.AgregarPokemon(pFuego);
+                    agregarFilaTabla(pFuego);
+                }
+            }
+
 
         }
 
         private void configurarTablaPokemon() {
-            var colorFondo = Color.FromArgb(240, 240, 240); // Usa el color de tu panel
+            var colorFondo = Color.White;
             Registrar.tablaPokemons().ReadOnly = true;
             Registrar.tablaPokemons().Font = new Font("Montserrat", 7, FontStyle.Bold);
             Registrar.tablaPokemons().BorderStyle = BorderStyle.None;
@@ -65,12 +113,17 @@ namespace Pokemon_POO.Controlador {
             Registrar.tablaPokemons().AlternatingRowsDefaultCellStyle.BackColor = colorFondo;
 
             Registrar.tablaPokemons().AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Registrar.tablaPokemons().Columns.Add("Nombre", "Nombre");
             Registrar.tablaPokemons().Columns.Add("Tipo", "Tipo");
-            Registrar.tablaPokemons().Columns.Add("Nivel", "Nivel");
-            Registrar.tablaPokemons().Columns.Add("Vida", "Vida");
+            Registrar.tablaPokemons().Columns.Add("Nombre", "Nombre");
+            Registrar.tablaPokemons().Columns.Add("Especie", "Especie");
             Registrar.tablaPokemons().Columns.Add("Ataque", "Ataque");
+            Registrar.tablaPokemons().Columns.Add("Nivel", "Nivel");
+            Registrar.tablaPokemons().Columns.Add("Defensa", "Defensa");
+            Registrar.tablaPokemons().Columns.Add("Vida", "Vida");
+        }
 
+        private void agregarFilaTabla(Pokemon p) {
+            Registrar.tablaPokemons().Rows.Add(p.Tipo, p.Nombre, p.Especie, p.Ataque, p.Nivel, p.Defensa, p.Vida);
         }
 
 
@@ -80,12 +133,9 @@ namespace Pokemon_POO.Controlador {
 
        
 
-        private void mostrarRegistrar() {
-            mostrarFrm(Registrar);
-        }
+        
 
-        private void mostrarFrm(Form p) {
-
+        private void mostrarFormulario(Form p) {
             /// limpiamos el panel contenedor antes de mostrar otro Ejercicio
             if (this.vista.contenedor().Controls.Count > 0) {
                 this.vista.contenedor().Controls.RemoveAt(0);
