@@ -40,7 +40,7 @@ namespace Pokemon_POO.Modelos {
         }
 
         public virtual string PokeDesc() {
-            return $"Nombre: {Nombre} {Environment.NewLine} Tipo: {Tipo} {Environment.NewLine} {Environment.NewLine} Nivel: {Nivel} {Environment.NewLine} Vida: {Vida} {Environment.NewLine} Especie: {Especie}";
+            return $" Nombre: {Nombre} {Environment.NewLine} Tipo: {Tipo} {Environment.NewLine} Nivel: {Nivel} {Environment.NewLine} Vida: {Vida} {Environment.NewLine} Especie: {Especie}";
         }
 
         public virtual int Atacar(Pokemon enemigo) {
