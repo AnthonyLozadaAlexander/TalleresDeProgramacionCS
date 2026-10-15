@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\TListaPokemon.cs" />
+    <Compile Include="Modelos\Pokemon.cs" />
     <Compile Include="Vista\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +86,6 @@
     <Content Include="Recursos\Icons\pokebola.ico" />
     <Content Include="Recursos\Images\Interfaz Pokédex sobre paisaje Pokémon %282%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modelos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
