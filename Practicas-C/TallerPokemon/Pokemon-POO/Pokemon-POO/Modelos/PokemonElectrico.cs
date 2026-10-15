@@ -5,6 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pokemon_POO.Modelos {
-    public class PokemonElectrico {
+    public class PokemonElectrico : Pokemon {
+
+        private string debilidad;
+        private string inmunidad;
+
+        public PokemonElectrico(string nombre, string tipo, int nivel, int vida, string especie, int ataque, int defensa) : base(nombre, tipo, nivel, vida, especie, ataque, defensa) {
+            this.debilidad = "Tierra";
+            this.inmunidad = "Ninguna";
+        }
+
+        public string Debilidad { get => debilidad; set => debilidad = value; }
+        public string Inmunidad { get => inmunidad; set => inmunidad = value; }
     }
 }
