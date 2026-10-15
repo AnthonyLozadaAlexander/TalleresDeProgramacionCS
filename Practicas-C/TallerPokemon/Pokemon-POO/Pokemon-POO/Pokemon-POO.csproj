@@ -46,18 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\ControladorPk.cs" />
     <Compile Include="Controlador\TListaPokemon.cs" />
-    <Compile Include="Modelos\Pokemon.cs" />
-    <Compile Include="Vista\FrmMenu.cs">
+    <Compile Include="Formularios\FrmDuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\FrmMenu.Designer.cs">
+    <Compile Include="Formularios\FrmDuelo.Designer.cs">
+      <DependentUpon>FrmDuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRegistrar.Designer.cs">
+      <DependentUpon>FrmRegistrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Pokemon.cs" />
+    <Compile Include="Formularios\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Vista\FrmMenu.resx">
+    <EmbeddedResource Include="Formularios\FrmDuelo.resx">
+      <DependentUpon>FrmDuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRegistrar.resx">
+      <DependentUpon>FrmRegistrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +103,8 @@
   <ItemGroup>
     <Content Include="Recursos\Icons\game.ico" />
     <Content Include="Recursos\Icons\pokebola.ico" />
+    <Content Include="Recursos\Images\FondoRegistrar.jpg" />
+    <Content Include="Recursos\Images\FondoRegistrar_Version2.jpg" />
     <Content Include="Recursos\Images\Interfaz Pokédex sobre paisaje Pokémon %282%29.png" />
   </ItemGroup>
   <ItemGroup />
