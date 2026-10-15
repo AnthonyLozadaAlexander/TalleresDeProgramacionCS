@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AplicandoPOO_Pokemon.Properties {
+namespace Pokemon_POO.Properties {
 
 
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
