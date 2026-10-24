@@ -14,5 +14,14 @@ namespace Pokemon_POO.Modelos {
             this.debilidad = "Fuego/Hielo";
             this.inmunidad = "Ninguna";
         }
+
+        public string Debilidad { get => debilidad; set => debilidad = value; }
+        public string Inmunidad { get => inmunidad; set => inmunidad = value; }
+
+        public override string TipoAtaque() => "Rayo Solar";
+
+        public override string PokeDesc() {
+            return base.PokeDesc() + $"{Environment.NewLine} Debilidad: {Debilidad} {Environment.NewLine} Inmunidad: {Inmunidad}";
+        }
     }
 }

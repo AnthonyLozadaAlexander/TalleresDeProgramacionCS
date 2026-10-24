@@ -19,8 +19,10 @@ namespace Pokemon_POO.Modelos {
         public string Debilidad { get => debilidad; set => debilidad = value; }
         public string Inmunidad { get => inmunidad; set => inmunidad = value; }
 
-        public override void TipoAtaque() {
-            MessageBox.Show("Presion Hidrica");
+        public override string TipoAtaque() => "Presion Hidrica";
+
+        public override string PokeDesc() {
+            return base.PokeDesc() + $"{Environment.NewLine} Debilidad: {Debilidad} {Environment.NewLine} Inmunidad: {Inmunidad}";
         }
     }
 }

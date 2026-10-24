@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pokemon_POO.Modelos {
-    public class Pokemon {
+    public abstract class Pokemon {
 
         private string nombre;
         private string tipo;
@@ -35,21 +35,19 @@ namespace Pokemon_POO.Modelos {
         public int Ataque { get => ataque; set => ataque = value; }
         public int Defensa { get => defensa; set => defensa = value; }
 
-        public virtual void TipoAtaque() {
-
-        }
+        public abstract string TipoAtaque(); 
 
         public virtual string PokeDesc() {
             return $" Nombre: {Nombre} {Environment.NewLine} Tipo: {Tipo} {Environment.NewLine} Nivel: {Nivel} {Environment.NewLine} Vida: {Vida} {Environment.NewLine} Especie: {Especie}";
         }
 
-        public virtual int Atacar(Pokemon enemigo) {
+        public virtual void Atacar(Pokemon enemigo) {
             int danio = Ataque - enemigo.defensa;
             if(danio < 0) {
                 danio = 0;
             }
 
-            return danio;
+            enemigo.RecibirDanio(danio);
         }
 
         public virtual void RecibirDanio(int cantidad) {
@@ -59,6 +57,9 @@ namespace Pokemon_POO.Modelos {
             }
         }
 
+        public override string ToString() {
+            return $"Nombre: {Nombre}";
+        }
 
 
     }

@@ -18,6 +18,9 @@ namespace Pokemon_POO.Modelos {
             get => inmunidad; set => inmunidad = value;
         }
 
-
+        public override string TipoAtaque() => "Terremoto";
+        public override string PokeDesc() {
+            return base.PokeDesc() + $"{Environment.NewLine} Debilidad: {Debilidad} {Environment.NewLine} Inmunidad: {Inmunidad}";
+        }
     }
 }
