@@ -25,8 +25,12 @@ namespace Pokemon_POO.Formularios {
 
         public Button ReiniciarSalud() => btnReiniciarHP;
 
-        private void gbSeleccionar_Enter(object sender, EventArgs e) {
+        public TextBox HP1 => txtHP1;
 
-        }
+        public TextBox HP2 => txtHP2;
+
+        public ComboBox cboPK1 => cboPokemon1;
+
+        public ComboBox cboPK2 => cboPokemon2;
     }
 }

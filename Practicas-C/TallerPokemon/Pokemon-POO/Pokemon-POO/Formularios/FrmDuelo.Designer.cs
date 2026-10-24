@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDuelo));
             this.gpHistorial = new System.Windows.Forms.GroupBox();
+            this.txtHistorial = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboPokemon1 = new System.Windows.Forms.ComboBox();
@@ -34,10 +35,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.gbSeleccionar = new System.Windows.Forms.GroupBox();
-            this.txtHistorial = new System.Windows.Forms.TextBox();
-            this.btnAtacar = new System.Windows.Forms.Button();
-            this.btnReiniciarHP = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.btnReiniciarHP = new System.Windows.Forms.Button();
+            this.btnAtacar = new System.Windows.Forms.Button();
             this.gpHistorial.SuspendLayout();
             this.gbSeleccionar.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,15 @@
             this.gpHistorial.TabIndex = 21;
             this.gpHistorial.TabStop = false;
             this.gpHistorial.Text = "[ Historial ]";
+            // 
+            // txtHistorial
+            // 
+            this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHistorial.Location = new System.Drawing.Point(35, 47);
+            this.txtHistorial.Multiline = true;
+            this.txtHistorial.Name = "txtHistorial";
+            this.txtHistorial.Size = new System.Drawing.Size(771, 296);
+            this.txtHistorial.TabIndex = 25;
             // 
             // label2
             // 
@@ -152,23 +161,14 @@
             this.gbSeleccionar.TabStop = false;
             this.gbSeleccionar.Text = "[ Seleccionar ]";
             // 
-            // txtHistorial
+            // btnMenu
             // 
-            this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHistorial.Location = new System.Drawing.Point(35, 47);
-            this.txtHistorial.Multiline = true;
-            this.txtHistorial.Name = "txtHistorial";
-            this.txtHistorial.Size = new System.Drawing.Size(771, 296);
-            this.txtHistorial.TabIndex = 25;
-            // 
-            // btnAtacar
-            // 
-            this.btnAtacar.Location = new System.Drawing.Point(209, 151);
-            this.btnAtacar.Name = "btnAtacar";
-            this.btnAtacar.Size = new System.Drawing.Size(164, 44);
-            this.btnAtacar.TabIndex = 27;
-            this.btnAtacar.Text = "Atacar";
-            this.btnAtacar.UseVisualStyleBackColor = true;
+            this.btnMenu.Location = new System.Drawing.Point(714, 32);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(92, 44);
+            this.btnMenu.TabIndex = 29;
+            this.btnMenu.Text = "MENU";
+            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // btnReiniciarHP
             // 
@@ -179,14 +179,14 @@
             this.btnReiniciarHP.Text = "Reiniciar Salud";
             this.btnReiniciarHP.UseVisualStyleBackColor = true;
             // 
-            // btnMenu
+            // btnAtacar
             // 
-            this.btnMenu.Location = new System.Drawing.Point(714, 32);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(92, 44);
-            this.btnMenu.TabIndex = 29;
-            this.btnMenu.Text = "MENU";
-            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnAtacar.Location = new System.Drawing.Point(209, 151);
+            this.btnAtacar.Name = "btnAtacar";
+            this.btnAtacar.Size = new System.Drawing.Size(164, 44);
+            this.btnAtacar.TabIndex = 27;
+            this.btnAtacar.Text = "Atacar";
+            this.btnAtacar.UseVisualStyleBackColor = true;
             // 
             // FrmDuelo
             // 
