@@ -36,28 +36,32 @@ namespace Pokemon_POO.Controlador {
                 }
             };
 
-            Registrar.menuR().Click += (s, e) => Registrar.Hide(); 
+            Registrar.menuR().Click += (s, e) => Registrar.Hide();
 
-            Vista.DuelosM.Click += (s, e) => mostrarFormulario(Duelo);
-            Duelo.MENU().Click += (s, e) => Duelo.Hide();
-
-            // Cargar ComboBox de Pokemons al iniciar el formulario de duelo
-            Duelo.Click += (s,e) => {
+            Vista.DuelosM.Click += (s, e) => {
+                mostrarFormulario(Duelo);
                 cargarComboPokemon();
             };
 
+            Duelo.MENU().Click += (s, e) => Duelo.Hide();
+
             Duelo.cboPK1.SelectedIndexChanged += (s, e) => {
-                int index = Duelo.cboPK1.SelectedIndex;
-                if(index >=0 && index < TListaPokemon.ListaPokemon.Count) {
-                    Duelo.HP1.Text = TListaPokemon.ListaPokemon[index].Vida.ToString();
+                Pokemon pSeleccionado = (Pokemon) Duelo.cboPK1.SelectedItem;
+                if (pSeleccionado == null) {
+                    Duelo.HP1.Text = "-";
+                    return;
                 }
+
+                Duelo.HP1.Text = pSeleccionado.Vida.ToString();
             };
 
             Duelo.cboPK2.SelectedIndexChanged += (s, e) => {
-                int index = Duelo.cboPK2.SelectedIndex;
-                if (index >= 0 && index < TListaPokemon.ListaPokemon.Count) {
-                    Duelo.HP2.Text = TListaPokemon.ListaPokemon[index].Vida.ToString();
+                Pokemon pSeleccionado = (Pokemon)Duelo.cboPK2.SelectedItem;
+                if (pSeleccionado == null) {
+                    Duelo.HP2.Text = "-";
+                    return;
                 }
+                Duelo.HP2.Text = pSeleccionado.Vida.ToString();
             };
 
             // Evento para reiniciar la salud de los Pokemons seleccionados
