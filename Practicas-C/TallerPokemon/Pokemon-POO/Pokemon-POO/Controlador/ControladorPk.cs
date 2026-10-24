@@ -19,6 +19,7 @@ namespace Pokemon_POO.Controlador {
         private FrmDuelo duelo;
 
         public ControladorPk(FrmMenu vista, FrmRegistrar registrar, FrmDuelo duelo) {
+
             this.vista = vista;
             this.registrar = registrar;
             this.duelo = duelo;
@@ -27,6 +28,7 @@ namespace Pokemon_POO.Controlador {
             Vista.RegistrarM.Click += (s, e) => mostrarFormulario(Registrar);
             Registrar.agregarR().Click += (s, e) => agregarPokemon();
             Registrar.VerLista().Click += (s, e) => verLista();
+
             Registrar.tablaPokemons().CellClick += (s, e) => {
                 if (e.RowIndex >= 0) {
                     indexSeleccionado = e.RowIndex;
@@ -39,6 +41,12 @@ namespace Pokemon_POO.Controlador {
             Vista.DuelosM.Click += (s, e) => mostrarFormulario(Duelo);
             Duelo.MENU().Click += (s, e) => Duelo.Hide();
 
+            // Cargar ComboBox de Pokemons al iniciar el formulario de duelo
+            Duelo.Load += (s,e) => {
+                cargarComboPokemon();
+            };
+
+            // Evento para reiniciar la salud de los Pokemons seleccionados
             vista.SalirM.Click += (s, e) => Salir();
 
         }
@@ -58,6 +66,7 @@ namespace Pokemon_POO.Controlador {
         public FrmRegistrar Registrar {
             get => registrar;
         }
+
         public void verLista() {
             using ( FrmLista lista = new FrmLista()){
                 lista.ShowDialog();
@@ -93,10 +102,41 @@ namespace Pokemon_POO.Controlador {
                     int defensa = int.Parse(Registrar.TxtDefensaR().Text);
                     string tipo = Registrar.CboPokemonR().SelectedItem.ToString();
 
-                    if (Registrar.CboPokemonR().SelectedItem.Equals("Fuego")) {
-                        PokemonFuego pFuego = new PokemonFuego(nombre, tipo, nivel, vida, especie, ataque, defensa);
-                        TListaPokemon.AgregarPokemon(pFuego);
-                        agregarFilaTabla(pFuego);
+                    if (verificarDuplicado(TListaPokemon.ListaPokemon, nombre)) {
+                        MessageBox.Show("Error: Ya Existe Un Pokemon Con Ese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Crear el objeto Pokemon correspondiente según el tipo seleccionado
+                    switch (tipo) {
+                        case "Fuego":
+                            PokemonFuego fuego = new PokemonFuego(nombre, tipo,nivel, vida, especie, ataque, defensa);
+                            TListaPokemon.AgregarPokemon(fuego);
+                            agregarFilaTabla(fuego);
+                            break;
+                        case "Agua":
+                            PokemonAgua agua = new PokemonAgua(nombre,tipo, nivel, vida, especie, ataque, defensa);
+                            TListaPokemon.AgregarPokemon(agua);
+                            agregarFilaTabla(agua);
+                            break;
+                        case "Planta":
+                            PokemonPlanta planta = new PokemonPlanta(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                            TListaPokemon.AgregarPokemon(planta);
+                            agregarFilaTabla(planta);
+                            break;
+                        case "Electrico":
+                            PokemonElectrico electrico = new PokemonElectrico(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                            TListaPokemon.AgregarPokemon(electrico);
+                            agregarFilaTabla(electrico);
+                            break;
+                        case "Tierra":
+                            PokemonTierra tierra = new PokemonTierra(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                            TListaPokemon.AgregarPokemon(tierra);
+                            agregarFilaTabla(tierra);
+                            break;
+                        default:
+                            MessageBox.Show("Error: Tipo De Pokemon No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break; 
                     }
                 }
             }catch(FormatException) {
@@ -106,6 +146,8 @@ namespace Pokemon_POO.Controlador {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private bool verificarDuplicado(List<Pokemon> listaP, string nombre) => listaP.Any(p => p.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase)); 
 
         private void configurarTablaPokemon() {
             var colorFondo = Color.White;
@@ -137,6 +179,14 @@ namespace Pokemon_POO.Controlador {
             get => duelo;
         }
 
+        private void cargarComboPokemon() {
+            duelo.cboPK1.Items.Clear(); duelo.cboPK2.Items.Clear();
+
+            foreach (Pokemon p in TListaPokemon.ListaPokemon) {
+                Duelo.cboPK1.Items.Add(p);
+                Duelo.cboPK2.Items.Add(p);
+            }
+        }
 
         private void mostrarFormulario(Form p) {
             /// limpiamos el panel contenedor antes de mostrar otro Ejercicio
