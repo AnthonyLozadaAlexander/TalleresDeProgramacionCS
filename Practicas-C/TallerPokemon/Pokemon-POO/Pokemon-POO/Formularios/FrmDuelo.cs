@@ -32,5 +32,9 @@ namespace Pokemon_POO.Formularios {
         public ComboBox cboPK1 => cboPokemon1;
 
         public ComboBox cboPK2 => cboPokemon2;
+
+        private void gbSeleccionar_Enter(object sender, EventArgs e) {
+
+        }
     }
 }

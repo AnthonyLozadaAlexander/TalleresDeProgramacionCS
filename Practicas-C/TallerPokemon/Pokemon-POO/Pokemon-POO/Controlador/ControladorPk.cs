@@ -42,8 +42,22 @@ namespace Pokemon_POO.Controlador {
             Duelo.MENU().Click += (s, e) => Duelo.Hide();
 
             // Cargar ComboBox de Pokemons al iniciar el formulario de duelo
-            Duelo.Load += (s,e) => {
+            Duelo.Click += (s,e) => {
                 cargarComboPokemon();
+            };
+
+            Duelo.cboPK1.SelectedIndexChanged += (s, e) => {
+                int index = Duelo.cboPK1.SelectedIndex;
+                if(index >=0 && index < TListaPokemon.ListaPokemon.Count) {
+                    Duelo.HP1.Text = TListaPokemon.ListaPokemon[index].Vida.ToString();
+                }
+            };
+
+            Duelo.cboPK2.SelectedIndexChanged += (s, e) => {
+                int index = Duelo.cboPK2.SelectedIndex;
+                if (index >= 0 && index < TListaPokemon.ListaPokemon.Count) {
+                    Duelo.HP2.Text = TListaPokemon.ListaPokemon[index].Vida.ToString();
+                }
             };
 
             // Evento para reiniciar la salud de los Pokemons seleccionados
@@ -108,42 +122,38 @@ namespace Pokemon_POO.Controlador {
                     }
 
                     // Crear el objeto Pokemon correspondiente según el tipo seleccionado
-                    switch (tipo) {
-                        case "Fuego":
-                            PokemonFuego fuego = new PokemonFuego(nombre, tipo,nivel, vida, especie, ataque, defensa);
-                            TListaPokemon.AgregarPokemon(fuego);
-                            agregarFilaTabla(fuego);
-                            break;
-                        case "Agua":
-                            PokemonAgua agua = new PokemonAgua(nombre,tipo, nivel, vida, especie, ataque, defensa);
-                            TListaPokemon.AgregarPokemon(agua);
-                            agregarFilaTabla(agua);
-                            break;
-                        case "Planta":
-                            PokemonPlanta planta = new PokemonPlanta(nombre, tipo, nivel, vida, especie, ataque, defensa);
-                            TListaPokemon.AgregarPokemon(planta);
-                            agregarFilaTabla(planta);
-                            break;
-                        case "Electrico":
-                            PokemonElectrico electrico = new PokemonElectrico(nombre, tipo, nivel, vida, especie, ataque, defensa);
-                            TListaPokemon.AgregarPokemon(electrico);
-                            agregarFilaTabla(electrico);
-                            break;
-                        case "Tierra":
-                            PokemonTierra tierra = new PokemonTierra(nombre, tipo, nivel, vida, especie, ataque, defensa);
-                            TListaPokemon.AgregarPokemon(tierra);
-                            agregarFilaTabla(tierra);
-                            break;
-                        default:
-                            MessageBox.Show("Error: Tipo De Pokemon No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break; 
+                    Pokemon p = crearPokemon(nombre, tipo, nivel, vida, especie, ataque, defensa);
+
+                    if (p == null) {
+                        MessageBox.Show("Error: Tipo de Pokemon No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
+
+                    TListaPokemon.AgregarPokemon(p);
+                    agregarFilaTabla(p);
                 }
             }catch(FormatException) {
                 MessageBox.Show("Error: Ingrese Valores Numericos En Los Campos De Nivel, Vida, Ataque Y Defensa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex) {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private Pokemon crearPokemon(string nombre, string tipo, int nivel, int vida, string especie, int ataque, int defensa) {
+            switch (tipo) {
+                case "Fuego":
+                    return new PokemonFuego(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                case "Agua":
+                    return new PokemonAgua(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                case "Planta":
+                    return new PokemonPlanta(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                case "Electrico":
+                    return new PokemonElectrico(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                case "Tierra":
+                    return new PokemonTierra(nombre, tipo, nivel, vida, especie, ataque, defensa);
+                default:
+                    return null;
             }
         }
 

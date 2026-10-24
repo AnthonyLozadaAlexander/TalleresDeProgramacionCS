@@ -68,7 +68,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 53);
+            this.label2.Location = new System.Drawing.Point(76, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 33);
             this.label2.TabIndex = 19;
@@ -79,7 +79,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat SemiBold", 13.74545F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(203, 102);
+            this.label3.Location = new System.Drawing.Point(72, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 33);
             this.label3.TabIndex = 20;
@@ -89,18 +89,18 @@
             // 
             this.cboPokemon1.Font = new System.Drawing.Font("Montserrat SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPokemon1.FormattingEnabled = true;
-            this.cboPokemon1.Location = new System.Drawing.Point(252, 45);
+            this.cboPokemon1.Location = new System.Drawing.Point(132, 45);
             this.cboPokemon1.Name = "cboPokemon1";
-            this.cboPokemon1.Size = new System.Drawing.Size(121, 35);
+            this.cboPokemon1.Size = new System.Drawing.Size(241, 35);
             this.cboPokemon1.TabIndex = 21;
             // 
             // cboPokemon2
             // 
             this.cboPokemon2.Font = new System.Drawing.Font("Montserrat SemiBold", 11.12727F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPokemon2.FormattingEnabled = true;
-            this.cboPokemon2.Location = new System.Drawing.Point(252, 100);
+            this.cboPokemon2.Location = new System.Drawing.Point(129, 100);
             this.cboPokemon2.Name = "cboPokemon2";
-            this.cboPokemon2.Size = new System.Drawing.Size(121, 35);
+            this.cboPokemon2.Size = new System.Drawing.Size(244, 35);
             this.cboPokemon2.TabIndex = 22;
             // 
             // txtHP1
@@ -160,6 +160,7 @@
             this.gbSeleccionar.TabIndex = 20;
             this.gbSeleccionar.TabStop = false;
             this.gbSeleccionar.Text = "[ Seleccionar ]";
+            this.gbSeleccionar.Enter += new System.EventHandler(this.gbSeleccionar_Enter);
             // 
             // btnMenu
             // 
