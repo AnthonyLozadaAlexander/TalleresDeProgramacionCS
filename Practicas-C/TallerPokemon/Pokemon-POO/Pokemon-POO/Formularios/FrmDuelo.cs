@@ -13,11 +13,14 @@ namespace Pokemon_POO.Formularios {
         public FrmDuelo() {
             InitializeComponent();
             CenterToScreen();
+            txtHistorial.ScrollBars = ScrollBars.Vertical;
         }
 
         public GroupBox contenedorSeleccionar() => gbSeleccionar;
 
         public GroupBox contenedorHistorial() => gpHistorial;
+
+        public TextBox Historial => txtHistorial;
 
         public Button MENU() => btnMenu;
 

@@ -43,7 +43,7 @@
             // btnDuelos
             // 
             this.btnDuelos.Font = new System.Drawing.Font("Montserrat", 15.70909F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDuelos.Location = new System.Drawing.Point(41, 223);
+            this.btnDuelos.Location = new System.Drawing.Point(41, 222);
             this.btnDuelos.Name = "btnDuelos";
             this.btnDuelos.Size = new System.Drawing.Size(179, 56);
             this.btnDuelos.TabIndex = 2;

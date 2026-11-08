@@ -57,7 +57,7 @@
             // txtHistorial
             // 
             this.txtHistorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHistorial.Location = new System.Drawing.Point(35, 47);
+            this.txtHistorial.Location = new System.Drawing.Point(44, 47);
             this.txtHistorial.Multiline = true;
             this.txtHistorial.Name = "txtHistorial";
             this.txtHistorial.Size = new System.Drawing.Size(771, 296);
