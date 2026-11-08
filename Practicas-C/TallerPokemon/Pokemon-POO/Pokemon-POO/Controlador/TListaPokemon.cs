@@ -31,5 +31,13 @@ namespace Pokemon_POO.Controlador {
             return index;
         }
 
+        public static void Datos() {
+            PokemonElectrico pikachu = new PokemonElectrico("Pikachu", "Eléctrico", 5, 100, "Ratón Eléctrico", 20, 10);
+            PokemonFuego charmander = new PokemonFuego("Charmander", "Fuego", 5, 100, "Lagartija de Fuego", 25, 8);
+
+            AgregarPokemon(pikachu);
+            AgregarPokemon(charmander);
+        }
+
     }
 }
