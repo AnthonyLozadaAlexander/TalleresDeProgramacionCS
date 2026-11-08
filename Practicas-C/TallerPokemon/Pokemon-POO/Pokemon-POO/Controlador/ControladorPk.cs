@@ -66,46 +66,12 @@ namespace Pokemon_POO.Controlador {
                 Duelo.HP2.Text = pSeleccionado.Vida.ToString();
             };
 
-            // async indica que una función puede realizar operaciones que esperan un tiempo sin bloquear la interfaz.
-            // await se utiliza para esperar a que una operación asincrónica termine antes de continuar con la ejecución del código.
+            
             // evento para el botón de ataque en el formulario de duelo
-            Duelo.Atacar().Click += async (s, e) => {
-                
+            Duelo.Atacar().Click +=  (s, e) => {
                 Pokemon p1 = (Pokemon)Duelo.cboPK1.SelectedItem;
                 Pokemon p2 = (Pokemon)Duelo.cboPK2.SelectedItem;
-
-                // Verificar si ambos Pokémon seleccionados son el mismo
-                if (ReferenceEquals(p1, p2)) {
-                    MessageBox.Show("Error: No Se Puede Atacar A Si Mismo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if(p1 != null && p2 != null) {
-                    Duelo.Historial.AppendText($"Se ha elegido  a {p1.Nombre} y a {p2.Nombre} para el combate. {Environment.NewLine} Combate Iniciado");
-
-                    while(p1.Vida > 0 && p2.Vida > 0) {
-                        p1.Atacar(p2);
-                        Duelo.HP2.Text = p2.Vida.ToString();
-                        Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ataca a {p2.Nombre}");
-                        Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p2.Nombre}: {p2.Vida}");
-                        p2.Atacar(p1);
-                        Duelo.HP1.Text = p1.Vida.ToString();
-                        Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ataca a {p1.Nombre}");
-                        Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p1.Nombre}: {p1.Vida}");
-
-                        if (p1.Vida <= 0) {
-                            Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ha sido derrotado por {p2.Nombre}");
-                            break;
-                        }
-
-                        if(p2.Vida <= 0) {
-                            Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ha sido derrotado por {p1.Nombre}");
-                            break;
-                        }
-
-                        await Task.Delay(1000); // Pausa de 1 segundo entre ataques para simular el tiempo de combate
-                    }
-                }
+                combate(p1, p2);
 
             };
 
@@ -266,8 +232,42 @@ namespace Pokemon_POO.Controlador {
             }
         }
 
-        private void combate() {
+        // async indica que una función puede realizar operaciones que esperan un tiempo sin bloquear la interfaz.
+        // await se utiliza para esperar a que una operación asincrónica termine antes de continuar con la ejecución del código.
+        private async void combate(Pokemon p1, Pokemon p2) {
+        
+            // Verificar si ambos Pokémon seleccionados son el mismo
+            if (ReferenceEquals(p1, p2)) {
+                MessageBox.Show("Error: No Se Puede Atacar A Si Mismo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            if (p1 != null && p2 != null) {
+                Duelo.Historial.AppendText($"Se ha elegido  a {p1.Nombre} y a {p2.Nombre} para el combate. {Environment.NewLine} Combate Iniciado");
+
+                while (p1.Vida > 0 && p2.Vida > 0) {
+                    p1.Atacar(p2);
+                    Duelo.HP2.Text = p2.Vida.ToString();
+                    Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ataca a {p2.Nombre}");
+                    Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p2.Nombre}: {p2.Vida}");
+                    p2.Atacar(p1);
+                    Duelo.HP1.Text = p1.Vida.ToString();
+                    Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ataca a {p1.Nombre}");
+                    Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p1.Nombre}: {p1.Vida}");
+
+                    if (p1.Vida <= 0) {
+                        Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ha sido derrotado por {p2.Nombre}");
+                        break;
+                    }
+
+                    if (p2.Vida <= 0) {
+                        Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ha sido derrotado por {p1.Nombre}");
+                        break;
+                    }
+
+                    await Task.Delay(1000); // Pausa de 1 segundo entre ataques para simular el tiempo de combate
+                }
+            }
         }
 
         private void mostrarFormulario(Form p) {
