@@ -13,6 +13,8 @@ namespace Pokemon_POO.Modelos {
         private int vida;
         private string especie;
 
+        private int vidaInicial;
+
         private int ataque;
 
         private int defensa;
@@ -25,6 +27,7 @@ namespace Pokemon_POO.Modelos {
             this.especie = especie;
             this.ataque = ataque;
             this.defensa = defensa;
+            this.vidaInicial = vida;
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -55,6 +58,11 @@ namespace Pokemon_POO.Modelos {
             if(Vida < 0) {
                 Vida = 0;
             }
+        }
+
+        // Restaurar la vida del Pokémon a su valor inicial
+        public virtual void RestaurarVida() {
+                Vida = vidaInicial;
         }
 
         public override string ToString() {
