@@ -24,7 +24,7 @@ namespace Pokemon_POO.Controlador {
             this.registrar = registrar;
             this.duelo = duelo;
             configurarTablaPokemon();
-            TListaPokemon.Datos();
+            TListaPokemon.Datos(); // Cargar datos iniciales si no se han cargado previamente
             Registrar.tablaPokemons().Rows.Clear();
             // tambien se puede como: TListaPokemon.ListaPokemon.ForEach(agregarFilaTabla);
             foreach (Pokemon p in TListaPokemon.ListaPokemon) agregarFilaTabla(p);

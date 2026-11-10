@@ -10,6 +10,8 @@ namespace Pokemon_POO.Controlador {
 
         private static List<Pokemon> listaPokemon = new List<Pokemon>();
 
+        private static bool datosCargados = false;
+
         public static List<Pokemon> ListaPokemon {
             get => listaPokemon;
         }
@@ -32,11 +34,15 @@ namespace Pokemon_POO.Controlador {
         }
 
         public static void Datos() {
-            PokemonElectrico pikachu = new PokemonElectrico("Pikachu", "Eléctrico", 5, 100, "Ratón Eléctrico", 20, 10);
-            PokemonFuego charmander = new PokemonFuego("Charmander", "Fuego", 5, 100, "Lagartija de Fuego", 25, 8);
+            if (!datosCargados) {
+                PokemonElectrico pikachu = new PokemonElectrico("Pikachu", "Eléctrico", 5, 100, "Ratón Eléctrico", 20, 10);
+                PokemonFuego charmander = new PokemonFuego("Charmander", "Fuego", 5, 100, "Lagartija de Fuego", 25, 8);
 
-            AgregarPokemon(pikachu);
-            AgregarPokemon(charmander);
+                AgregarPokemon(pikachu);
+                AgregarPokemon(charmander);
+            }
+
+            datosCargados = true;
         }
 
     }
