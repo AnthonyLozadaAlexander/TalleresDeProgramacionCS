@@ -162,6 +162,11 @@ namespace Pokemon_POO.Controlador {
                         return;
                     }
 
+                    if(vida <= 0 || ataque <= 0 || defensa <= 0) {
+                        MessageBox.Show("Error: Los valores de Vida, Ataque y Defensa deben ser mayores a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     // Crear el objeto Pokemon correspondiente según el tipo seleccionado
                     Pokemon p = crearPokemon(nombre, tipo, nivel, vida, especie, ataque, defensa);
 
