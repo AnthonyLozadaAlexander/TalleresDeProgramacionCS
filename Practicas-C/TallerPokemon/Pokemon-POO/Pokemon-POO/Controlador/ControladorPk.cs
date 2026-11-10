@@ -257,6 +257,9 @@ namespace Pokemon_POO.Controlador {
             if (p1 != null && p2 != null) {
                 Duelo.Historial.AppendText($"Se ha elegido  a {p1.Nombre} y a {p2.Nombre} para el combate. {Environment.NewLine} Combate Iniciado");
 
+                Duelo.Atacar().Enabled = false;
+                Duelo.ReiniciarSalud().Enabled = false;
+
                 while (p1.Vida > 0 && p2.Vida > 0) {
                     p1.Atacar(p2);
                     Duelo.HP2.Text = p2.Vida.ToString();
@@ -274,6 +277,10 @@ namespace Pokemon_POO.Controlador {
 
                     await Task.Delay(1000); // Pausa de 1 segundo entre ataques para simular el tiempo de combate
                 }
+
+                Duelo.Atacar().Enabled = true;
+                Duelo.ReiniciarSalud().Enabled = true;
+
             }
         }
 
