@@ -262,20 +262,15 @@ namespace Pokemon_POO.Controlador {
                     Duelo.HP2.Text = p2.Vida.ToString();
                     Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ataca a {p2.Nombre}");
                     Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p2.Nombre}: {p2.Vida}");
-                    p2.Atacar(p1);
-                    Duelo.HP1.Text = p1.Vida.ToString();
-                    Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ataca a {p1.Nombre}");
-                    Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p1.Nombre}: {p1.Vida}");
-
-                    if (p1.Vida <= 0) {
-                        Duelo.Historial.AppendText($"{Environment.NewLine}{p1.Nombre} ha sido derrotado por {p2.Nombre}");
-                        break;
-                    }
-
                     if (p2.Vida <= 0) {
                         Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ha sido derrotado por {p1.Nombre}");
                         break;
                     }
+
+                    p2.Atacar(p1);
+                    Duelo.HP1.Text = p1.Vida.ToString();
+                    Duelo.Historial.AppendText($"{Environment.NewLine}{p2.Nombre} ataca a {p1.Nombre}");
+                    Duelo.Historial.AppendText($"{Environment.NewLine}Vida de {p1.Nombre}: {p1.Vida}");
 
                     await Task.Delay(1000); // Pausa de 1 segundo entre ataques para simular el tiempo de combate
                 }
